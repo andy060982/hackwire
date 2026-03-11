@@ -91,7 +91,6 @@
     "compiler": {},
     "expireTime": 31536000,
     "staticPageGenerationTimeout": 60,
-    "output": "standalone",
     "modularizeImports": {
       "@mui/icons-material": {
         "transform": "@mui/icons-material/{{member}}"
@@ -100,7 +99,7 @@
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "/home/aarevalo/clawd",
+    "outputFileTracingRoot": "/home/aarevalo/clawd/",
     "experimental": {
       "useSkewCookie": false,
       "cacheLife": {
@@ -290,7 +289,7 @@
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.ts",
     "turbopack": {
-      "root": "/home/aarevalo/clawd"
+      "root": "/home/aarevalo/clawd/"
     }
   },
   "appDir": "/home/aarevalo/clawd/hackwire",
