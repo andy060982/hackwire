@@ -1,3 +1,6 @@
 .vercel
 .next
 node_modules
+youtube-shorts/output/
+youtube-shorts/pixel_art_output/
+youtube-shorts/temp/
