@@ -1,0 +1,18 @@
+This is HackWire Daily, your cybersecurity threat briefing. Today is Thursday, March 12, 2026. Here are your top stories.
+
+Our lead story: Iran-Backed Hackers Claim Wiper Attack on Medtech Firm Stryker. A hacktivist group with links to Iran's intelligence agencies is claiming responsibility for a data-wiping attack against Stryker, a global medical technology company based in Michigan. News reports o
+
+Story number second: What Boards Must Demand in the Age of AI-Automated Exploitation. “You knew, and you could have acted. Why didn’t you?”&nbsp;
+This is the question you do not want to be asked. And increasingly, it’s the question leaders are forced to answer after an incident.
+For ye
+
+Story number third: CISA orders feds to patch n8n RCE flaw exploited in attacks. The U.S. Cybersecurity and Infrastructure Security Agency (CISA) ordered government agencies on Wednesday to patch their systems against an actively exploited n8n vulnerability. [...]
+
+Story number fourth: SQLi flaw in Elementor Ally plugin impacts 250k+ WordPress sites. An SQL injection vulnerability in Ally, a WordPress plugin from Elementor for web accessibility and usability with more than 400,000 installations, could be exploited to steal sensitive data without a
+
+Story number fifth: WhatsApp introduces parent-managed accounts for pre-teens. WhatsApp has begun rolling out parent-managed accounts for pre-teens, allowing parents and guardians to decide who can contact them and which groups they can join. [...]
+
+Before we go, a quick hit.
+Dozens of Vendors Patch Security Flaws Across Enterprise Software and Network Devices. SAP has released security updates to address two critical security flaws that could be exploited to achieve arbitrary code execution on affected syste
+
+That's all for this Morning Brief of HackWire Daily. Stay patched, stay vigilant. Subscribe wherever you listen to podcasts, and visit hackwire dot news for the full stories. Until next time.
