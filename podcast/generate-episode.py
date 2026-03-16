@@ -144,14 +144,17 @@ def write_fallback_script(articles, edition, now):
 
 
 def generate_voice(script, output_path):
-    """Generate TTS audio using Edge TTS (more reliable)."""
-    # Skip Gemini TTS due to partial chunk processing issues
-    # Use Edge TTS which reliably synthesizes full scripts
-    return generate_voice_edge(script, output_path)
+    """Generate TTS audio using Gemini API with Charon voice."""
+    try:
+        return generate_voice_gemini(script, output_path)
+    except Exception as e:
+        print(f"  Gemini Charon TTS failed: {e}")
+        print(f"  Falling back to Edge TTS...")
+        return generate_voice_edge(script, output_path)
 
 
-def generate_voice_gemini_old(script, output_path):
-    """Old Gemini TTS implementation - kept for reference."""
+def generate_voice_gemini(script, output_path):
+    """Generate TTS audio using Gemini API with Charon voice."""
     import base64
     import urllib.request
     
