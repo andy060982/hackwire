@@ -116,8 +116,11 @@ def write_fallback_script(articles, edition, now):
     ]
     
     for i, a in enumerate(articles[:5], 1):
-        ordinals = ["first", "second", "third", "fourth", "fifth"]
-        label = f"{'Our lead story' if i == 1 else f'Story number {ordinals[i-1]}'}"
+        ordinals = ["", "first", "second", "third", "fourth", "fifth"]
+        if i == 1:
+            label = "Our lead story"
+        else:
+            label = f"Next up is our {ordinals[i]} story of the day"
         category = a.get('category', 'Security News').upper()
         
         lines.append(f"{label}: {a['headline']}")

@@ -78,6 +78,16 @@ def classify_category(title: str, summary: str) -> str:
     best = max(scores, key=scores.get)
     return best if scores[best] > 0 else "vulnerabilities"
 
+def clean_rss_content(content: str) -> str:
+    """Remove RSS feed template boilerplate that shouldn't be in articles."""
+    # Remove "Read more in my article on the [Blog] blog" type text
+    content = re.sub(r'\s*Read more in my article on the .+ blog\.?\s*', '', content, flags=re.IGNORECASE)
+    # Remove "The post [Title] appeared first on [Source]" type text
+    content = re.sub(r'\s*The post .+ appeared first on .+\.?\s*', '', content, flags=re.IGNORECASE)
+    # Clean up trailing whitespace
+    content = content.strip()
+    return content
+
 def classify_severity(title: str, summary: str) -> str:
     text = (title + " " + summary).lower()
     critical_words = ["critical", "zero-day", "0day", "emergency", "actively exploited", "nation-state", "millions"]
@@ -209,13 +219,16 @@ def rewrite_article_fallback(entry: dict) -> dict:
     """Fallback: use RSS content directly, no AI."""
     full_content = entry.get("summary_full", entry["summary"])
     
+    # Clean up RSS template boilerplate
+    full_content = clean_rss_content(full_content)
+    
     # Simple TL;DR from original summary
     tldr = full_content[:200] + "..." if len(full_content) > 200 else full_content
     
     return {
         "headline": entry["title"],
         "summary": entry["summary"][:300],  # Preview (truncated)
-        "body": full_content,  # Full article content
+        "body": full_content,  # Full article content (cleaned)
         "tldr": tldr,  # Quick summary
     }
 
