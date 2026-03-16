@@ -14,3 +14,6 @@ youtube-assets/
 logs/
 .env.local
 .env
+**/node_modules/
+**/synthwave/
+**/dark-ambient/
