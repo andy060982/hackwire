@@ -1,0 +1,50 @@
+# HackWire Weekly Threat Briefing: March 04, 2026 – March 11, 2026
+
+## Top Stories This Week
+
+### 1. Iran-Backed Hackers Claim Wiper Attack on Medtech Firm Stryker
+Category: breaches
+A hacktivist group with links to Iran's intelligence agencies is claiming responsibility for a data-wiping attack against Stryker, a global medical technology company based in Michigan. News reports out of Ireland, Stryker's largest hub outside of the United States, said the company sent home more t
+
+### 2. What Boards Must Demand in the Age of AI-Automated Exploitation
+Category: vulnerabilities
+“You knew, and you could have acted. Why didn’t you?”&nbsp;
+This is the question you do not want to be asked. And increasingly, it’s the question leaders are forced to answer after an incident.
+For years, many executive teams and boards have treated a large vulnerability backlog as an uncomfortable 
+
+### 3. CISA orders feds to patch n8n RCE flaw exploited in attacks
+Category: vulnerabilities
+The U.S. Cybersecurity and Infrastructure Security Agency (CISA) ordered government agencies on Wednesday to patch their systems against an actively exploited n8n vulnerability. [...]
+
+### 4. SQLi flaw in Elementor Ally plugin impacts 250k+ WordPress sites
+Category: vulnerabilities
+An SQL injection vulnerability in Ally, a WordPress plugin from Elementor for web accessibility and usability with more than 400,000 installations, could be exploited to steal sensitive data without authentication. [...]
+
+### 5. WhatsApp introduces parent-managed accounts for pre-teens
+Category: vulnerabilities
+WhatsApp has begun rolling out parent-managed accounts for pre-teens, allowing parents and guardians to decide who can contact them and which groups they can join. [...]
+
+### 6. Dozens of Vendors Patch Security Flaws Across Enterprise Software and Network Devices
+Category: vulnerabilities
+SAP has released security updates to address two critical security flaws that could be exploited to achieve arbitrary code execution on affected systems.
+The vulnerabilities in question listed below -
+
+CVE-2019-17571 (CVSS score: 9.8) - A code injection vulnerability in SAP Quotation Management Insu
+
+### 7. Meta Disables 150K Accounts Linked to Southeast Asia Scam Centers in Global Crackdown
+Category: vulnerabilities
+Meta on Wednesday said it disabled over 150,000 accounts associated with scam centers in Southeast Asia as part of a coordinated effort in partnership with authorities from Thailand, the U.S., the U.K., Canada, Korea, Japan, Singapore, the Philippines, Australia, New Zealand, and Indonesia.
+The effo
+
+### 8. Researchers Trick Perplexity's Comet AI Browser Into Phishing Scam in Under Four Minutes
+Category: vulnerabilities
+Agentic web browsers that leverage artificial intelligence (AI) capabilities to autonomously execute actions across multiple websites on behalf of a user could be trained and tricked into falling prey to phishing and scam traps.
+The attack, at its core, takes advantage of AI browsers' tendency to re
+
+### 9. New PhantomRaven NPM attack wave steals dev data via 88 packages
+Category: vulnerabilities
+New attack waves from the 'PhantomRaven' supply-chain campaign are hitting the npm registry, with dozens of malicious packages that exfiltrate sensitive data from JavaScript developers. [...]
+
+### 10. Medtech giant Stryker offline after Iran-linked wiper malware attack
+Category: breaches
+Leading medical technology company Stryker has been hit by a wiper malware attack claimed by Handala, an Iranian-linked and pro-Palestinian hacktivist group. [...]

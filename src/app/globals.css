@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Enable class-based dark mode for Tailwind v4 */
+@variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-background: #0A0A0F;
   --color-surface: #0F0F1A;
@@ -10,12 +13,16 @@
 }
 
 html {
+  background-color: #ffffff;
+  color: #1e293b;
+}
+
+html.dark {
   background-color: #0A0A0F;
   color: #e2e8f0;
 }
 
 body {
-  background-color: #0A0A0F;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -26,14 +33,24 @@ body {
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0A0A0F;
+  background: #f1f5f9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1E1E2E;
+  background: #cbd5e1;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #00FF88/30;
+  background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #0A0A0F;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #1E1E2E;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #2a2a3e;
 }
 
 /* Line clamp utilities */
@@ -64,8 +81,8 @@ body {
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* Prose article styling */
-.article-body h2 {
+/* Prose article styling — dark mode (default since site was dark) */
+.dark .article-body h2 {
   font-size: 1.25rem;
   font-weight: 700;
   color: white;
@@ -73,25 +90,89 @@ body {
   font-family: 'JetBrains Mono', monospace;
 }
 
-.article-body h2::before {
+.dark .article-body h2::before {
   content: '## ';
   color: #00FF88;
   opacity: 0.5;
 }
 
-.article-body p {
+.dark .article-body p {
   color: #9ca3af;
   line-height: 1.8;
   margin-bottom: 1.25rem;
 }
 
-.article-body strong {
+.dark .article-body strong {
   color: #e2e8f0;
   font-weight: 600;
 }
 
-.article-body ul, .article-body ol {
+.dark .article-body ul,
+.dark .article-body ol {
   color: #9ca3af;
+  margin: 1rem 0 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.dark .article-body li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+
+.dark .article-body code {
+  background: #1E1E2E;
+  color: #00FF88;
+  padding: 0.125rem 0.375rem;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875em;
+}
+
+.dark .article-body pre {
+  background: #0F0F1A;
+  border: 1px solid #1E1E2E;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.dark .article-body pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* Prose article styling — light mode */
+.article-body h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 1.75rem 0 0.75rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.article-body h2::before {
+  content: '## ';
+  color: #059669;
+  opacity: 0.6;
+}
+
+.article-body p {
+  color: #475569;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+.article-body strong {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.article-body ul,
+.article-body ol {
+  color: #475569;
   margin: 1rem 0 1.25rem;
   padding-left: 1.5rem;
 }
@@ -102,8 +183,8 @@ body {
 }
 
 .article-body code {
-  background: #1E1E2E;
-  color: #00FF88;
+  background: #f1f5f9;
+  color: #059669;
   padding: 0.125rem 0.375rem;
   border-radius: 4px;
   font-family: 'JetBrains Mono', monospace;
@@ -111,8 +192,8 @@ body {
 }
 
 .article-body pre {
-  background: #0F0F1A;
-  border: 1px solid #1E1E2E;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   border-radius: 8px;
   padding: 1.25rem;
   margin: 1.5rem 0;

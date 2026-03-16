@@ -46,11 +46,11 @@ export default function HomePage() {
         {/* News feed */}
         <div className="lg:col-span-2">
           <div className="flex items-center gap-2 mb-5">
-            <span className="text-[#00FF88] text-xs font-mono">▶</span>
-            <h2 className="text-xs font-mono font-bold text-[#00FF88] tracking-widest uppercase">
+            <span className="text-[#059669] dark:text-[#00FF88] text-xs font-mono">▶</span>
+            <h2 className="text-xs font-mono font-bold text-[#059669] dark:text-[#00FF88] tracking-widest uppercase">
               Latest Stories
             </h2>
-            <div className="flex-1 h-px bg-gradient-to-r from-[#00FF88]/20 to-transparent ml-2" />
+            <div className="flex-1 h-px bg-gradient-to-r from-[#059669]/20 dark:from-[#00FF88]/20 to-transparent ml-2" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -66,10 +66,10 @@ export default function HomePage() {
             <TrendingSidebar articles={allArticles} />
 
             {/* Stats widget */}
-            <div className="mt-6 bg-[#0F0F1A] border border-[#1E1E2E] rounded-lg p-4">
+            <div className="mt-6 bg-white dark:bg-[#0F0F1A] border border-gray-200 dark:border-[#1E1E2E] rounded-lg p-4 shadow-sm dark:shadow-none">
               <div className="flex items-center gap-2 mb-4">
-                <span className="text-[#00FF88] text-xs font-mono">▶</span>
-                <h3 className="text-xs font-mono font-bold text-[#00FF88] tracking-widest uppercase">
+                <span className="text-[#059669] dark:text-[#00FF88] text-xs font-mono">▶</span>
+                <h3 className="text-xs font-mono font-bold text-[#059669] dark:text-[#00FF88] tracking-widest uppercase">
                   Threat Intel
                 </h3>
               </div>
@@ -81,10 +81,10 @@ export default function HomePage() {
                   { label: 'New Malware Families', value: '23', delta: '+7' },
                 ].map((stat) => (
                   <div key={stat.label} className="flex items-center justify-between">
-                    <span className="text-gray-500 text-xs font-mono">{stat.label}</span>
+                    <span className="text-gray-500 dark:text-gray-500 text-xs font-mono">{stat.label}</span>
                     <div className="flex items-center gap-2">
-                      <span className="text-white text-sm font-mono font-bold">{stat.value}</span>
-                      <span className="text-red-400 text-xs font-mono">{stat.delta}</span>
+                      <span className="text-slate-800 dark:text-white text-sm font-mono font-bold">{stat.value}</span>
+                      <span className="text-red-500 dark:text-red-400 text-xs font-mono">{stat.delta}</span>
                     </div>
                   </div>
                 ))}

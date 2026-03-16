@@ -1,0 +1,458 @@
+[2026-03-13 17:16:41] WARNING: Transcript file not found, will extract from audio metadata
+[2026-03-13 17:16:41] INFO: Latest episode found: HackWire Daily Morning Brief — March 13, 2026
+[2026-03-13 17:16:41] INFO: Audio file: /home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3
+[2026-03-13 17:16:41] INFO: Transcript file: None
+[2026-03-13 17:16:41] WARNING: No transcript file available, using placeholder text
+[2026-03-13 17:23:32] INFO: ======================================================================
+[2026-03-13 17:23:32] INFO: HackWire Daily YouTube Shorts Pipeline Started
+[2026-03-13 17:23:32] INFO: ======================================================================
+[2026-03-13 17:23:32] INFO: Step 1: Fetching latest episode metadata...
+[2026-03-13 17:23:32] WARNING: Transcript file not found, will extract from audio metadata
+[2026-03-13 17:23:32] INFO: Latest episode found: HackWire Daily Morning Brief — March 13, 2026
+[2026-03-13 17:23:32] INFO: Audio file: /home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3
+[2026-03-13 17:23:32] INFO: Transcript file: None
+[2026-03-13 17:23:32] INFO: Using episode date: 2026-03-13
+[2026-03-13 17:23:32] INFO: Step 2: Extracting story snippets from transcript...
+[2026-03-13 17:23:32] WARNING: No transcript file available, using placeholder text
+[2026-03-13 17:23:32] INFO: Extracted 3 snippets
+[2026-03-13 17:23:32] DEBUG:   Snippet 1: Cybersecurity News Update...
+[2026-03-13 17:23:32] DEBUG:   Snippet 2: Stay Secure...
+[2026-03-13 17:23:32] DEBUG:   Snippet 3: HackWire Daily...
+[2026-03-13 17:23:32] INFO: Step 3: Preparing background video...
+[2026-03-13 17:23:32] INFO: Pexels API key not provided, will use generated background
+[2026-03-13 17:23:32] INFO: Step 4: Creating shorts video with FFmpeg...
+[2026-03-13 17:23:32] INFO: Generating gradient background (1080x1920, 667s)...
+[2026-03-13 17:24:32] ERROR: Failed to generate gradient background: Command '['ffmpeg', '-f', 'lavfi', '-i', 'color=c=#0a0a0a:s=1080x1920:d=667', '-vf', 'format=yuv420p', '-y', '/home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773422612.mp4']' timed out after 60 seconds
+[2026-03-13 17:24:32] ERROR: Pipeline failed: Command '['ffmpeg', '-f', 'lavfi', '-i', 'color=c=#0a0a0a:s=1080x1920:d=667', '-vf', 'format=yuv420p', '-y', '/home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773422612.mp4']' timed out after 60 seconds
+Traceback (most recent call last):
+  File "/home/aarevalo/clawd/hackwire/youtube-shorts/main.py", line 639, in main
+    video_file = create_shorts_video(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/home/aarevalo/clawd/hackwire/youtube-shorts/main.py", line 414, in create_shorts_video
+    background_video = generate_gradient_background(1080, 1920, int(audio_duration) + 2)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aarevalo/clawd/hackwire/youtube-shorts/main.py", line 362, in generate_gradient_background
+    subprocess.run(cmd, check=True, capture_output=True, timeout=60)
+  File "/usr/lib/python3.12/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 1209, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 2116, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.12/subprocess.py", line 1253, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['ffmpeg', '-f', 'lavfi', '-i', 'color=c=#0a0a0a:s=1080x1920:d=667', '-vf', 'format=yuv420p', '-y', '/home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773422612.mp4']' timed out after 60 seconds
+[2026-03-13 17:24:37] INFO: ======================================================================
+[2026-03-13 17:24:37] INFO: HackWire Daily YouTube Shorts Pipeline Started
+[2026-03-13 17:24:37] INFO: ======================================================================
+[2026-03-13 17:24:37] INFO: Step 1: Fetching latest episode metadata...
+[2026-03-13 17:24:37] WARNING: Transcript file not found, will extract from audio metadata
+[2026-03-13 17:24:37] INFO: Latest episode found: HackWire Daily Morning Brief — March 13, 2026
+[2026-03-13 17:24:37] INFO: Audio file: /home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3
+[2026-03-13 17:24:37] INFO: Transcript file: None
+[2026-03-13 17:24:37] INFO: Using episode date: 2026-03-13
+[2026-03-13 17:24:37] INFO: Step 2: Extracting story snippets from transcript...
+[2026-03-13 17:24:37] WARNING: No transcript file available, using placeholder text
+[2026-03-13 17:24:37] INFO: Extracted 3 snippets
+[2026-03-13 17:24:37] DEBUG:   Snippet 1: Cybersecurity News Update...
+[2026-03-13 17:24:37] DEBUG:   Snippet 2: Stay Secure...
+[2026-03-13 17:24:37] DEBUG:   Snippet 3: HackWire Daily...
+[2026-03-13 17:24:37] INFO: Step 3: Preparing background video...
+[2026-03-13 17:24:37] INFO: Pexels API key not provided, will use generated background
+[2026-03-13 17:24:37] INFO: Step 4: Creating shorts video with FFmpeg...
+[2026-03-13 17:24:37] INFO: Generating gradient background (1080x1920, 667s)...
+[2026-03-13 17:25:37] ERROR: Failed to generate gradient background: Command '['ffmpeg', '-f', 'lavfi', '-i', 'color=c=#0a0a0a:s=1080x1920:d=667', '-vf', 'format=yuv420p', '-y', '/home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773422677.mp4']' timed out after 60 seconds
+[2026-03-13 17:25:37] ERROR: Pipeline failed: Command '['ffmpeg', '-f', 'lavfi', '-i', 'color=c=#0a0a0a:s=1080x1920:d=667', '-vf', 'format=yuv420p', '-y', '/home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773422677.mp4']' timed out after 60 seconds
+Traceback (most recent call last):
+  File "/home/aarevalo/clawd/hackwire/youtube-shorts/main.py", line 639, in main
+    video_file = create_shorts_video(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/home/aarevalo/clawd/hackwire/youtube-shorts/main.py", line 414, in create_shorts_video
+    background_video = generate_gradient_background(1080, 1920, int(audio_duration) + 2)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aarevalo/clawd/hackwire/youtube-shorts/main.py", line 362, in generate_gradient_background
+    subprocess.run(cmd, check=True, capture_output=True, timeout=60)
+  File "/usr/lib/python3.12/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 1209, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 2116, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.12/subprocess.py", line 1253, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['ffmpeg', '-f', 'lavfi', '-i', 'color=c=#0a0a0a:s=1080x1920:d=667', '-vf', 'format=yuv420p', '-y', '/home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773422677.mp4']' timed out after 60 seconds
+[2026-03-13 17:26:01] INFO: ======================================================================
+[2026-03-13 17:26:01] INFO: HackWire Daily YouTube Shorts Pipeline Started
+[2026-03-13 17:26:01] INFO: ======================================================================
+[2026-03-13 17:26:01] INFO: Step 1: Fetching latest episode metadata...
+[2026-03-13 17:26:01] WARNING: Transcript file not found, will extract from audio metadata
+[2026-03-13 17:26:01] INFO: Latest episode found: HackWire Daily Morning Brief — March 13, 2026
+[2026-03-13 17:26:01] INFO: Audio file: /home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3
+[2026-03-13 17:26:01] INFO: Transcript file: None
+[2026-03-13 17:26:01] INFO: Using episode date: 2026-03-13
+[2026-03-13 17:26:01] INFO: Step 2: Extracting story snippets from transcript...
+[2026-03-13 17:26:01] WARNING: No transcript file available, using placeholder text
+[2026-03-13 17:26:01] INFO: Extracted 3 snippets
+[2026-03-13 17:26:01] DEBUG:   Snippet 1: Cybersecurity News Update...
+[2026-03-13 17:26:01] DEBUG:   Snippet 2: Stay Secure...
+[2026-03-13 17:26:01] DEBUG:   Snippet 3: HackWire Daily...
+[2026-03-13 17:26:01] INFO: Step 3: Preparing background video...
+[2026-03-13 17:26:01] INFO: Pexels API key not provided, will use generated background
+[2026-03-13 17:26:01] INFO: Step 4: Creating shorts video with FFmpeg...
+[2026-03-13 17:26:01] INFO: Generating gradient background (1080x1920, 60s)...
+[2026-03-13 17:26:07] INFO: Gradient background created: /home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773422761.mp4
+[2026-03-13 17:26:07] INFO: Creating shorts video: /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 17:26:07] DEBUG: FFmpeg command: ffmpeg -i /home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773422761.mp4 -i /home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3 -filter_complex [0:v]drawtext=text='Cybersecurity News Update':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,0,5)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='Stay Secure':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,5,10)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='HackWire Daily':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,10,15)':box=1:boxcolor=#64:boxborderw=5[v];[v][1:a]concat=n=1:v=1:a=1[out] -map [out] -c:v libx264 -preset medium -b:v 5000k -c:a aac -b:a 128k -pix_fmt yuv420p -y /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 17:26:07] ERROR: FFmpeg video creation failed: Command '['ffmpeg', '-i', '/home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773422761.mp4', '-i', '/home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3', '-filter_complex', "[0:v]drawtext=text='Cybersecurity News Update':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,0,5)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='Stay Secure':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,5,10)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='HackWire Daily':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,10,15)':box=1:boxcolor=#64:boxborderw=5[v];[v][1:a]concat=n=1:v=1:a=1[out]", '-map', '[out]', '-c:v', 'libx264', '-preset', 'medium', '-b:v', '5000k', '-c:a', 'aac', '-b:a', '128k', '-pix_fmt', 'yuv420p', '-y', '/home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4']' returned non-zero exit status 8.
+[2026-03-13 17:26:07] ERROR: Pipeline failed: Command '['ffmpeg', '-i', '/home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773422761.mp4', '-i', '/home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3', '-filter_complex', "[0:v]drawtext=text='Cybersecurity News Update':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,0,5)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='Stay Secure':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,5,10)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='HackWire Daily':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,10,15)':box=1:boxcolor=#64:boxborderw=5[v];[v][1:a]concat=n=1:v=1:a=1[out]", '-map', '[out]', '-c:v', 'libx264', '-preset', 'medium', '-b:v', '5000k', '-c:a', 'aac', '-b:a', '128k', '-pix_fmt', 'yuv420p', '-y', '/home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4']' returned non-zero exit status 8.
+Traceback (most recent call last):
+  File "/home/aarevalo/clawd/hackwire/youtube-shorts/main.py", line 643, in main
+    video_file = create_shorts_video(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/home/aarevalo/clawd/hackwire/youtube-shorts/main.py", line 451, in create_shorts_video
+    subprocess.run(cmd, check=True, timeout=300)
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['ffmpeg', '-i', '/home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773422761.mp4', '-i', '/home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3', '-filter_complex', "[0:v]drawtext=text='Cybersecurity News Update':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,0,5)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='Stay Secure':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,5,10)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='HackWire Daily':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,10,15)':box=1:boxcolor=#64:boxborderw=5[v];[v][1:a]concat=n=1:v=1:a=1[out]", '-map', '[out]', '-c:v', 'libx264', '-preset', 'medium', '-b:v', '5000k', '-c:a', 'aac', '-b:a', '128k', '-pix_fmt', 'yuv420p', '-y', '/home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4']' returned non-zero exit status 8.
+[2026-03-13 17:27:27] INFO: ======================================================================
+[2026-03-13 17:27:27] INFO: HackWire Daily YouTube Shorts Pipeline Started
+[2026-03-13 17:27:27] INFO: ======================================================================
+[2026-03-13 17:27:27] INFO: Step 1: Fetching latest episode metadata...
+[2026-03-13 17:27:27] WARNING: Transcript file not found, will extract from audio metadata
+[2026-03-13 17:27:27] INFO: Latest episode found: HackWire Daily Morning Brief — March 13, 2026
+[2026-03-13 17:27:27] INFO: Audio file: /home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3
+[2026-03-13 17:27:27] INFO: Transcript file: None
+[2026-03-13 17:27:27] INFO: Using episode date: 2026-03-13
+[2026-03-13 17:27:27] INFO: Step 2: Extracting story snippets from transcript...
+[2026-03-13 17:27:27] WARNING: No transcript file available, using placeholder text
+[2026-03-13 17:27:27] INFO: Extracted 3 snippets
+[2026-03-13 17:27:27] DEBUG:   Snippet 1: Cybersecurity News Update...
+[2026-03-13 17:27:27] DEBUG:   Snippet 2: Stay Secure...
+[2026-03-13 17:27:27] DEBUG:   Snippet 3: HackWire Daily...
+[2026-03-13 17:27:27] INFO: Step 3: Preparing background video...
+[2026-03-13 17:27:27] INFO: Pexels API key not provided, will use generated background
+[2026-03-13 17:27:27] INFO: Step 4: Creating shorts video with FFmpeg...
+[2026-03-13 17:27:27] INFO: Generating gradient background (1080x1920, 60s)...
+[2026-03-13 17:27:33] INFO: Gradient background created: /home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773422847.mp4
+[2026-03-13 17:27:33] INFO: Creating shorts video: /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 17:27:33] DEBUG: FFmpeg command: ffmpeg -i /home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773422847.mp4 -i /home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3 -filter_complex [0:v]scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2[v];[v][1:a]concat=n=1:v=1:a=1[out] -map [out] -c:v libx264 -preset medium -b:v 5000k -c:a aac -b:a 128k -pix_fmt yuv420p -y /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 17:27:59] INFO: Video created successfully: /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 17:27:59] INFO: Step 5: Skipping upload (--skip-upload flag set)
+[2026-03-13 17:27:59] INFO: Video ready: /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 17:27:59] INFO: Cleaning up temporary files...
+[2026-03-13 17:27:59] INFO: Cleanup complete
+[2026-03-13 17:27:59] INFO: ======================================================================
+[2026-03-13 17:27:59] INFO: ✓ Pipeline completed successfully
+[2026-03-13 17:27:59] INFO: ======================================================================
+[2026-03-13 17:28:06] INFO: ======================================================================
+[2026-03-13 17:28:06] INFO: HackWire Daily YouTube Shorts Pipeline Started
+[2026-03-13 17:28:06] INFO: ======================================================================
+[2026-03-13 17:28:06] INFO: Step 1: Fetching latest episode metadata...
+[2026-03-13 17:28:06] WARNING: Transcript file not found, will extract from audio metadata
+[2026-03-13 17:28:06] INFO: Latest episode found: HackWire Daily Morning Brief — March 13, 2026
+[2026-03-13 17:28:06] INFO: Audio file: /home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3
+[2026-03-13 17:28:06] INFO: Transcript file: None
+[2026-03-13 17:28:06] INFO: Using episode date: 2026-03-13
+[2026-03-13 17:28:06] INFO: Step 2: Extracting story snippets from transcript...
+[2026-03-13 17:28:06] WARNING: No transcript file available, using placeholder text
+[2026-03-13 17:28:06] INFO: Extracted 3 snippets
+[2026-03-13 17:28:06] DEBUG:   Snippet 1: Cybersecurity News Update...
+[2026-03-13 17:28:06] DEBUG:   Snippet 2: Stay Secure...
+[2026-03-13 17:28:06] DEBUG:   Snippet 3: HackWire Daily...
+[2026-03-13 17:28:06] INFO: Step 3: Preparing background video...
+[2026-03-13 17:28:06] INFO: Pexels API key not provided, will use generated background
+[2026-03-13 17:28:06] INFO: Step 4: Creating shorts video with FFmpeg...
+[2026-03-13 17:28:06] INFO: Generating gradient background (1080x1920, 60s)...
+[2026-03-13 17:28:12] INFO: Gradient background created: /home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773422886.mp4
+[2026-03-13 17:28:12] INFO: Creating shorts video: /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 17:28:12] DEBUG: FFmpeg command: ffmpeg -i /home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773422886.mp4 -i /home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3 -filter_complex [0:v]scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2[v];[v][1:a]concat=n=1:v=1:a=1[out] -map [out] -c:v libx264 -preset medium -b:v 5000k -c:a aac -b:a 128k -pix_fmt yuv420p -y /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 17:28:38] INFO: Video created successfully: /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 17:28:38] INFO: Step 5: Uploading to YouTube...
+[2026-03-13 17:28:38] INFO: YouTube authentication successful
+[2026-03-13 17:28:38] INFO: Preparing upload: [2026-03-13] HackWire Daily - Security Brief
+[2026-03-13 17:28:38] DEBUG: Description:
+Your daily cybersecurity threat briefing. Subscribe and visit https://hackwire.news/podcast/ for the full stories.
+
+🔒 Daily coverage of data breaches, vulnerabilities, ransomware, and security news.
+📰 Original Episode: HackWire Daily Morning Brief — March 13, 2026
+🔗 Full Podcast: https://hackwire.news/podcast/
+[2026-03-13 17:28:38] INFO: Uploading to YouTube...
+[2026-03-13 17:28:40] ERROR: YouTube API error: <HttpError 401 when requesting None returned "Unauthorized". Details: "[{'message': 'Unauthorized', 'domain': 'youtube.header', 'reason': 'youtubeSignupRequired', 'location': 'Authorization', 'locationType': 'header'}]">
+[2026-03-13 17:28:40] ERROR: Upload failed
+[2026-03-13 17:34:28] INFO: ======================================================================
+[2026-03-13 17:34:28] INFO: HackWire Daily YouTube Shorts Pipeline Started
+[2026-03-13 17:34:28] INFO: ======================================================================
+[2026-03-13 17:34:28] INFO: Step 1: Fetching latest episode metadata...
+[2026-03-13 17:34:28] WARNING: Transcript file not found, will extract from audio metadata
+[2026-03-13 17:34:28] INFO: Latest episode found: HackWire Daily Morning Brief — March 13, 2026
+[2026-03-13 17:34:28] INFO: Audio file: /home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3
+[2026-03-13 17:34:28] INFO: Transcript file: None
+[2026-03-13 17:34:28] INFO: Using episode date: 2026-03-13
+[2026-03-13 17:34:28] INFO: Step 2: Extracting story snippets from transcript...
+[2026-03-13 17:34:28] WARNING: No transcript file available, using placeholder text
+[2026-03-13 17:34:28] INFO: Extracted 3 snippets
+[2026-03-13 17:34:28] DEBUG:   Snippet 1: Cybersecurity News Update...
+[2026-03-13 17:34:28] DEBUG:   Snippet 2: Stay Secure...
+[2026-03-13 17:34:28] DEBUG:   Snippet 3: HackWire Daily...
+[2026-03-13 17:34:28] INFO: Step 3: Preparing background video...
+[2026-03-13 17:34:28] INFO: Pexels API key not provided, will use generated background
+[2026-03-13 17:34:28] INFO: Step 4: Creating shorts video with FFmpeg...
+[2026-03-13 17:34:28] INFO: Generating gradient background (1080x1920, 60s)...
+[2026-03-13 17:34:34] INFO: Gradient background created: /home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773423268.mp4
+[2026-03-13 17:34:34] INFO: Creating shorts video: /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 17:34:34] DEBUG: FFmpeg command: ffmpeg -i /home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773423268.mp4 -i /home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3 -filter_complex [0:v]scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2[v];[v][1:a]concat=n=1:v=1:a=1[out] -map [out] -c:v libx264 -preset medium -b:v 5000k -c:a aac -b:a 128k -pix_fmt yuv420p -y /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 17:35:00] INFO: Video created successfully: /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 17:35:00] INFO: Step 5: Uploading to YouTube...
+[2026-03-13 17:35:00] INFO: YouTube authentication successful
+[2026-03-13 17:35:00] INFO: Preparing upload: [2026-03-13] HackWire Daily - Security Brief
+[2026-03-13 17:35:00] DEBUG: Description:
+Your daily cybersecurity threat briefing. Subscribe and visit https://hackwire.news/podcast/ for the full stories.
+
+🔒 Daily coverage of data breaches, vulnerabilities, ransomware, and security news.
+📰 Original Episode: HackWire Daily Morning Brief — March 13, 2026
+🔗 Full Podcast: https://hackwire.news/podcast/
+[2026-03-13 17:35:00] INFO: Uploading to YouTube...
+[2026-03-13 17:35:01] ERROR: YouTube API error: <HttpError 401 when requesting None returned "Unauthorized". Details: "[{'message': 'Unauthorized', 'domain': 'youtube.header', 'reason': 'youtubeSignupRequired', 'location': 'Authorization', 'locationType': 'header'}]">
+[2026-03-13 17:35:01] ERROR: Upload failed
+[2026-03-13 17:47:06] INFO: ======================================================================
+[2026-03-13 17:47:06] INFO: HackWire Daily YouTube Shorts Pipeline Started
+[2026-03-13 17:47:06] INFO: ======================================================================
+[2026-03-13 17:47:06] INFO: Step 1: Fetching latest episode metadata...
+[2026-03-13 17:47:06] WARNING: Transcript file not found, will extract from audio metadata
+[2026-03-13 17:47:06] INFO: Latest episode found: HackWire Daily Morning Brief — March 13, 2026
+[2026-03-13 17:47:06] INFO: Audio file: /home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3
+[2026-03-13 17:47:06] INFO: Transcript file: None
+[2026-03-13 17:47:06] INFO: Using episode date: 2026-03-13
+[2026-03-13 17:47:06] INFO: Step 2: Extracting story snippets from transcript...
+[2026-03-13 17:47:06] WARNING: No transcript file available, using placeholder text
+[2026-03-13 17:47:06] INFO: Extracted 3 snippets
+[2026-03-13 17:47:06] DEBUG:   Snippet 1: Cybersecurity News Update...
+[2026-03-13 17:47:06] DEBUG:   Snippet 2: Stay Secure...
+[2026-03-13 17:47:06] DEBUG:   Snippet 3: HackWire Daily...
+[2026-03-13 17:47:06] INFO: Step 3: Preparing background video...
+[2026-03-13 17:47:06] INFO: Pexels API key not provided, will use generated background
+[2026-03-13 17:47:06] INFO: Step 4: Creating shorts video with FFmpeg...
+[2026-03-13 17:47:06] INFO: Generating gradient background (1080x1920, 60s)...
+[2026-03-13 17:47:12] INFO: Gradient background created: /home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773424026.mp4
+[2026-03-13 17:47:12] INFO: Creating shorts video: /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 17:47:12] DEBUG: FFmpeg command: ffmpeg -i /home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773424026.mp4 -i /home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3 -filter_complex [0:v]scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2[v];[v][1:a]concat=n=1:v=1:a=1[out] -map [out] -c:v libx264 -preset medium -b:v 5000k -c:a aac -b:a 128k -pix_fmt yuv420p -y /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 17:47:38] INFO: Video created successfully: /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 17:47:38] INFO: Step 5: Uploading to YouTube...
+[2026-03-13 17:47:38] ERROR: Unexpected error during authentication: name 'service_account' is not defined
+Traceback (most recent call last):
+  File "/home/aarevalo/clawd/hackwire/youtube-shorts/main.py", line 499, in authenticate_youtube
+    credentials = service_account.Credentials.from_service_account_file(
+                  ^^^^^^^^^^^^^^^
+NameError: name 'service_account' is not defined
+[2026-03-13 17:47:38] ERROR: YouTube authentication failed, aborting upload
+[2026-03-13 17:47:52] INFO: ======================================================================
+[2026-03-13 17:47:52] INFO: HackWire Daily YouTube Shorts Pipeline Started
+[2026-03-13 17:47:52] INFO: ======================================================================
+[2026-03-13 17:47:52] INFO: Step 1: Fetching latest episode metadata...
+[2026-03-13 17:47:52] WARNING: Transcript file not found, will extract from audio metadata
+[2026-03-13 17:47:52] INFO: Latest episode found: HackWire Daily Morning Brief — March 13, 2026
+[2026-03-13 17:47:52] INFO: Audio file: /home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3
+[2026-03-13 17:47:52] INFO: Transcript file: None
+[2026-03-13 17:47:52] INFO: Using episode date: 2026-03-13
+[2026-03-13 17:47:52] INFO: Step 2: Extracting story snippets from transcript...
+[2026-03-13 17:47:52] WARNING: No transcript file available, using placeholder text
+[2026-03-13 17:47:52] INFO: Extracted 3 snippets
+[2026-03-13 17:47:52] DEBUG:   Snippet 1: Cybersecurity News Update...
+[2026-03-13 17:47:52] DEBUG:   Snippet 2: Stay Secure...
+[2026-03-13 17:47:52] DEBUG:   Snippet 3: HackWire Daily...
+[2026-03-13 17:47:52] INFO: Step 3: Preparing background video...
+[2026-03-13 17:47:52] INFO: Pexels API key not provided, will use generated background
+[2026-03-13 17:47:52] INFO: Step 4: Creating shorts video with FFmpeg...
+[2026-03-13 17:47:52] INFO: Generating gradient background (1080x1920, 60s)...
+[2026-03-13 17:47:58] INFO: Gradient background created: /home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773424072.mp4
+[2026-03-13 17:47:58] INFO: Creating shorts video: /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 17:47:58] DEBUG: FFmpeg command: ffmpeg -i /home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773424072.mp4 -i /home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3 -filter_complex [0:v]scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2[v];[v][1:a]concat=n=1:v=1:a=1[out] -map [out] -c:v libx264 -preset medium -b:v 5000k -c:a aac -b:a 128k -pix_fmt yuv420p -y /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 17:48:24] INFO: Video created successfully: /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 17:48:24] INFO: Step 5: Uploading to YouTube...
+[2026-03-13 17:48:24] INFO: Opening browser for OAuth authorization...
+[2026-03-13 17:48:24] ERROR: YouTube authentication failed: Client secrets must be for a web or installed app.
+[2026-03-13 17:48:24] ERROR: YouTube authentication failed, aborting upload
+[2026-03-13 17:48:34] INFO: ======================================================================
+[2026-03-13 17:48:34] INFO: HackWire Daily YouTube Shorts Pipeline Started
+[2026-03-13 17:48:34] INFO: ======================================================================
+[2026-03-13 17:48:34] INFO: Step 1: Fetching latest episode metadata...
+[2026-03-13 17:48:34] WARNING: Transcript file not found, will extract from audio metadata
+[2026-03-13 17:48:34] INFO: Latest episode found: HackWire Daily Morning Brief — March 13, 2026
+[2026-03-13 17:48:34] INFO: Audio file: /home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3
+[2026-03-13 17:48:34] INFO: Transcript file: None
+[2026-03-13 17:48:34] INFO: Using episode date: 2026-03-13
+[2026-03-13 17:48:34] INFO: Step 2: Extracting story snippets from transcript...
+[2026-03-13 17:48:34] WARNING: No transcript file available, using placeholder text
+[2026-03-13 17:48:34] INFO: Extracted 3 snippets
+[2026-03-13 17:48:34] DEBUG:   Snippet 1: Cybersecurity News Update...
+[2026-03-13 17:48:34] DEBUG:   Snippet 2: Stay Secure...
+[2026-03-13 17:48:34] DEBUG:   Snippet 3: HackWire Daily...
+[2026-03-13 17:48:34] INFO: Step 3: Preparing background video...
+[2026-03-13 17:48:34] INFO: Pexels API key not provided, will use generated background
+[2026-03-13 17:48:34] INFO: Step 4: Creating shorts video with FFmpeg...
+[2026-03-13 17:48:34] INFO: Generating gradient background (1080x1920, 60s)...
+[2026-03-13 17:48:40] INFO: Gradient background created: /home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773424114.mp4
+[2026-03-13 17:48:40] INFO: Creating shorts video: /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 17:48:40] DEBUG: FFmpeg command: ffmpeg -i /home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773424114.mp4 -i /home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3 -filter_complex [0:v]scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2[v];[v][1:a]concat=n=1:v=1:a=1[out] -map [out] -c:v libx264 -preset medium -b:v 5000k -c:a aac -b:a 128k -pix_fmt yuv420p -y /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 17:49:06] INFO: Video created successfully: /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 17:49:06] INFO: Step 5: Uploading to YouTube...
+[2026-03-13 17:49:06] INFO: Opening browser for OAuth authorization...
+[2026-03-13 17:49:06] ERROR: YouTube authentication failed: [Errno 98] Address already in use
+[2026-03-13 17:49:06] ERROR: YouTube authentication failed, aborting upload
+[2026-03-13 17:49:12] INFO: ======================================================================
+[2026-03-13 17:49:12] INFO: HackWire Daily YouTube Shorts Pipeline Started
+[2026-03-13 17:49:12] INFO: ======================================================================
+[2026-03-13 17:49:12] INFO: Step 1: Fetching latest episode metadata...
+[2026-03-13 17:49:12] WARNING: Transcript file not found, will extract from audio metadata
+[2026-03-13 17:49:12] INFO: Latest episode found: HackWire Daily Morning Brief — March 13, 2026
+[2026-03-13 17:49:12] INFO: Audio file: /home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3
+[2026-03-13 17:49:12] INFO: Transcript file: None
+[2026-03-13 17:49:12] INFO: Using episode date: 2026-03-13
+[2026-03-13 17:49:12] INFO: Step 2: Extracting story snippets from transcript...
+[2026-03-13 17:49:12] WARNING: No transcript file available, using placeholder text
+[2026-03-13 17:49:12] INFO: Extracted 3 snippets
+[2026-03-13 17:49:12] DEBUG:   Snippet 1: Cybersecurity News Update...
+[2026-03-13 17:49:12] DEBUG:   Snippet 2: Stay Secure...
+[2026-03-13 17:49:12] DEBUG:   Snippet 3: HackWire Daily...
+[2026-03-13 17:49:12] INFO: Step 3: Preparing background video...
+[2026-03-13 17:49:12] INFO: Pexels API key not provided, will use generated background
+[2026-03-13 17:49:12] INFO: Step 4: Creating shorts video with FFmpeg...
+[2026-03-13 17:49:12] INFO: Generating gradient background (1080x1920, 60s)...
+[2026-03-13 17:49:18] INFO: Gradient background created: /home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773424152.mp4
+[2026-03-13 17:49:18] INFO: Creating shorts video: /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 17:49:18] DEBUG: FFmpeg command: ffmpeg -i /home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773424152.mp4 -i /home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3 -filter_complex [0:v]scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2[v];[v][1:a]concat=n=1:v=1:a=1[out] -map [out] -c:v libx264 -preset medium -b:v 5000k -c:a aac -b:a 128k -pix_fmt yuv420p -y /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 17:49:44] INFO: Video created successfully: /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 17:49:44] INFO: Step 5: Uploading to YouTube...
+[2026-03-13 17:49:44] INFO: Opening browser for OAuth authorization...
+[2026-03-13 17:49:44] ERROR: YouTube authentication failed: could not locate runnable browser
+[2026-03-13 17:49:44] ERROR: YouTube authentication failed, aborting upload
+[2026-03-13 17:52:42] INFO: ======================================================================
+[2026-03-13 17:52:42] INFO: HackWire Daily YouTube Shorts Pipeline Started
+[2026-03-13 17:52:42] INFO: ======================================================================
+[2026-03-13 17:52:42] INFO: Step 1: Fetching latest episode metadata...
+[2026-03-13 17:52:42] WARNING: Transcript file not found, will extract from audio metadata
+[2026-03-13 17:52:42] INFO: Latest episode found: HackWire Daily Morning Brief — March 13, 2026
+[2026-03-13 17:52:42] INFO: Audio file: /home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3
+[2026-03-13 17:52:42] INFO: Transcript file: None
+[2026-03-13 17:52:42] INFO: Using episode date: 2026-03-13
+[2026-03-13 17:52:42] INFO: Step 2: Extracting story snippets from transcript...
+[2026-03-13 17:52:42] WARNING: No transcript file available, using placeholder text
+[2026-03-13 17:52:42] INFO: Extracted 3 snippets
+[2026-03-13 17:52:42] DEBUG:   Snippet 1: Cybersecurity News Update...
+[2026-03-13 17:52:42] DEBUG:   Snippet 2: Stay Secure...
+[2026-03-13 17:52:42] DEBUG:   Snippet 3: HackWire Daily...
+[2026-03-13 17:52:42] INFO: Step 3: Preparing background video...
+[2026-03-13 17:52:42] INFO: Pexels API key not provided, will use generated background
+[2026-03-13 17:52:42] INFO: Step 4: Creating shorts video with FFmpeg...
+[2026-03-13 17:52:42] INFO: Generating gradient background (1080x1920, 60s)...
+[2026-03-13 17:52:49] INFO: Gradient background created: /home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773424362.mp4
+[2026-03-13 17:52:49] INFO: Creating shorts video: /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 17:52:49] DEBUG: FFmpeg command: ffmpeg -i /home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773424362.mp4 -i /home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3 -filter_complex [0:v]scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2[v];[v][1:a]concat=n=1:v=1:a=1[out] -map [out] -c:v libx264 -preset medium -b:v 5000k -c:a aac -b:a 128k -pix_fmt yuv420p -y /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 17:53:14] INFO: Video created successfully: /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 17:53:14] INFO: Step 5: Uploading to YouTube...
+[2026-03-13 17:53:14] INFO: Opening browser for OAuth authorization...
+[2026-03-13 17:53:14] ERROR: YouTube authentication failed: could not locate runnable browser
+[2026-03-13 17:53:14] ERROR: YouTube authentication failed, aborting upload
+[2026-03-13 18:12:24] INFO: ======================================================================
+[2026-03-13 18:12:24] INFO: HackWire Daily YouTube Shorts Pipeline Started
+[2026-03-13 18:12:24] INFO: ======================================================================
+[2026-03-13 18:12:24] INFO: Step 1: Fetching latest episode metadata...
+[2026-03-13 18:12:24] WARNING: Transcript file not found, will extract from audio metadata
+[2026-03-13 18:12:24] INFO: Latest episode found: HackWire Daily Morning Brief — March 13, 2026
+[2026-03-13 18:12:24] INFO: Audio file: /home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3
+[2026-03-13 18:12:24] INFO: Transcript file: None
+[2026-03-13 18:12:24] INFO: Using episode date: 2026-03-13
+[2026-03-13 18:12:24] INFO: Step 2: Extracting story snippets from transcript...
+[2026-03-13 18:12:24] WARNING: No transcript file available, using placeholder text
+[2026-03-13 18:12:24] INFO: Extracted 3 snippets
+[2026-03-13 18:12:24] DEBUG:   Snippet 1: Cybersecurity News Update...
+[2026-03-13 18:12:24] DEBUG:   Snippet 2: Stay Secure...
+[2026-03-13 18:12:24] DEBUG:   Snippet 3: HackWire Daily...
+[2026-03-13 18:12:24] INFO: Step 3: Preparing background video...
+[2026-03-13 18:12:24] INFO: Pexels API key not provided, will use generated background
+[2026-03-13 18:12:24] INFO: Step 4: Creating shorts video with FFmpeg...
+[2026-03-13 18:12:24] INFO: Generating gradient background (1080x1920, 60s)...
+[2026-03-13 18:12:30] INFO: Gradient background created: /home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773425544.mp4
+[2026-03-13 18:12:30] INFO: Creating shorts video: /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 18:12:30] DEBUG: FFmpeg command: ffmpeg -i /home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773425544.mp4 -i /home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3 -filter_complex [0:v]drawtext=text='Cybersecurity News Update':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,0,5)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='Stay Secure':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,5,10)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='HackWire Daily':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,10,15)':box=1:boxcolor=#64:boxborderw=5[v];[v][1:a]concat=n=1:v=1:a=1[out] -map [out] -c:v libx264 -preset medium -b:v 5000k -c:a aac -b:a 128k -pix_fmt yuv420p -y /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 18:12:30] ERROR: FFmpeg video creation failed: Command '['ffmpeg', '-i', '/home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773425544.mp4', '-i', '/home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3', '-filter_complex', "[0:v]drawtext=text='Cybersecurity News Update':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,0,5)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='Stay Secure':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,5,10)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='HackWire Daily':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,10,15)':box=1:boxcolor=#64:boxborderw=5[v];[v][1:a]concat=n=1:v=1:a=1[out]", '-map', '[out]', '-c:v', 'libx264', '-preset', 'medium', '-b:v', '5000k', '-c:a', 'aac', '-b:a', '128k', '-pix_fmt', 'yuv420p', '-y', '/home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4']' returned non-zero exit status 8.
+[2026-03-13 18:12:30] ERROR: Pipeline failed: Command '['ffmpeg', '-i', '/home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773425544.mp4', '-i', '/home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3', '-filter_complex', "[0:v]drawtext=text='Cybersecurity News Update':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,0,5)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='Stay Secure':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,5,10)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='HackWire Daily':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,10,15)':box=1:boxcolor=#64:boxborderw=5[v];[v][1:a]concat=n=1:v=1:a=1[out]", '-map', '[out]', '-c:v', 'libx264', '-preset', 'medium', '-b:v', '5000k', '-c:a', 'aac', '-b:a', '128k', '-pix_fmt', 'yuv420p', '-y', '/home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4']' returned non-zero exit status 8.
+Traceback (most recent call last):
+  File "/home/aarevalo/clawd/hackwire/youtube-shorts/main.py", line 655, in main
+    video_file = create_shorts_video(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/home/aarevalo/clawd/hackwire/youtube-shorts/main.py", line 451, in create_shorts_video
+    subprocess.run(cmd, check=True, timeout=300)
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['ffmpeg', '-i', '/home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773425544.mp4', '-i', '/home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3', '-filter_complex', "[0:v]drawtext=text='Cybersecurity News Update':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,0,5)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='Stay Secure':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,5,10)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='HackWire Daily':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,10,15)':box=1:boxcolor=#64:boxborderw=5[v];[v][1:a]concat=n=1:v=1:a=1[out]", '-map', '[out]', '-c:v', 'libx264', '-preset', 'medium', '-b:v', '5000k', '-c:a', 'aac', '-b:a', '128k', '-pix_fmt', 'yuv420p', '-y', '/home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4']' returned non-zero exit status 8.
+[2026-03-13 18:12:33] INFO: ======================================================================
+[2026-03-13 18:12:33] INFO: HackWire Daily YouTube Shorts Pipeline Started
+[2026-03-13 18:12:33] INFO: ======================================================================
+[2026-03-13 18:12:33] INFO: Step 1: Fetching latest episode metadata...
+[2026-03-13 18:12:33] WARNING: Transcript file not found, will extract from audio metadata
+[2026-03-13 18:12:33] INFO: Latest episode found: HackWire Daily Morning Brief — March 13, 2026
+[2026-03-13 18:12:33] INFO: Audio file: /home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3
+[2026-03-13 18:12:33] INFO: Transcript file: None
+[2026-03-13 18:12:33] INFO: Using episode date: 2026-03-13
+[2026-03-13 18:12:33] INFO: Step 2: Extracting story snippets from transcript...
+[2026-03-13 18:12:33] WARNING: No transcript file available, using placeholder text
+[2026-03-13 18:12:33] INFO: Extracted 3 snippets
+[2026-03-13 18:12:33] DEBUG:   Snippet 1: Cybersecurity News Update...
+[2026-03-13 18:12:33] DEBUG:   Snippet 2: Stay Secure...
+[2026-03-13 18:12:33] DEBUG:   Snippet 3: HackWire Daily...
+[2026-03-13 18:12:33] INFO: Step 3: Preparing background video...
+[2026-03-13 18:12:33] INFO: Pexels API key not provided, will use generated background
+[2026-03-13 18:12:33] INFO: Step 4: Creating shorts video with FFmpeg...
+[2026-03-13 18:12:33] INFO: Generating gradient background (1080x1920, 60s)...
+[2026-03-13 18:12:40] INFO: Gradient background created: /home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773425553.mp4
+[2026-03-13 18:12:40] INFO: Creating shorts video: /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 18:12:40] DEBUG: FFmpeg command: ffmpeg -i /home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773425553.mp4 -i /home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3 -filter_complex [0:v]drawtext=text='Cybersecurity News Update':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,0,5)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='Stay Secure':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,5,10)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='HackWire Daily':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,10,15)':box=1:boxcolor=#64:boxborderw=5[v];[v][1:a]concat=n=1:v=1:a=1[out] -map [out] -c:v libx264 -preset medium -b:v 5000k -c:a aac -b:a 128k -pix_fmt yuv420p -y /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 18:12:40] ERROR: FFmpeg video creation failed: Command '['ffmpeg', '-i', '/home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773425553.mp4', '-i', '/home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3', '-filter_complex', "[0:v]drawtext=text='Cybersecurity News Update':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,0,5)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='Stay Secure':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,5,10)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='HackWire Daily':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,10,15)':box=1:boxcolor=#64:boxborderw=5[v];[v][1:a]concat=n=1:v=1:a=1[out]", '-map', '[out]', '-c:v', 'libx264', '-preset', 'medium', '-b:v', '5000k', '-c:a', 'aac', '-b:a', '128k', '-pix_fmt', 'yuv420p', '-y', '/home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4']' returned non-zero exit status 8.
+[2026-03-13 18:12:40] ERROR: Pipeline failed: Command '['ffmpeg', '-i', '/home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773425553.mp4', '-i', '/home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3', '-filter_complex', "[0:v]drawtext=text='Cybersecurity News Update':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,0,5)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='Stay Secure':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,5,10)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='HackWire Daily':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,10,15)':box=1:boxcolor=#64:boxborderw=5[v];[v][1:a]concat=n=1:v=1:a=1[out]", '-map', '[out]', '-c:v', 'libx264', '-preset', 'medium', '-b:v', '5000k', '-c:a', 'aac', '-b:a', '128k', '-pix_fmt', 'yuv420p', '-y', '/home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4']' returned non-zero exit status 8.
+Traceback (most recent call last):
+  File "/home/aarevalo/clawd/hackwire/youtube-shorts/main.py", line 655, in main
+    video_file = create_shorts_video(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/home/aarevalo/clawd/hackwire/youtube-shorts/main.py", line 451, in create_shorts_video
+    subprocess.run(cmd, check=True, timeout=300)
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['ffmpeg', '-i', '/home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773425553.mp4', '-i', '/home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3', '-filter_complex', "[0:v]drawtext=text='Cybersecurity News Update':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,0,5)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='Stay Secure':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,5,10)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='HackWire Daily':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,10,15)':box=1:boxcolor=#64:boxborderw=5[v];[v][1:a]concat=n=1:v=1:a=1[out]", '-map', '[out]', '-c:v', 'libx264', '-preset', 'medium', '-b:v', '5000k', '-c:a', 'aac', '-b:a', '128k', '-pix_fmt', 'yuv420p', '-y', '/home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4']' returned non-zero exit status 8.
+[2026-03-13 18:12:47] INFO: ======================================================================
+[2026-03-13 18:12:47] INFO: HackWire Daily YouTube Shorts Pipeline Started
+[2026-03-13 18:12:47] INFO: ======================================================================
+[2026-03-13 18:12:47] INFO: Step 1: Fetching latest episode metadata...
+[2026-03-13 18:12:47] WARNING: Transcript file not found, will extract from audio metadata
+[2026-03-13 18:12:47] INFO: Latest episode found: HackWire Daily Morning Brief — March 13, 2026
+[2026-03-13 18:12:47] INFO: Audio file: /home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3
+[2026-03-13 18:12:47] INFO: Transcript file: None
+[2026-03-13 18:12:47] INFO: Using episode date: 2026-03-13
+[2026-03-13 18:12:47] INFO: Step 2: Extracting story snippets from transcript...
+[2026-03-13 18:12:47] WARNING: No transcript file available, using placeholder text
+[2026-03-13 18:12:47] INFO: Extracted 3 snippets
+[2026-03-13 18:12:47] DEBUG:   Snippet 1: Cybersecurity News Update...
+[2026-03-13 18:12:47] DEBUG:   Snippet 2: Stay Secure...
+[2026-03-13 18:12:47] DEBUG:   Snippet 3: HackWire Daily...
+[2026-03-13 18:12:47] INFO: Step 3: Preparing background video...
+[2026-03-13 18:12:47] INFO: Pexels API key not provided, will use generated background
+[2026-03-13 18:12:47] INFO: Step 4: Creating shorts video with FFmpeg...
+[2026-03-13 18:12:47] INFO: Generating gradient background (1080x1920, 60s)...
+[2026-03-13 18:12:53] INFO: Gradient background created: /home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773425567.mp4
+[2026-03-13 18:12:53] INFO: Creating shorts video: /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 18:12:53] DEBUG: FFmpeg command: ffmpeg -i /home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773425567.mp4 -i /home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3 -filter_complex [0:v]drawtext=text='Cybersecurity News Update':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,0,5)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='Stay Secure':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,5,10)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='HackWire Daily':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,10,15)':box=1:boxcolor=#64:boxborderw=5[v];[v][1:a]concat=n=1:v=1:a=1[out] -map [out] -c:v libx264 -preset medium -b:v 5000k -c:a aac -b:a 128k -pix_fmt yuv420p -y /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4
+[2026-03-13 18:12:53] ERROR: FFmpeg video creation failed: Command '['ffmpeg', '-i', '/home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773425567.mp4', '-i', '/home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3', '-filter_complex', "[0:v]drawtext=text='Cybersecurity News Update':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,0,5)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='Stay Secure':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,5,10)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='HackWire Daily':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,10,15)':box=1:boxcolor=#64:boxborderw=5[v];[v][1:a]concat=n=1:v=1:a=1[out]", '-map', '[out]', '-c:v', 'libx264', '-preset', 'medium', '-b:v', '5000k', '-c:a', 'aac', '-b:a', '128k', '-pix_fmt', 'yuv420p', '-y', '/home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4']' returned non-zero exit status 8.
+[2026-03-13 18:12:53] ERROR: Pipeline failed: Command '['ffmpeg', '-i', '/home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773425567.mp4', '-i', '/home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3', '-filter_complex', "[0:v]drawtext=text='Cybersecurity News Update':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,0,5)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='Stay Secure':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,5,10)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='HackWire Daily':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,10,15)':box=1:boxcolor=#64:boxborderw=5[v];[v][1:a]concat=n=1:v=1:a=1[out]", '-map', '[out]', '-c:v', 'libx264', '-preset', 'medium', '-b:v', '5000k', '-c:a', 'aac', '-b:a', '128k', '-pix_fmt', 'yuv420p', '-y', '/home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4']' returned non-zero exit status 8.
+Traceback (most recent call last):
+  File "/home/aarevalo/clawd/hackwire/youtube-shorts/main.py", line 655, in main
+    video_file = create_shorts_video(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/home/aarevalo/clawd/hackwire/youtube-shorts/main.py", line 451, in create_shorts_video
+    subprocess.run(cmd, check=True, timeout=300)
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['ffmpeg', '-i', '/home/aarevalo/clawd/hackwire/youtube-shorts/temp/gradient_bg_1773425567.mp4', '-i', '/home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-13-morning.mp3', '-filter_complex', "[0:v]drawtext=text='Cybersecurity News Update':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,0,5)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='Stay Secure':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,5,10)':box=1:boxcolor=#64:boxborderw=5,drawtext=text='HackWire Daily':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:fontsize=60:fontcolor=white:x=(w-text_w)/2:y=h*0.7:enable='between(t,10,15)':box=1:boxcolor=#64:boxborderw=5[v];[v][1:a]concat=n=1:v=1:a=1[out]", '-map', '[out]', '-c:v', 'libx264', '-preset', 'medium', '-b:v', '5000k', '-c:a', 'aac', '-b:a', '128k', '-pix_fmt', 'yuv420p', '-y', '/home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-2026-03-13.mp4']' returned non-zero exit status 8.

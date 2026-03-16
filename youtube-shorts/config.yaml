@@ -1,0 +1,38 @@
+# HackWire Daily YouTube Shorts Configuration
+
+# Directories
+podcast_dir: "/home/aarevalo/clawd/hackwire/podcast"
+episodes_dir: "/home/aarevalo/clawd/hackwire/podcast/episodes"
+service_account_file: "/home/aarevalo/.openclaw/agents/hermes/agent/google-service-account.json"
+log_file: "/home/aarevalo/clawd/hackwire/youtube-shorts/upload.log"
+
+# Video settings
+video_width: 1080
+video_height: 1920
+font_size: 60
+duration_per_snippet: 3.5
+
+# Branding
+theme_color: "#00FF00"      # Neon green
+bg_color: "#0a0a0a"         # Dark black
+font_color: "white"
+
+# YouTube
+podcast_url: "https://hackwire.news/podcast/"
+youtube_scope:
+  - "https://www.googleapis.com/auth/youtube.upload"
+video_category_id: "25"     # News & Politics
+privacy_status: "public"
+
+# API Keys (optional)
+pexels_api_url: "https://api.pexels.com/videos/search"
+pexels_api_key: "${PEXELS_API_KEY}"  # Set via environment variable
+
+# Default story snippets (used when transcript unavailable)
+fallback_snippets:
+  - "Cybersecurity Threat Alert"
+  - "Critical Security Updates"
+  - "Data Breach Coverage"
+  - "Ransomware News"
+  - "Zero-Day Vulnerabilities"
+  - "Enterprise Security News"

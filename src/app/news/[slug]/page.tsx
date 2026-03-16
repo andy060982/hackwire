@@ -119,10 +119,10 @@ export default async function ArticlePage({ params }: Props) {
 
       <article className="max-w-7xl mx-auto px-4 py-8">
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-xs font-mono text-gray-600 mb-6">
-          <Link href="/" className="hover:text-[#00FF88] transition-colors">HOME</Link>
+        <nav className="flex items-center gap-2 text-xs font-mono text-gray-400 dark:text-gray-600 mb-6">
+          <Link href="/" className="hover:text-[#059669] dark:hover:text-[#00FF88] transition-colors">HOME</Link>
           <span>/</span>
-          <Link href={`/category/${article.category}`} className="hover:text-[#00FF88] transition-colors uppercase">
+          <Link href={`/category/${article.category}`} className="hover:text-[#059669] dark:hover:text-[#00FF88] transition-colors uppercase">
             {article.category}
           </Link>
           <span>/</span>
@@ -139,37 +139,37 @@ export default async function ArticlePage({ params }: Props) {
             </div>
 
             {/* Headline */}
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight font-mono mb-5">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-800 dark:text-white leading-tight font-mono mb-5">
               {article.headline}
             </h1>
 
             {/* Summary */}
-            <p className="text-gray-400 text-lg leading-relaxed mb-6 pb-6 border-b border-[#1E1E2E]">
+            <p className="text-gray-500 dark:text-gray-400 text-lg leading-relaxed mb-6 pb-6 border-b border-gray-200 dark:border-[#1E1E2E]">
               {article.summary}
             </p>
 
             {/* Meta */}
             <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
               <div className="flex items-center gap-4 text-sm">
-                <span className="text-[#00FF88]/80 font-mono font-medium">{article.source}</span>
-                <span className="text-gray-600">·</span>
+                {article.sourceUrl ? <a href={article.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-[#059669]/80 dark:text-[#00FF88]/80 font-mono font-medium hover:underline">{article.source}</a> : <span className="text-[#059669]/80 dark:text-[#00FF88]/80 font-mono font-medium">{article.source}</span>}
+                <span className="text-gray-400 dark:text-gray-600">·</span>
                 <time dateTime={article.publishedAt} className="text-gray-500 font-mono">
                   {articleDate.toLocaleDateString('en-US', {
                     year: 'numeric', month: 'long', day: 'numeric'
                   })}
                 </time>
-                <span className="text-gray-600">·</span>
+                <span className="text-gray-400 dark:text-gray-600">·</span>
                 <span className="text-gray-500 font-mono">{formatTimeAgo(article.publishedAt)}</span>
               </div>
 
               {/* Share buttons */}
               <div className="flex items-center gap-2">
-                <span className="text-gray-600 text-xs font-mono">SHARE:</span>
+                <span className="text-gray-400 dark:text-gray-600 text-xs font-mono">SHARE:</span>
                 <a
                   href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(article.headline)}&url=${encodeURIComponent(`https://hackwire.news/news/${article.slug}`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-2 py-1 border border-[#1E1E2E] text-gray-500 text-xs font-mono rounded hover:border-[#00FF88]/30 hover:text-[#00FF88] transition-colors"
+                  className="px-2 py-1 border border-gray-200 dark:border-[#1E1E2E] text-gray-400 dark:text-gray-500 text-xs font-mono rounded hover:border-[#059669]/30 dark:hover:border-[#00FF88]/30 hover:text-[#059669] dark:hover:text-[#00FF88] transition-colors"
                 >
                   𝕏
                 </a>
@@ -177,7 +177,7 @@ export default async function ArticlePage({ params }: Props) {
                   href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://hackwire.news/news/${article.slug}`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-2 py-1 border border-[#1E1E2E] text-gray-500 text-xs font-mono rounded hover:border-[#00FF88]/30 hover:text-[#00FF88] transition-colors"
+                  className="px-2 py-1 border border-gray-200 dark:border-[#1E1E2E] text-gray-400 dark:text-gray-500 text-xs font-mono rounded hover:border-[#059669]/30 dark:hover:border-[#00FF88]/30 hover:text-[#059669] dark:hover:text-[#00FF88] transition-colors"
                 >
                   IN
                 </a>
@@ -189,7 +189,7 @@ export default async function ArticlePage({ params }: Props) {
               {article.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-2 py-1 bg-[#0F0F1A] border border-[#1E1E2E] text-gray-500 text-xs font-mono rounded"
+                  className="px-2 py-1 bg-gray-100 dark:bg-[#0F0F1A] border border-gray-200 dark:border-[#1E1E2E] text-gray-500 dark:text-gray-500 text-xs font-mono rounded"
                 >
                   #{tag}
                 </span>
@@ -202,9 +202,24 @@ export default async function ArticlePage({ params }: Props) {
               dangerouslySetInnerHTML={{ __html: renderBody(article.body) }}
             />
 
+            {/* TL;DR Section */}
+            {article.tldr && (
+              <div className="mt-10 p-4 bg-blue-50 dark:bg-blue-950/20 border-l-4 border-blue-500 dark:border-blue-400 rounded">
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold text-lg mt-0.5">⚡</span>
+                  <div>
+                    <h3 className="text-blue-900 dark:text-blue-300 font-mono font-bold text-sm uppercase mb-2">TL;DR – For the Busy Reader</h3>
+                    <p className="text-blue-800 dark:text-blue-200 text-sm leading-relaxed">
+                      {article.tldr}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+
             {/* Attribution */}
-            <div className="mt-10 pt-6 border-t border-[#1E1E2E]">
-              <p className="text-xs text-gray-600 font-mono">
+            <div className="mt-10 pt-6 border-t border-gray-200 dark:border-[#1E1E2E]">
+              <p className="text-xs text-gray-400 dark:text-gray-600 font-mono">
                 Source attribution: {article.source}. HackWire aggregates and contextualizes publicly reported cybersecurity news for informational purposes.
               </p>
             </div>
@@ -214,41 +229,41 @@ export default async function ArticlePage({ params }: Props) {
           <aside className="lg:col-span-1">
             <div className="sticky top-32 space-y-6">
               {/* Quick facts */}
-              <div className="bg-[#0F0F1A] border border-[#1E1E2E] rounded-lg overflow-hidden">
-                <div className="px-4 py-3 bg-[#0A0A14] border-b border-[#1E1E2E]">
-                  <span className="text-xs font-mono font-bold text-[#00FF88] tracking-widest uppercase">Quick Facts</span>
+              <div className="bg-white dark:bg-[#0F0F1A] border border-gray-200 dark:border-[#1E1E2E] rounded-lg overflow-hidden shadow-sm dark:shadow-none">
+                <div className="px-4 py-3 bg-gray-50 dark:bg-[#0A0A14] border-b border-gray-200 dark:border-[#1E1E2E]">
+                  <span className="text-xs font-mono font-bold text-[#059669] dark:text-[#00FF88] tracking-widest uppercase">Quick Facts</span>
                 </div>
                 <div className="p-4 space-y-3">
                   <div>
-                    <span className="text-gray-600 text-xs font-mono block mb-1">Category</span>
+                    <span className="text-gray-400 dark:text-gray-600 text-xs font-mono block mb-1">Category</span>
                     <CategoryBadge categoryId={article.category} size="sm" />
                   </div>
                   {article.severity && (
                     <div>
-                      <span className="text-gray-600 text-xs font-mono block mb-1">Severity</span>
+                      <span className="text-gray-400 dark:text-gray-600 text-xs font-mono block mb-1">Severity</span>
                       <SeverityBadge severity={article.severity} />
                     </div>
                   )}
                   <div>
-                    <span className="text-gray-600 text-xs font-mono block mb-1">Published</span>
-                    <span className="text-white text-sm font-mono">
+                    <span className="text-gray-400 dark:text-gray-600 text-xs font-mono block mb-1">Published</span>
+                    <span className="text-slate-800 dark:text-white text-sm font-mono">
                       {articleDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                     </span>
                   </div>
                   <div>
-                    <span className="text-gray-600 text-xs font-mono block mb-1">Source</span>
-                    <span className="text-[#00FF88]/70 text-sm font-mono">{article.source}</span>
+                    <span className="text-gray-400 dark:text-gray-600 text-xs font-mono block mb-1">Source</span>
+                    {article.sourceUrl ? <a href={article.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-[#059669]/70 dark:text-[#00FF88]/70 text-sm font-mono hover:underline">{article.source}</a> : <span className="text-[#059669]/70 dark:text-[#00FF88]/70 text-sm font-mono">{article.source}</span>}
                   </div>
                 </div>
               </div>
 
               {/* Related articles */}
               {related.length > 0 && (
-                <div className="bg-[#0F0F1A] border border-[#1E1E2E] rounded-lg overflow-hidden">
-                  <div className="px-4 py-3 bg-[#0A0A14] border-b border-[#1E1E2E]">
-                    <span className="text-xs font-mono font-bold text-[#00FF88] tracking-widest uppercase">Related Stories</span>
+                <div className="bg-white dark:bg-[#0F0F1A] border border-gray-200 dark:border-[#1E1E2E] rounded-lg overflow-hidden shadow-sm dark:shadow-none">
+                  <div className="px-4 py-3 bg-gray-50 dark:bg-[#0A0A14] border-b border-gray-200 dark:border-[#1E1E2E]">
+                    <span className="text-xs font-mono font-bold text-[#059669] dark:text-[#00FF88] tracking-widest uppercase">Related Stories</span>
                   </div>
-                  <div className="divide-y divide-[#1E1E2E]">
+                  <div className="divide-y divide-gray-100 dark:divide-[#1E1E2E]">
                     {related.map((rel) => (
                       <div key={rel.slug} className="p-4">
                         <NewsCard article={rel} />

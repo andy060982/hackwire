@@ -42,15 +42,15 @@ export default async function CategoryPage({ params }: Props) {
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-3">
           <CategoryBadge categoryId={category} />
-          <span className="text-gray-600 text-xs font-mono">{catArticles.length} stories</span>
+          <span className="text-gray-400 dark:text-gray-600 text-xs font-mono">{catArticles.length} stories</span>
         </div>
-        <h1 className="text-3xl md:text-4xl font-bold font-mono text-white mb-2">
+        <h1 className="text-3xl md:text-4xl font-bold font-mono text-slate-800 dark:text-white mb-2">
           {cat.label}
         </h1>
-        <p className="text-gray-500 text-sm">
+        <p className="text-gray-500 dark:text-gray-500 text-sm">
           Latest cybersecurity {cat.label.toLowerCase()} news, analysis, and intelligence.
         </p>
-        <div className="mt-4 h-px bg-gradient-to-r from-[#00FF88]/30 to-transparent" />
+        <div className="mt-4 h-px bg-gradient-to-r from-[#059669]/30 dark:from-[#00FF88]/30 to-transparent" />
       </div>
 
       {/* Category nav */}
@@ -62,7 +62,7 @@ export default async function CategoryPage({ params }: Props) {
             className={`px-3 py-1.5 rounded text-xs font-mono font-medium transition-all border ${
               c.id === category
                 ? `${c.color} ${c.bgColor} ${c.borderColor}`
-                : 'text-gray-600 bg-transparent border-[#1E1E2E] hover:border-gray-600'
+                : 'text-gray-500 dark:text-gray-600 bg-transparent border-gray-200 dark:border-[#1E1E2E] hover:border-gray-400 dark:hover:border-gray-600'
             }`}
           >
             {c.emoji} {c.label.toUpperCase()}
@@ -72,7 +72,7 @@ export default async function CategoryPage({ params }: Props) {
 
       {catArticles.length === 0 ? (
         <div className="text-center py-20">
-          <p className="text-gray-600 font-mono text-sm">No articles found in this category.</p>
+          <p className="text-gray-400 dark:text-gray-600 font-mono text-sm">No articles found in this category.</p>
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

@@ -143,19 +143,80 @@ def fetch_feeds():
             print(f"  Warning: Failed to fetch {source_name}: {e}")
     return entries
 
+def rewrite_article_with_claude(entry: dict) -> dict | None:
+    """Rewrite article using Claude Haiku for full-length analysis."""
+    try:
+        import anthropic
+        
+        full_content = entry.get("summary_full", entry["summary"])
+        headline = entry["title"]
+        
+        # Build rewrite prompt
+        rewrite_prompt = f"""You are a professional cybersecurity journalist. 
+
+Expand this news summary into a comprehensive 800-1200 word article that:
+1. Provides full context and background
+2. Explains technical details in accessible language
+3. Discusses implications for organizations
+4. Includes recommendations where applicable
+5. Maintains journalistic objectivity
+
+ORIGINAL SUMMARY:
+Title: {headline}
+Content: {full_content}
+
+Write the full article now. Include all important details, context, and analysis."""
+
+        client = anthropic.Anthropic()
+        response = client.messages.create(
+            model="claude-3-5-haiku-20241022",
+            max_tokens=2000,
+            messages=[{"role": "user", "content": rewrite_prompt}]
+        )
+        
+        body = response.content[0].text
+        
+        # Generate TL;DR
+        tldr_prompt = f"""Write a 1-paragraph summary (2-3 sentences max) of this article for people on the go:
+
+{body}
+
+Summary:"""
+        
+        tldr_response = client.messages.create(
+            model="claude-3-5-haiku-20241022",
+            max_tokens=150,
+            messages=[{"role": "user", "content": tldr_prompt}]
+        )
+        
+        tldr = tldr_response.content[0].text.strip()
+        
+        return {
+            "headline": headline,
+            "summary": full_content[:300],  # Preview from original
+            "body": body,  # Full rewritten article
+            "tldr": tldr,  # Quick summary
+        }
+    except Exception as e:
+        print(f"  Claude rewrite failed: {e}, using fallback")
+        return rewrite_article_fallback(entry)
+
 def rewrite_article_gemini(entry: dict) -> dict | None:
-    """Use fallback for now - Claude via OpenClaw needs configuration."""
-    # For now, use fallback to ensure articles publish
-    # TODO: Wire up OpenClaw local Claude API when available
-    return rewrite_article_fallback(entry)
+    """Use Claude rewrite with fallback."""
+    return rewrite_article_with_claude(entry)
 
 def rewrite_article_fallback(entry: dict) -> dict:
-    """Simple rewrite without AI — restructure RSS content."""
+    """Fallback: use RSS content directly, no AI."""
     full_content = entry.get("summary_full", entry["summary"])
+    
+    # Simple TL;DR from original summary
+    tldr = full_content[:200] + "..." if len(full_content) > 200 else full_content
+    
     return {
         "headline": entry["title"],
         "summary": entry["summary"][:300],  # Preview (truncated)
         "body": full_content,  # Full article content
+        "tldr": tldr,  # Quick summary
     }
 
 def publish_articles(max_articles=5):
@@ -202,6 +263,7 @@ def publish_articles(max_articles=5):
                 "headline": rewritten["headline"],
                 "summary": rewritten["summary"],
                 "body": rewritten["body"],
+                "tldr": rewritten.get("tldr", rewritten["summary"]),  # TL;DR for busy readers
                 "category": category,
                 "source": f"via {entry['source']}",
                 "sourceUrl": entry.get("sourceUrl", ""),

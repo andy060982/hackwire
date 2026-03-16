@@ -8,6 +8,7 @@ export interface Article {
   headline: string
   summary: string
   body: string
+  tldr?: string  // TL;DR summary for busy readers
   category: CategoryId
   source: string
   sourceUrl: string
