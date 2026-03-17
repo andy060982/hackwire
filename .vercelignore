@@ -1,3 +1,9 @@
-youtube-shorts/
-podcast/episodes/
-.git/
+node_modules/
+.git
+.next/cache
+podcast/synthwave
+podcast/dark-ambient
+youtube-shorts/venv
+*.mp3
+*.wav
+*.mp4

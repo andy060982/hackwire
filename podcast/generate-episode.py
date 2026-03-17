@@ -200,11 +200,24 @@ def generate_voice_gemini(script, output_path):
         try:
             resp = urllib.request.urlopen(req, timeout=120)
             data = json.loads(resp.read())
-            audio = base64.b64decode(data["candidates"][0]["content"]["parts"][0]["inlineData"]["data"])
-            pcm_parts.append(audio)
+            
+            # Gemini returns audio in candidates
+            if "candidates" in data and len(data["candidates"]) > 0:
+                candidate = data["candidates"][0]
+                if "content" in candidate and "parts" in candidate["content"]:
+                    parts = candidate["content"]["parts"]
+                    if parts and "inlineData" in parts[0]:
+                        audio = base64.b64decode(parts[0]["inlineData"]["data"])
+                        pcm_parts.append(audio)
+                    else:
+                        raise Exception("No audio data in response")
+                else:
+                    raise Exception("Unexpected response structure")
+            else:
+                raise Exception("No candidates in response")
         except Exception as e:
-            print(f"  Gemini TTS failed on chunk {i+1}: {e}, falling back to Edge TTS")
-            return generate_voice_edge(script, output_path)
+            print(f"  Gemini TTS failed on chunk {i+1}: {e}")
+            raise
     
     # Combine PCM and convert to mp3
     pcm_file = output_path.with_suffix(".pcm")

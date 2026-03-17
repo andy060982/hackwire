@@ -1,0 +1,23 @@
+/home/aarevalo/clawd/hackwire/auto-publish.py:181: DeprecationWarning: The model 'claude-3-5-haiku-20241022' is deprecated and will reach end-of-life on February 19th, 2026.
+Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+  response = client.messages.create(
+/home/aarevalo/clawd/hackwire/auto-publish.py:181: DeprecationWarning: The model 'claude-3-5-haiku-20241022' is deprecated and will reach end-of-life on February 19th, 2026.
+Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+  response = client.messages.create(
+[2026-03-16T17:49:18.478692+00:00] Starting HackWire auto-publish...
+  Fetched 40 entries from RSS feeds
+  Claude rewrite failed: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted", using fallback
+  + [POLICY] UK’s Companies House confirms security flaw exposed business data
+  Claude rewrite failed: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted", using fallback
+  + [VULNERABILITIES] Microsoft Exchange Online outage blocks access to mailboxes
+  Claude rewrite failed: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted", using fallback
+  + [TOOLS] Shadow AI is everywhere. Here’s how to find and secure it.
+  Claude rewrite failed: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted", using fallback
+  + [VULNERABILITIES] Microsoft pulls Samsung app blocking Windows C: drive from Store
+  Claude rewrite failed: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted", using fallback
+  + [BREACHES] ⚡ Weekly Recap: Chrome 0-Days, Router Botnets, AWS Breach, Rogue AI Agents & More
+  Saved 5 new articles (total: 113)
+  Building site...
+  Deploying to Vercel...
+  Deployed successfully!
+Done. Published 5 articles.

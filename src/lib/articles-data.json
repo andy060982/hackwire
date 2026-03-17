@@ -1,5 +1,57 @@
 [
   {
+    "slug": "inside-olympic-cybersecurity-lessons-from-paris-2024-to-milan-cortina-2026",
+    "headline": "Inside Olympic Cybersecurity: Lessons From Paris 2024 to Milan Cortina 2026",
+    "summary": "Discover how Franz Regul, former CISO for the Paris 2024 Olympics, tackled unique cybersecurity challenges to protect the Olympics from evolving threats.",
+    "body": "Discover how Franz Regul, former CISO for the Paris 2024 Olympics, tackled unique cybersecurity challenges to protect the Olympics from evolving threats.",
+    "tldr": "Discover how Franz Regul, former CISO for the Paris 2024 Olympics, tackled unique cybersecurity challenges to protect the Olympics from evolving threats.",
+    "category": "vulnerabilities",
+    "source": "via Dark Reading",
+    "sourceUrl": "https://www.darkreading.com/threat-intelligence/olympic-cybersecurity-paris-2024-milan-2026",
+    "publishedAt": "2026-03-17T00:00:13Z",
+    "severity": "medium",
+    "tags": []
+  },
+  {
+    "slug": "glassworm-malware-evolves-to-hide-in-dependencies",
+    "headline": "GlassWorm Malware Evolves to Hide in Dependencies",
+    "summary": "Researchers have identified dozens of malicious GlassWorm extensions that come with new evasion techniques.",
+    "body": "Researchers have identified dozens of malicious GlassWorm extensions that come with new evasion techniques.",
+    "tldr": "Researchers have identified dozens of malicious GlassWorm extensions that come with new evasion techniques.",
+    "category": "malware",
+    "source": "via Dark Reading",
+    "sourceUrl": "https://www.darkreading.com/application-security/glassworm-malware-evolves-hide-dependencies",
+    "publishedAt": "2026-03-17T00:00:13Z",
+    "severity": "medium",
+    "tags": []
+  },
+  {
+    "slug": "glassworm-attack-uses-stolen-github-tokens-to-force-push-malware-into-python-rep",
+    "headline": "GlassWorm Attack Uses Stolen GitHub Tokens to Force-Push Malware Into Python Repos",
+    "summary": "The GlassWorm malware campaign is being used to fuel an ongoing attack that leverages the stolen GitHub tokens to inject malware into hundreds of Python repositories. \"The attack targets Python projects — including Django apps, ML research code, Streamlit dashboards, and PyPI packages — by appending",
+    "body": "The GlassWorm malware campaign is being used to fuel an ongoing attack that leverages the stolen GitHub tokens to inject malware into hundreds of Python repositories. \"The attack targets Python projects — including Django apps, ML research code, Streamlit dashboards, and PyPI packages — by appending obfuscated code to files like setup.py, main.py, and app.py,\" StepSecurity said. \"Anyone who runs",
+    "tldr": "The GlassWorm malware campaign is being used to fuel an ongoing attack that leverages the stolen GitHub tokens to inject malware into hundreds of Python repositories. \"The attack targets Python projec...",
+    "category": "malware",
+    "source": "via The Hacker News",
+    "sourceUrl": "https://thehackernews.com/2026/03/glassworm-attack-uses-stolen-github.html",
+    "publishedAt": "2026-03-17T00:00:13Z",
+    "severity": "medium",
+    "tags": []
+  },
+  {
+    "slug": "stryker-attack-wiped-tens-of-thousands-of-devices-no-malware-needed",
+    "headline": "Stryker attack wiped tens of thousands of devices, no malware needed",
+    "summary": "Last week's cyberattack on medical technology giant Stryker was limited to its internal Microsoft environment and remotely wiped tens of thousands of employee devices. [...]",
+    "body": "Last week's cyberattack on medical technology giant Stryker was limited to its internal Microsoft environment and remotely wiped tens of thousands of employee devices. [...]",
+    "tldr": "Last week's cyberattack on medical technology giant Stryker was limited to its internal Microsoft environment and remotely wiped tens of thousands of employee devices. [...]",
+    "category": "malware",
+    "source": "via BleepingComputer",
+    "sourceUrl": "https://www.bleepingcomputer.com/news/security/stryker-attack-wiped-tens-of-thousands-of-devices-no-malware-needed/",
+    "publishedAt": "2026-03-17T00:00:13Z",
+    "severity": "medium",
+    "tags": []
+  },
+  {
     "slug": "cisa-flags-wing-ftp-server-flaw-as-actively-exploited-in-attacks",
     "headline": "CISA flags Wing FTP Server flaw as actively exploited in attacks",
     "summary": "CISA warned U.S. government agencies to secure their Wing FTP Server instances against an actively exploited vulnerability that may be chained in remote code execution attacks. [...]",

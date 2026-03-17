@@ -553,3 +553,97 @@ The latest update may fix any errors that occurred.
 [2026-03-16 10:31:09] INFO: ======================================================================
 [2026-03-16 10:31:09] INFO: Pipeline complete - video uploaded + website updated
 [2026-03-16 10:31:09] INFO: ======================================================================
+[2026-03-16 22:30:02] INFO: ======================================================================
+[2026-03-16 22:30:02] INFO: HackWire Daily YouTube Shorts Pipeline
+[2026-03-16 22:30:02] INFO: ======================================================================
+[2026-03-16 22:30:02] INFO: Latest episode: HackWire Daily — 16
+[2026-03-16 22:30:02] INFO: Step 4: Creating shorts video...
+[2026-03-16 22:30:02] INFO: Using master hacker animation background
+[2026-03-16 22:30:02] INFO: Creating shorts video: /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-16.mp4
+ffmpeg version 7.0.2-static https://johnvansickle.com/ffmpeg/  Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 8 (Debian 8.3.0-6)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-debug --disable-ffplay --disable-indev=sndio --disable-outdev=sndio --cc=gcc --enable-fontconfig --enable-frei0r --enable-gnutls --enable-gmp --enable-libgme --enable-gray --enable-libaom --enable-libfribidi --enable-libass --enable-libvmaf --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-librubberband --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libvorbis --enable-libopus --enable-libtheora --enable-libvidstab --enable-libvo-amrwbenc --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libdav1d --enable-libxvid --enable-libzvbi --enable-libzimg
+  libavutil      59.  8.100 / 59.  8.100
+  libavcodec     61.  3.100 / 61.  3.100
+  libavformat    61.  1.100 / 61.  1.100
+  libavdevice    61.  1.100 / 61.  1.100
+  libavfilter    10.  1.100 / 10.  1.100
+  libswscale      8.  1.100 /  8.  1.100
+  libswresample   5.  1.100 /  5.  1.100
+  libpostproc    58.  1.100 / 58.  1.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/home/aarevalo/clawd/hackwire/youtube-shorts/master_bg.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 1
+    compatible_brands: isommp41mp42
+    creation_time   : 2026-03-14T01:26:44.000000Z
+  Duration: 00:00:08.00, start: 0.000000, bitrate: 395 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 700x460, 393 kb/s, 12.50 fps, 12.50 tbr, 600 tbn (default)
+      Metadata:
+        creation_time   : 2026-03-14T01:26:44.000000Z
+        handler_name    : Core Media Video
+        vendor_id       : [0][0][0][0]
+[mp3 @ 0xca8c100] Estimating duration from bitrate, this may be inaccurate
+Input #1, mp3, from '/home/aarevalo/clawd/hackwire/podcast/episodes/hackwire-daily-2026-03-16-morning.voice.mp3':
+  Duration: 00:05:56.35, start: 0.000000, bitrate: 48 kb/s
+  Stream #1:0: Audio: mp3 (mp3float), 24000 Hz, mono, fltp, 48 kb/s
+Stream mapping:
+  Stream #0:0 (h264) -> scale:default
+  Stream #1:0 (mp3float) -> concat
+  concat -> Stream #0:0 (aac)
+  concat -> Stream #0:1 (libx264)
+Press [q] to stop, [?] for help
+[libx264 @ 0xcab97c0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512
+[libx264 @ 0xcab97c0] profile High, level 4.0, 4:2:0, 8-bit
+[libx264 @ 0xcab97c0] 264 - core 164 r3191 4613ac3 - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=12 lookahead_threads=2 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=12 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=abr mbtree=1 bitrate=5000 ratetol=1.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-16.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 1
+    compatible_brands: isommp41mp42
+    encoder         : Lavf61.1.100
+  Stream #0:0: Audio: aac (LC) (mp4a / 0x6134706D), 24000 Hz, mono, fltp, 128 kb/s
+      Metadata:
+        encoder         : Lavc61.3.100 aac
+  Stream #0:1: Video: h264 (avc1 / 0x31637661), yuv420p(progressive), 1080x1920, q=2-31, 5000 kb/s, 12.50 fps, 12800 tbn
+      Metadata:
+        encoder         : Lavc61.3.100 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/5000000 buffer size: 0 vbv_delay: N/A
+frame=    0 fps=0.0 q=0.0 size=       0KiB time=N/A bitrate=N/A speed=N/A    frame=   20 fps= 20 q=7.0 size=     256KiB time=00:00:01.44 bitrate=1456.6kbits/s speed=1.44x    frame=   57 fps= 38 q=2.0 size=    1536KiB time=00:00:04.40 bitrate=2859.8kbits/s speed=2.93x    frame=   99 fps= 49 q=0.0 size=    3072KiB time=00:00:07.76 bitrate=3243.1kbits/s speed=3.87x    frame=  139 fps= 56 q=0.0 size=    4864KiB time=00:00:10.96 bitrate=3635.6kbits/s speed=4.38x    frame=  181 fps= 60 q=0.0 size=    6400KiB time=00:00:14.32 bitrate=3661.3kbits/s speed=4.76x    frame=  218 fps= 62 q=0.0 size=    8192KiB time=00:00:17.28 bitrate=3883.6kbits/s speed=4.93x    frame=  257 fps= 64 q=0.0 size=    9984KiB time=00:00:20.40 bitrate=4009.3kbits/s speed=5.09x    frame=  297 fps= 66 q=0.0 size=   11520KiB time=00:00:23.60 bitrate=3998.8kbits/s speed=5.23x    frame=  334 fps= 67 q=0.0 size=   13312KiB time=00:00:26.56 bitrate=4105.9kbits/s speed= 5.3x    frame=  378 fps= 69 q=0.0 size=   14848KiB time=00:00:30.08 bitrate=4043.7kbits/s speed=5.46x    frame=  411 fps= 68 q=0.0 size=   16384KiB time=00:00:32.80 bitrate=4092.0kbits/s speed=5.46x    frame=  454 fps= 70 q=0.0 size=   18176KiB time=00:00:36.16 bitrate=4117.8kbits/s speed=5.55x    frame=  496 fps= 71 q=0.0 size=   19712KiB time=00:00:39.52 bitrate=4086.1kbits/s speed=5.64x    frame=  534 fps= 71 q=0.0 size=   21504KiB time=00:00:42.56 bitrate=4139.1kbits/s speed=5.66x    frame=  577 fps= 72 q=0.0 size=   23296KiB time=00:00:46.08 bitrate=4141.5kbits/s speed=5.75x    frame=  610 fps= 72 q=0.0 size=   24832KiB time=00:00:48.64 bitrate=4182.2kbits/s speed=5.71x    frame=  648 fps= 72 q=0.0 size=   26368KiB time=00:00:51.68 bitrate=4179.7kbits/s speed=5.73x    frame=  690 fps= 73 q=0.0 size=   27904KiB time=00:00:55.04 bitrate=4153.2kbits/s speed=5.78x    frame=  727 fps= 73 q=0.0 size=   29696KiB time=00:00:58.00 bitrate=4194.3kbits/s speed=5.79x    frame=  767 fps= 73 q=0.0 size=   31488KiB time=00:01:01.20 bitrate=4214.9kbits/s speed=5.82x    frame=  806 fps= 73 q=0.0 size=   33024KiB time=00:01:04.32 bitrate=4206.0kbits/s speed=5.84x    frame=  847 fps= 74 q=0.0 size=   34816KiB time=00:01:07.60 bitrate=4219.1kbits/s speed=5.87x    frame=  887 fps= 74 q=0.0 size=   36352KiB time=00:01:10.80 bitrate=4206.2kbits/s speed=5.89x    frame=  920 fps= 73 q=0.0 size=   37888KiB time=00:01:13.44 bitrate=4226.3kbits/s speed=5.86x    frame=  957 fps= 73 q=0.0 size=   39424KiB time=00:01:16.40 bitrate=4227.2kbits/s speed=5.87x    frame=  998 fps= 74 q=0.0 size=   40960KiB time=00:01:19.68 bitrate=4211.2kbits/s speed=5.89x    frame= 1033 fps= 74 q=0.0 size=   42752KiB time=00:01:22.48 bitrate=4246.2kbits/s speed=5.88x    frame= 1074 fps= 74 q=0.0 size=   44288KiB time=00:01:25.76 bitrate=4230.5kbits/s speed= 5.9x    frame= 1106 fps= 74 q=0.0 size=   45568KiB time=00:01:28.32 bitrate=4226.6kbits/s speed=5.88x    frame= 1146 fps= 74 q=0.0 size=   47360KiB time=00:01:31.52 bitrate=4239.2kbits/s speed=5.89x    frame= 1188 fps= 74 q=0.0 size=   48896KiB time=00:01:34.88 bitrate=4221.7kbits/s speed=5.92x    frame= 1223 fps= 74 q=0.0 size=   50688KiB time=00:01:37.68 bitrate=4251.0kbits/s speed=5.91x    frame= 1265 fps= 74 q=0.0 size=   52480KiB time=00:01:41.04 bitrate=4254.9kbits/s speed=5.93x    frame= 1302 fps= 74 q=0.0 size=   53760KiB time=00:01:44.08 bitrate=4231.4kbits/s speed=5.94x    frame= 1343 fps= 74 q=0.0 size=   55808KiB time=00:01:47.28 bitrate=4261.6kbits/s speed=5.95x    frame= 1385 fps= 75 q=0.0 size=   57344KiB time=00:01:50.64 bitrate=4245.9kbits/s speed=5.97x    frame= 1416 fps= 74 q=0.0 size=   58880KiB time=00:01:53.12 bitrate=4264.0kbits/s speed=5.94x    frame= 1453 fps= 74 q=0.0 size=   60416KiB time=00:01:56.08 bitrate=4263.7kbits/s speed=5.94x    frame= 1486 fps= 74 q=0.0 size=   61440KiB time=00:01:58.72 bitrate=4239.5kbits/s speed=5.92x    frame= 1508 fps= 73 q=0.0 size=   62464KiB time=00:02:00.48 bitrate=4247.2kbits/s speed=5.86x    frame= 1546 fps= 73 q=0.0 size=   64256KiB time=00:02:03.52 bitrate=4261.5kbits/s speed=5.87x    frame= 1589 fps= 74 q=0.0 size=   65792KiB time=00:02:06.96 bitrate=4245.2kbits/s speed=5.89x    frame= 1620 fps= 73 q=0.0 size=   67328KiB time=00:02:09.44 bitrate=4261.1kbits/s speed=5.87x    frame= 1661 fps= 74 q=0.0 size=   69120KiB time=00:02:12.72 bitrate=4266.4kbits/s speed=5.89x    frame= 1703 fps= 74 q=0.0 size=   70656KiB time=00:02:16.08 bitrate=4253.5kbits/s speed= 5.9x    frame= 1744 fps= 74 q=0.0 size=   72448KiB time=00:02:19.36 bitrate=4258.7kbits/s speed=5.92x    frame= 1788 fps= 74 q=0.0 size=   74240KiB time=00:02:22.88 bitrate=4256.5kbits/s speed=5.94x    frame= 1823 fps= 74 q=0.0 size=   76032KiB time=00:02:25.68 bitrate=4275.5kbits/s speed=5.93x    frame= 1862 fps= 74 q=0.0 size=   77568KiB time=00:02:28.80 bitrate=4270.4kbits/s speed=5.94x    frame= 1902 fps= 74 q=0.0 size=   79104KiB time=00:02:32.00 bitrate=4263.3kbits/s speed=5.95x    frame= 1936 fps= 74 q=0.0 size=   80896KiB time=00:02:34.72 bitrate=4283.2kbits/s speed=5.94x    frame= 1980 fps= 75 q=0.0 size=   82432KiB time=00:02:38.32 bitrate=4265.3kbits/s speed=5.96x    frame= 2020 fps= 75 q=0.0 size=   84224KiB time=00:02:41.44 bitrate=4273.8kbits/s speed=5.97x    frame= 2061 fps= 75 q=0.0 size=   86016KiB time=00:02:44.72 bitrate=4277.8kbits/s speed=5.98x    frame= 2101 fps= 75 q=0.0 size=   87552KiB time=00:02:47.92 bitrate=4271.2kbits/s speed=5.99x    frame= 2140 fps= 75 q=0.0 size=   89344KiB time=00:02:51.04 bitrate=4279.2kbits/s speed=5.99x    frame= 2181 fps= 75 q=0.0 size=   90880KiB time=00:02:54.32 bitrate=4270.8kbits/s speed=   6x    frame= 2216 fps= 75 q=0.0 size=   92416KiB time=00:02:57.12 bitrate=4274.3kbits/s speed=5.99x    frame= 2256 fps= 75 q=0.0 size=   94208KiB time=00:03:00.32 bitrate=4279.9kbits/s speed=   6x    frame= 2297 fps= 75 q=0.0 size=   95744KiB time=00:03:03.60 bitrate=4272.0kbits/s speed=6.01x    frame= 2327 fps= 75 q=0.0 size=   97280KiB time=00:03:06.00 bitrate=4284.5kbits/s speed=5.99x    frame= 2366 fps= 75 q=0.0 size=   98816KiB time=00:03:09.12 bitrate=4280.4kbits/s speed=5.99x    frame= 2401 fps= 75 q=0.0 size=  100096KiB time=00:03:11.92 bitrate=4272.5kbits/s speed=5.99x    frame= 2436 fps= 75 q=0.0 size=  101888KiB time=00:03:14.72 bitrate=4286.5kbits/s speed=5.98x    frame= 2477 fps= 75 q=0.0 size=  103424KiB time=00:03:18.00 bitrate=4279.0kbits/s speed=5.99x    frame= 2516 fps= 75 q=0.0 size=  105216KiB time=00:03:21.12 bitrate=4285.6kbits/s speed=5.99x    frame= 2558 fps= 75 q=0.0 size=  107008KiB time=00:03:24.48 bitrate=4287.0kbits/s speed=   6x    frame= 2599 fps= 75 q=0.0 size=  108544KiB time=00:03:27.76 bitrate=4279.9kbits/s speed=6.01x    frame= 2634 fps= 75 q=0.0 size=  110080KiB time=00:03:30.56 bitrate=4282.7kbits/s speed=   6x    frame= 2678 fps= 75 q=0.0 size=  111872KiB time=00:03:34.08 bitrate=4280.9kbits/s speed=6.02x    frame= 2708 fps= 75 q=0.0 size=  113152KiB time=00:03:36.48 bitrate=4281.9kbits/s speed=   6x    frame= 2751 fps= 75 q=0.0 size=  115200KiB time=00:03:39.92 bitrate=4291.2kbits/s speed=6.01x    frame= 2793 fps= 75 q=0.0 size=  116736KiB time=00:03:43.28 bitrate=4283.0kbits/s speed=6.02x    frame= 2829 fps= 75 q=0.0 size=  118528KiB time=00:03:46.16 bitrate=4293.3kbits/s speed=6.02x    frame= 2871 fps= 75 q=0.0 size=  120064KiB time=00:03:49.52 bitrate=4285.3kbits/s speed=6.03x    frame= 2907 fps= 75 q=0.0 size=  121600KiB time=00:03:52.40 bitrate=4286.3kbits/s speed=6.03x    frame= 2947 fps= 75 q=0.0 size=  123392KiB time=00:03:55.60 bitrate=4290.4kbits/s speed=6.03x    frame= 2989 fps= 76 q=0.0 size=  124928KiB time=00:03:58.96 bitrate=4282.8kbits/s speed=6.04x    frame= 3027 fps= 76 q=0.0 size=  126720KiB time=00:04:02.00 bitrate=4289.6kbits/s speed=6.04x    frame= 3070 fps= 76 q=0.0 size=  128512KiB time=00:04:05.44 bitrate=4289.3kbits/s speed=6.05x    frame= 3109 fps= 76 q=0.0 size=  130048KiB time=00:04:08.56 bitrate=4286.1kbits/s speed=6.05x    frame= 3150 fps= 76 q=0.0 size=  131840KiB time=00:04:11.84 bitrate=4288.6kbits/s speed=6.06x    frame= 3194 fps= 76 q=0.0 size=  133632KiB time=00:04:15.36 bitrate=4286.9kbits/s speed=6.07x    frame= 3227 fps= 76 q=0.0 size=  135168KiB time=00:04:18.00 bitrate=4291.8kbits/s speed=6.06x    frame= 3270 fps= 76 q=0.0 size=  136960KiB time=00:04:21.44 bitrate=4291.5kbits/s speed=6.07x    frame= 3306 fps= 76 q=0.0 size=  138496KiB time=00:04:24.32 bitrate=4292.4kbits/s speed=6.06x    frame= 3346 fps= 76 q=0.0 size=  140288KiB time=00:04:27.52 bitrate=4295.9kbits/s speed=6.07x    frame= 3390 fps= 76 q=0.0 size=  141824KiB time=00:04:31.04 bitrate=4286.5kbits/s speed=6.08x    frame= 3427 fps= 76 q=0.0 size=  143616KiB time=00:04:34.00 bitrate=4293.8kbits/s speed=6.08x    frame= 3466 fps= 76 q=0.0 size=  145152KiB time=00:04:37.12 bitrate=4290.9kbits/s speed=6.08x    frame= 3506 fps= 76 q=0.0 size=  146944KiB time=00:04:40.32 bitrate=4294.3kbits/s speed=6.08x    frame= 3546 fps= 76 q=0.0 size=  148480KiB time=00:04:43.52 bitrate=4290.2kbits/s speed=6.09x    frame= 3590 fps= 76 q=0.0 size=  150272KiB time=00:04:47.12 bitrate=4287.5kbits/s speed= 6.1x    frame= 3627 fps= 76 q=0.0 size=  152064KiB time=00:04:50.00 bitrate=4295.5kbits/s speed=6.09x    frame= 3667 fps= 76 q=0.0 size=  153600KiB time=00:04:53.20 bitrate=4291.6kbits/s speed= 6.1x    frame= 3706 fps= 76 q=0.0 size=  155392KiB time=00:04:56.32 bitrate=4295.9kbits/s speed= 6.1x    frame= 3745 fps= 76 q=0.0 size=  156928KiB time=00:04:59.44 bitrate=4293.2kbits/s speed= 6.1x    frame= 3787 fps= 76 q=0.0 size=  158464KiB time=00:05:02.80 bitrate=4287.1kbits/s speed=6.11x    frame= 3817 fps= 76 q=0.0 size=  160000KiB time=00:05:05.20 bitrate=4294.6kbits/s speed=6.09x    frame= 3858 fps= 76 q=0.0 size=  161792KiB time=00:05:08.48 bitrate=4296.6kbits/s speed= 6.1x    frame= 3899 fps= 76 q=0.0 size=  163328KiB time=00:05:11.76 bitrate=4291.7kbits/s speed= 6.1x    frame= 3939 fps= 76 q=0.0 size=  165120KiB time=00:05:14.96 bitrate=4294.7kbits/s speed=6.11x    frame= 3981 fps= 76 q=0.0 size=  166912KiB time=00:05:18.32 bitrate=4295.5kbits/s speed=6.11x    frame= 4016 fps= 76 q=0.0 size=  168448KiB time=00:05:21.12 bitrate=4297.2kbits/s speed=6.11x    frame= 4057 fps= 76 q=0.0 size=  169984KiB time=00:05:24.40 bitrate=4292.6kbits/s speed=6.11x    frame= 4098 fps= 76 q=0.0 size=  171776KiB time=00:05:27.68 bitrate=4294.4kbits/s speed=6.11x    frame= 4138 fps= 76 q=0.0 size=  173568KiB time=00:05:30.88 bitrate=4297.2kbits/s speed=6.12x    frame= 4177 fps= 77 q=0.0 size=  175104KiB time=00:05:34.00 bitrate=4294.8kbits/s speed=6.12x    frame= 4210 fps= 76 q=0.0 size=  176384KiB time=00:05:36.64 bitrate=4292.2kbits/s speed=6.11x    frame= 4254 fps= 77 q=0.0 size=  178432KiB time=00:05:40.16 bitrate=4297.1kbits/s speed=6.12x    frame= 4293 fps= 77 q=0.0 size=  179968KiB time=00:05:43.28 bitrate=4294.7kbits/s speed=6.12x    frame= 4328 fps= 76 q=0.0 size=  181504KiB time=00:05:46.08 bitrate=4296.4kbits/s speed=6.12x    frame= 4368 fps= 77 q=0.0 size=  183296KiB time=00:05:49.28 bitrate=4299.0kbits/s speed=6.12x    frame= 4405 fps= 76 q=0.0 size=  184576KiB time=00:05:52.24 bitrate=4292.7kbits/s speed=6.12x    frame= 4446 fps= 77 q=-1.0 size=  186624KiB time=00:05:55.52 bitrate=4300.2kbits/s speed=6.12x    [out#0/mp4 @ 0xcac91c0] video:182613KiB audio:4379KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.070109%
+frame= 4454 fps= 76 q=-1.0 Lsize=  187123KiB time=00:05:56.16 bitrate=4304.0kbits/s speed=6.12x    
+[aac @ 0xcab8900] Qavg: 64949.504
+[libx264 @ 0xcab97c0] frame I:18    Avg QP: 0.21  size:141385
+[libx264 @ 0xcab97c0] frame P:1336  Avg QP: 0.10  size: 72597
+[libx264 @ 0xcab97c0] frame B:3100  Avg QP: 0.27  size: 28213
+[libx264 @ 0xcab97c0] consecutive B-frames:  1.6%  7.9% 26.2% 64.2%
+[libx264 @ 0xcab97c0] mb I  I16..4: 87.1%  3.1%  9.8%
+[libx264 @ 0xcab97c0] mb P  I16..4:  8.8%  0.4%  1.4%  P16..4:  7.4%  1.5%  1.5%  0.0%  0.0%    skip:79.1%
+[libx264 @ 0xcab97c0] mb B  I16..4:  2.5%  0.1%  0.3%  B16..8:  6.8%  1.1%  0.5%  direct: 4.8%  skip:83.9%  L0:42.3% L1:53.5% BI: 4.1%
+[libx264 @ 0xcab97c0] final ratefactor: -4.35
+[libx264 @ 0xcab97c0] 8x8 transform intra:3.7% inter:30.1%
+[libx264 @ 0xcab97c0] coded y,uvDC,uvAC intra: 21.0% 26.3% 26.2% inter: 4.7% 9.8% 9.1%
+[libx264 @ 0xcab97c0] i16 v,h,dc,p: 18% 82%  0%  0%
+[libx264 @ 0xcab97c0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 55% 15%  1%  1%  1%  1%  1%  1%
+[libx264 @ 0xcab97c0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 28% 52% 10%  1%  2%  2%  2%  2%  2%
+[libx264 @ 0xcab97c0] i8c dc,h,v,p: 43% 47%  9%  1%
+[libx264 @ 0xcab97c0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0xcab97c0] ref P L0: 68.3%  3.3% 18.6%  9.8%
+[libx264 @ 0xcab97c0] ref B L0: 84.7% 13.2%  2.1%
+[libx264 @ 0xcab97c0] ref B L1: 97.8%  2.2%
+[libx264 @ 0xcab97c0] kb/s:4198.36
+[2026-03-16 22:31:01] INFO: Video created successfully: /home/aarevalo/clawd/hackwire/youtube-shorts/output/hackwire-shorts-16.mp4
+[2026-03-16 22:31:01] INFO: Step 5: Uploading to YouTube...
+[2026-03-16 22:31:01] INFO: Refreshing OAuth token...
+[2026-03-16 22:31:01] INFO: file_cache is only supported with oauth2client<4.0.0
+[2026-03-16 22:31:01] INFO: YouTube authentication successful
+[2026-03-16 22:31:01] INFO: Uploading: [16] HackWire Daily - Security Brief
+[2026-03-16 22:31:05] INFO: ✅ Uploaded successfully! Video ID: YBbjrpfj3Fw
+[2026-03-16 22:31:05] INFO: ======================================================================
+[2026-03-16 22:31:05] INFO: Step 6: Deploying website to Vercel...
+[2026-03-16 22:31:05] INFO: ======================================================================
+[2026-03-16 22:31:05] INFO: Triggering Vercel deployment...
+[2026-03-16 22:31:48] INFO: ✅ Website deployed to Vercel successfully
+[2026-03-16 22:31:48] INFO: ======================================================================
+[2026-03-16 22:31:48] INFO: Pipeline complete - video uploaded + website updated
+[2026-03-16 22:31:48] INFO: ======================================================================

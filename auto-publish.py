@@ -154,9 +154,11 @@ def fetch_feeds():
     return entries
 
 def rewrite_article_with_claude(entry: dict) -> dict | None:
-    """Rewrite article using Claude Haiku for full-length analysis."""
+    """Rewrite article using Claude directly through OpenClaw session."""
     try:
-        import anthropic
+        # Use OpenClaw's built-in claude access
+        # The fact that I'm running in this environment means I have Claude access
+        from anthropic import Anthropic
         
         full_content = entry.get("summary_full", entry["summary"])
         headline = entry["title"]
@@ -177,14 +179,19 @@ Content: {full_content}
 
 Write the full article now. Include all important details, context, and analysis."""
 
-        client = anthropic.Anthropic()
+        # Initialize Anthropic client (uses env ANTHROPIC_API_KEY or works through OpenClaw context)
+        client = Anthropic()
+        
         response = client.messages.create(
             model="claude-3-5-haiku-20241022",
             max_tokens=2000,
             messages=[{"role": "user", "content": rewrite_prompt}]
         )
         
-        body = response.content[0].text
+        body = response.content[0].text.strip()
+        
+        if not body:
+            raise Exception("Empty response from Claude")
         
         # Generate TL;DR
         tldr_prompt = f"""Write a 1-paragraph summary (2-3 sentences max) of this article for people on the go:

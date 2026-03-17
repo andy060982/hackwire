@@ -24,7 +24,15 @@
   
   
   
+  
+  
+  
+  
   <channel>
+    
+    
+    
+    
     
     
     
@@ -74,7 +82,15 @@
     
     
     
+    
+    
+    
+    
     <description>Your daily cybersecurity threat briefing in under 5 minutes. Twice daily coverage of the latest data breaches, vulnerabilities, ransomware attacks, and security news that matters.</description>
+    
+    
+    
+    
     
     
     
@@ -124,7 +140,15 @@
     
     
     
+    
+    
+    
+    
     <language>en-us</language>
+    
+    
+    
+    
     
     
     
@@ -174,7 +198,15 @@
     
     
     
+    
+    
+    
+    
     <ns0:category text="Technology"/>
+    
+    
+    
+    
     
     
     
@@ -224,6 +256,10 @@
     
     
     
+    
+    
+    
+    
     <ns0:explicit>false</ns0:explicit>
     
     
@@ -249,39 +285,143 @@
     
     
     
+    
+    
+    
+    
     <item>
-      <title>HackWire Daily Morning Brief — March 16, 2026</title>
-      <description>Top cybersecurity stories for Monday, March 16, 2026. Morning Brief edition.</description>
-      <enclosure url="https://hackwire.news/podcast/episodes/hackwire-daily-2026-03-16-morning.mp3" length="5963484" type="audio/mpeg"/>
-      <pubDate>Mon, 16 Mar 2026 06:00:01 -0400</pubDate>
-      <guid isPermaLink="true">https://hackwire.news/podcast/episodes/hackwire-daily-2026-03-16-morning.mp3</guid>
-      <ns0:duration>6:12</ns0:duration>
+      <title>HackWire Daily Morning Brief — March 17, 2026</title>
+      <description>Top cybersecurity stories for Tuesday, March 17, 2026. Morning Brief edition.</description>
+      <enclosure url="https://hackwire.news/podcast/episodes/hackwire-daily-2026-03-17-morning.mp3" length="5632043" type="audio/mpeg"/>
+      <pubDate>Tue, 17 Mar 2026 06:00:01 -0400</pubDate>
+      <guid isPermaLink="true">https://hackwire.news/podcast/episodes/hackwire-daily-2026-03-17-morning.mp3</guid>
+      <ns0:duration>5:51</ns0:duration>
     </item>
     <item>
+      
+      
+      <title>HackWire Daily Evening Wrap — March 16, 2026</title>
+      
+      
+      <description>Top cybersecurity stories for Monday, March 16, 2026. Evening Wrap edition.</description>
+      
+      
+      <enclosure url="https://hackwire.news/podcast/episodes/hackwire-daily-2026-03-16-evening.mp3" length="5889505" type="audio/mpeg"/>
+      
+      
+      <pubDate>Mon, 16 Mar 2026 18:00:01 -0400</pubDate>
+      
+      
+      <guid isPermaLink="true">https://hackwire.news/podcast/episodes/hackwire-daily-2026-03-16-evening.mp3</guid>
+      
+      
+      <ns0:duration>6:08</ns0:duration>
+      
+    
+    </item>
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>HackWire Daily Morning Brief — March 16, 2026</title>
+      
+      
+      
+      
+      <description>Top cybersecurity stories for Monday, March 16, 2026. Morning Brief edition.</description>
+      
+      
+      
+      
+      <enclosure url="https://hackwire.news/podcast/episodes/hackwire-daily-2026-03-16-morning.mp3" length="5963484" type="audio/mpeg"/>
+      
+      
+      
+      
+      <pubDate>Mon, 16 Mar 2026 06:00:01 -0400</pubDate>
+      
+      
+      
+      
+      <guid isPermaLink="true">https://hackwire.news/podcast/episodes/hackwire-daily-2026-03-16-morning.mp3</guid>
+      
+      
+      
+      
+      <ns0:duration>6:12</ns0:duration>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
       
       
       <title>HackWire Daily Evening Wrap — March 15, 2026</title>
       
       
+      
+      
+      
+      
       <description>Top cybersecurity stories for Sunday, March 15, 2026. Evening Wrap edition.</description>
+      
+      
+      
+      
       
       
       <enclosure url="https://hackwire.news/podcast/episodes/hackwire-daily-2026-03-15-evening.mp3" length="5785016" type="audio/mpeg"/>
       
       
+      
+      
+      
+      
       <pubDate>Sun, 15 Mar 2026 18:00:01 -0400</pubDate>
+      
+      
+      
+      
       
       
       <guid isPermaLink="true">https://hackwire.news/podcast/episodes/hackwire-daily-2026-03-15-evening.mp3</guid>
       
       
+      
+      
+      
+      
       <ns0:duration>6:01</ns0:duration>
       
+      
+      
+    
+    
     
     </item>
     
     
+    
+    
+    
+    
     <item>
+      
+      
+      
+      
       
       
       
@@ -291,7 +431,15 @@
       
       
       
+      
+      
+      
+      
       <description>Top cybersecurity stories for Sunday, March 15, 2026. Morning Brief edition.</description>
+      
+      
+      
+      
       
       
       
@@ -301,7 +449,15 @@
       
       
       
+      
+      
+      
+      
       <pubDate>Sun, 15 Mar 2026 07:11:14 -0400</pubDate>
+      
+      
+      
+      
       
       
       
@@ -311,9 +467,17 @@
       
       
       
+      
+      
+      
+      
       <ns0:duration>6:38</ns0:duration>
       
       
+      
+      
+    
+    
     
     
     </item>
@@ -321,7 +485,15 @@
     
     
     
+    
+    
+    
+    
     <item>
+      
+      
+      
+      
       
       
       
@@ -335,7 +507,15 @@
       
       
       
+      
+      
+      
+      
       <description>Top cybersecurity stories for Sunday, March 15, 2026. Morning Brief edition.</description>
+      
+      
+      
+      
       
       
       
@@ -349,7 +529,15 @@
       
       
       
+      
+      
+      
+      
       <pubDate>Sun, 15 Mar 2026 06:00:01 -0400</pubDate>
+      
+      
+      
+      
       
       
       
@@ -363,10 +551,18 @@
       
       
       
+      
+      
+      
+      
       <ns0:duration>2:22</ns0:duration>
       
       
       
+      
+      
+    
+    
     
     
     
@@ -377,7 +573,15 @@
     
     
     
+    
+    
+    
+    
     <item>
+      
+      
+      
+      
       
       
       
@@ -395,7 +599,15 @@
       
       
       
+      
+      
+      
+      
       <description>Top cybersecurity stories for Saturday, March 14, 2026. Evening Wrap edition.</description>
+      
+      
+      
+      
       
       
       
@@ -413,7 +625,15 @@
       
       
       
+      
+      
+      
+      
       <pubDate>Sat, 14 Mar 2026 18:00:01 -0400</pubDate>
+      
+      
+      
+      
       
       
       
@@ -431,11 +651,19 @@
       
       
       
+      
+      
+      
+      
       <ns0:duration>2:30</ns0:duration>
       
       
       
       
+      
+      
+    
+    
     
     
     
@@ -449,7 +677,15 @@
     
     
     
+    
+    
+    
+    
     <item>
+      
+      
+      
+      
       
       
       
@@ -471,7 +707,15 @@
       
       
       
+      
+      
+      
+      
       <description>Top cybersecurity stories for Saturday, March 14, 2026. Morning Brief edition.</description>
+      
+      
+      
+      
       
       
       
@@ -493,7 +737,15 @@
       
       
       
+      
+      
+      
+      
       <pubDate>Sat, 14 Mar 2026 06:00:01 -0400</pubDate>
+      
+      
+      
+      
       
       
       
@@ -515,12 +767,20 @@
       
       
       
+      
+      
+      
+      
       <ns0:duration>10:10</ns0:duration>
       
       
       
       
       
+      
+      
+    
+    
     
     
     
@@ -537,7 +797,15 @@
     
     
     
+    
+    
+    
+    
     <item>
+      
+      
+      
+      
       
       
       
@@ -563,7 +831,15 @@
       
       
       
+      
+      
+      
+      
       <description>Top cybersecurity stories for Friday, March 13, 2026. Evening Wrap edition.</description>
+      
+      
+      
+      
       
       
       
@@ -589,7 +865,15 @@
       
       
       
+      
+      
+      
+      
       <pubDate>Fri, 13 Mar 2026 18:00:01 -0400</pubDate>
+      
+      
+      
+      
       
       
       
@@ -615,6 +899,10 @@
       
       
       
+      
+      
+      
+      
       <ns0:duration>7:30</ns0:duration>
       
       
@@ -622,6 +910,10 @@
       
       
       
+      
+      
+    
+    
     
     
     
@@ -641,7 +933,15 @@
     
     
     
+    
+    
+    
+    
     <item>
+      
+      
+      
+      
       
       
       
@@ -671,7 +971,15 @@
       
       
       
+      
+      
+      
+      
       <description>Top cybersecurity stories for Friday, March 13, 2026. Morning Brief edition.</description>
+      
+      
+      
+      
       
       
       
@@ -701,7 +1009,15 @@
       
       
       
+      
+      
+      
+      
       <pubDate>Fri, 13 Mar 2026 07:09:43 -0400</pubDate>
+      
+      
+      
+      
       
       
       
@@ -731,6 +1047,10 @@
       
       
       
+      
+      
+      
+      
       <ns0:duration>11:05</ns0:duration>
       
       
@@ -739,6 +1059,10 @@
       
       
       
+      
+      
+    
+    
     
     
     
@@ -761,7 +1085,15 @@
     
     
     
+    
+    
+    
+    
     <item>
+      
+      
+      
+      
       
       
       
@@ -795,7 +1127,15 @@
       
       
       
+      
+      
+      
+      
       <description>Top cybersecurity stories for Friday, March 13, 2026. Morning Brief edition.</description>
+      
+      
+      
+      
       
       
       
@@ -829,7 +1169,15 @@
       
       
       
+      
+      
+      
+      
       <pubDate>Fri, 13 Mar 2026 06:57:10 -0400</pubDate>
+      
+      
+      
+      
       
       
       
@@ -863,6 +1211,10 @@
       
       
       
+      
+      
+      
+      
       <ns0:duration>0:42</ns0:duration>
       
       
@@ -872,6 +1224,10 @@
       
       
       
+      
+      
+    
+    
     
     
     
@@ -897,7 +1253,15 @@
     
     
     
+    
+    
+    
+    
     <item>
+      
+      
+      
+      
       
       
       
@@ -935,7 +1299,15 @@
       
       
       
+      
+      
+      
+      
       <description>Top cybersecurity stories for Friday, March 13, 2026. Morning Brief edition.</description>
+      
+      
+      
+      
       
       
       
@@ -973,7 +1345,15 @@
       
       
       
+      
+      
+      
+      
       <pubDate>Fri, 13 Mar 2026 06:53:05 -0400</pubDate>
+      
+      
+      
+      
       
       
       
@@ -1011,6 +1391,10 @@
       
       
       
+      
+      
+      
+      
       <ns0:duration>0:41</ns0:duration>
       
       
@@ -1021,6 +1405,10 @@
       
       
       
+      
+      
+    
+    
     
     
     
@@ -1049,7 +1437,15 @@
     
     
     
+    
+    
+    
+    
     <item>
+      
+      
+      
+      
       
       
       
@@ -1091,7 +1487,15 @@
       
       
       
+      
+      
+      
+      
       <description>Top cybersecurity stories for Friday, March 13, 2026. Morning Brief edition.</description>
+      
+      
+      
+      
       
       
       
@@ -1133,7 +1537,15 @@
       
       
       
+      
+      
+      
+      
       <pubDate>Fri, 13 Mar 2026 06:00:01 -0400</pubDate>
+      
+      
+      
+      
       
       
       
@@ -1175,6 +1587,10 @@
       
       
       
+      
+      
+      
+      
       <ns0:duration>0:40</ns0:duration>
       
       
@@ -1186,6 +1602,10 @@
       
       
       
+      
+      
+    
+    
     
     
     
@@ -1217,7 +1637,15 @@
     
     
     
+    
+    
+    
+    
     <item>
+      
+      
+      
+      
       
       
       
@@ -1263,7 +1691,15 @@
       
       
       
+      
+      
+      
+      
       <description>Top cybersecurity stories for Thursday, March 12, 2026. Evening Wrap edition.</description>
+      
+      
+      
+      
       
       
       
@@ -1309,7 +1745,15 @@
       
       
       
+      
+      
+      
+      
       <pubDate>Thu, 12 Mar 2026 15:30:45 -0400</pubDate>
+      
+      
+      
+      
       
       
       
@@ -1355,6 +1799,10 @@
       
       
       
+      
+      
+      
+      
       <ns0:duration>5:00</ns0:duration>
       
       
@@ -1367,6 +1815,10 @@
       
       
       
+      
+      
+    
+    
     
     
     
@@ -1401,7 +1853,15 @@
     
     
     
+    
+    
+    
+    
     <item>
+      
+      
+      
+      
       
       
       
@@ -1451,7 +1911,15 @@
       
       
       
+      
+      
+      
+      
       <description>Top cybersecurity stories for Wednesday, March 11, 2026. Evening Wrap edition.</description>
+      
+      
+      
+      
       
       
       
@@ -1501,7 +1969,15 @@
       
       
       
+      
+      
+      
+      
       <pubDate>Wed, 11 Mar 2026 23:22:20 -0400</pubDate>
+      
+      
+      
+      
       
       
       
@@ -1551,6 +2027,10 @@
       
       
       
+      
+      
+      
+      
       <ns0:duration>2:37</ns0:duration>
       
       
@@ -1564,6 +2044,10 @@
       
       
       
+      
+      
+    
+    
     
     
     
@@ -1589,6 +2073,10 @@
     
     
     
+    
+    
+  
+  
   
   
   
@@ -1614,6 +2102,10 @@
   
   
   
+  
+  
+
+
 
 
 
