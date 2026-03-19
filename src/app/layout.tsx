@@ -4,7 +4,7 @@ import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { ThemeProvider } from '@/components/ThemeProvider'
-import { Analytics } from '@vercel/analytics/react'
+// Analytics loaded via script tag to avoid hydration issues
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://hackwire.news'),
@@ -53,9 +53,7 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </ThemeProvider>
-        <Suspense fallback={null}>
-          <Analytics />
-        </Suspense>
+        <script defer src="https://va.vercel-scripts.com/v1/script.js" data-endpoint="/_vercel/insights" />
       </body>
     </html>
   )
