@@ -65,7 +65,7 @@ export default function Footer() {
               HackWire aggregates and synthesizes publicly available cybersecurity information for educational and informational purposes only. Content is based on publicly reported events. HackWire is not responsible for actions taken based on this information. Always verify critical security information through official channels before taking action.
             </div>
             <div className="text-xs text-gray-400 dark:text-gray-700 font-mono flex-shrink-0">
-              © 2025 HackWire. All rights reserved.
+              © {new Date().getFullYear()} HackWire. All rights reserved.
             </div>
           </div>
         </div>

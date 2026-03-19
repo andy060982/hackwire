@@ -45,7 +45,7 @@ export function getRelatedArticles(article: Article, limit = 3): Article[] {
 }
 
 export function formatTimeAgo(dateString: string): string {
-  const now = new Date('2025-01-14T12:00:00Z')
+  const now = new Date()
   const date = new Date(dateString)
   const diffMs = now.getTime() - date.getTime()
   const diffHours = Math.floor(diffMs / (1000 * 60 * 60))
