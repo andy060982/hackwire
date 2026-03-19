@@ -53,7 +53,6 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </ThemeProvider>
-        <script defer src="https://va.vercel-scripts.com/v1/script.js" data-endpoint="/_vercel/insights" />
       </body>
     </html>
   )
