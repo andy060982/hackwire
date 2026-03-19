@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Suspense } from 'react'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -47,7 +48,9 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </ThemeProvider>
-        <Analytics />
+        <Suspense fallback={null}>
+          <Analytics />
+        </Suspense>
       </body>
     </html>
   )
