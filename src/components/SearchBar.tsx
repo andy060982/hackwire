@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 
 interface Article {
@@ -10,12 +10,26 @@ interface Article {
   category: string
 }
 
-export default function SearchBar({ articles }: { articles: Article[] }) {
+export default function SearchBar() {
   const [query, setQuery] = useState('')
   const [isOpen, setIsOpen] = useState(false)
   const [results, setResults] = useState<Article[]>([])
+  const [articles, setArticles] = useState<Article[]>([])
   const ref = useRef<HTMLDivElement>(null)
   const router = useRouter()
+  const fetched = useRef(false)
+
+  const loadArticles = useCallback(async () => {
+    if (fetched.current) return
+    fetched.current = true
+    try {
+      const res = await fetch('/api/search')
+      const data = await res.json()
+      setArticles(data)
+    } catch {
+      fetched.current = false
+    }
+  }, [])
 
   useEffect(() => {
     if (query.length < 2) {
@@ -48,7 +62,7 @@ export default function SearchBar({ articles }: { articles: Article[] }) {
           placeholder="Search threats..."
           value={query}
           onChange={(e) => { setQuery(e.target.value); setIsOpen(true) }}
-          onFocus={() => setIsOpen(true)}
+          onFocus={() => { setIsOpen(true); loadArticles() }}
           className="bg-transparent text-xs font-mono text-gray-700 dark:text-gray-300 placeholder-gray-400 dark:placeholder-gray-600 outline-none w-full"
         />
         {query && (
@@ -80,7 +94,7 @@ export default function SearchBar({ articles }: { articles: Article[] }) {
         </div>
       )}
 
-      {isOpen && query.length >= 2 && results.length === 0 && (
+      {isOpen && query.length >= 2 && results.length === 0 && articles.length > 0 && (
         <div className="absolute top-full mt-1 w-80 right-0 bg-white dark:bg-[#0F0F1A] border border-gray-200 dark:border-[#1E1E2E] rounded shadow-lg z-50 p-4">
           <p className="text-xs font-mono text-gray-400 dark:text-gray-600 text-center">
             No threats found for &quot;{query}&quot;

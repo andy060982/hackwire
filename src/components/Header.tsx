@@ -2,10 +2,19 @@ import Link from 'next/link'
 import { categories } from '@/lib/categories'
 import ThemeToggle from './ThemeToggle'
 import SearchBar from './SearchBar'
-import { articles as allArticles } from '@/lib/articles'
+import { getLatestArticles } from '@/lib/articles'
+
+function getTickerAlerts(): string[] {
+  const critical = getLatestArticles()
+    .filter(a => a.severity === 'critical' || a.severity === 'high')
+    .slice(0, 5)
+  if (critical.length === 0) return ['Monitoring 15 sources for emerging threats']
+  return critical.map(a => a.headline)
+}
 
 export default function Header() {
-  const articles = allArticles.map(a => ({ slug: a.slug, headline: a.headline, summary: a.summary, category: a.category }))
+  const alerts = getTickerAlerts()
+  const tickerText = 'ACTIVE THREATS: ' + alerts.join(' \u00A0\u2022\u00A0 ')
   return (
     <header className="sticky top-0 z-50 bg-white/95 dark:bg-[#0A0A0F]/95 backdrop-blur-sm border-b border-gray-200 dark:border-[#1E1E2E]">
       {/* Alert ticker */}
@@ -17,7 +26,7 @@ export default function Header() {
           </span>
           <div className="overflow-hidden">
             <p className="text-red-500/80 dark:text-red-300/80 ticker-text whitespace-nowrap">
-              ACTIVE THREATS: Chrome zero-day CVE-2025-0971 under active exploitation — update immediately &nbsp;•&nbsp; CISA ED-25-02: Ivanti Connect Secure emergency directive issued &nbsp;•&nbsp; VoltZite ransomware targeting North American power grid operators &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ACTIVE THREATS: Chrome zero-day CVE-2025-0971 under active exploitation — update immediately &nbsp;•&nbsp; CISA ED-25-02: Ivanti Connect Secure emergency directive issued &nbsp;•&nbsp; VoltZite ransomware targeting North American power grid operators
+              {tickerText}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{tickerText}
             </p>
           </div>
         </div>
@@ -40,7 +49,7 @@ export default function Header() {
           </Link>
 
           {/* Search */}
-          <SearchBar articles={articles} />
+          <SearchBar />
 
           {/* Right side */}
           <div className="flex items-center gap-3">

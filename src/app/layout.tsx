@@ -1,12 +1,26 @@
 import type { Metadata } from 'next'
+import { Inter, JetBrains_Mono } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { Analytics } from '@vercel/analytics/next'
 
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-jetbrains',
+  display: 'swap',
+})
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://hackwire.news'),
+  metadataBase: new URL('https://www.hackwire.news'),
   title: {
     default: 'HackWire — Cybersecurity News, Decoded',
     template: '%s | HackWire',
@@ -15,6 +29,9 @@ export const metadata: Metadata = {
     'HackWire delivers real-time cybersecurity news covering breaches, vulnerabilities, malware, ransomware, policy, and security tools — decoded for professionals.',
   keywords: ['cybersecurity news', 'data breaches', 'vulnerabilities', 'malware', 'ransomware', 'infosec'],
   authors: [{ name: 'HackWire Editorial' }],
+  alternates: {
+    canonical: './',
+  },
   openGraph: {
     type: 'website',
     siteName: 'HackWire',
@@ -36,19 +53,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
       <head>
         {/* Prevent flash of wrong theme */}
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var s=localStorage.getItem('hackwire-theme');if(s==='light'){document.documentElement.classList.remove('dark')}else if(s==='dark'){document.documentElement.classList.add('dark')}else{var prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;if(prefersDark){document.documentElement.classList.add('dark')}else{document.documentElement.classList.remove('dark')}}}catch(e){document.documentElement.classList.add('dark')}})()`,
           }}
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
         />
       </head>
       <body className="min-h-screen bg-white dark:bg-[#0A0A0F] text-slate-800 dark:text-gray-100 antialiased transition-colors duration-200">
@@ -58,6 +69,19 @@ export default function RootLayout({
           <Footer />
         </ThemeProvider>
         <Analytics />
+        {/* Defer third-party scripts to after page load */}
+        <Script
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0211704144731556"
+          strategy="lazyOnload"
+          crossOrigin="anonymous"
+        />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-ZE00TMSWQF"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZE00TMSWQF');`}
+        </Script>
       </body>
     </html>
   )
