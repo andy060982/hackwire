@@ -56,23 +56,71 @@ function getRecentArticles(allArticles, hours = 24) {
     .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
 }
 
-function buildArticleHtml(article) {
-  const color = CATEGORY_COLORS[article.category] || '#64748b'
-  const label = CATEGORY_LABELS[article.category] || article.category.toUpperCase()
-  const severity = article.severity
-    ? `<span style="margin-left:8px;font-size:11px;color:${
-        article.severity === 'critical' ? '#FF3B3B' : article.severity === 'high' ? '#F59E0B' : '#64748b'
-      };">[${article.severity.toUpperCase()}]</span>`
-    : ''
+const CATEGORY_ORDER = ['breaches', 'vulnerabilities', 'malware', 'ransomware', 'policy', 'tools']
 
-  return `
-    <div style="margin-bottom:24px;padding:16px;background:#0F0F1A;border:1px solid #1E1E2E;border-radius:8px;border-left:3px solid ${color};">
-      <div style="margin-bottom:8px;">
-        <span style="font-size:11px;font-weight:700;color:${color};font-family:'JetBrains Mono',monospace;letter-spacing:0.5px;">${label}</span>${severity}
-      </div>
-      <a href="https://hackwire.news/news/${article.slug}" style="color:#ffffff;text-decoration:none;font-size:16px;font-weight:600;line-height:1.4;">${article.headline}</a>
-      <p style="margin:8px 0 0;font-size:13px;line-height:1.6;color:#94a3b8;">${article.summary}</p>
-    </div>`
+const CATEGORY_HEADLINES = {
+  breaches: 'Breaches & Data Exposure',
+  vulnerabilities: 'Vulnerabilities & CVEs',
+  malware: 'Malware Campaigns',
+  ransomware: 'Ransomware Activity',
+  policy: 'Policy & Regulation',
+  tools: 'Tools & Research',
+}
+
+const CATEGORY_LINKS = {
+  breaches: 'https://hackwire.news/category/breaches',
+  vulnerabilities: 'https://hackwire.news/category/vulnerabilities',
+  malware: 'https://hackwire.news/category/malware',
+  ransomware: 'https://hackwire.news/category/ransomware',
+  policy: 'https://hackwire.news/category/policy',
+  tools: 'https://hackwire.news/category/tools',
+}
+
+function buildNewsSectionHtml(articles) {
+  // Group articles by category
+  const grouped = {}
+  for (const a of articles) {
+    if (!grouped[a.category]) grouped[a.category] = []
+    grouped[a.category].push(a)
+  }
+
+  const sections = CATEGORY_ORDER
+    .filter((cat) => grouped[cat] && grouped[cat].length > 0)
+    .map((cat) => {
+      const color = CATEGORY_COLORS[cat] || '#64748b'
+      const heading = CATEGORY_HEADLINES[cat] || cat
+      const catLink = CATEGORY_LINKS[cat]
+      const items = grouped[cat]
+
+      const newsItems = items
+        .map((a) => {
+          const severity = a.severity === 'critical' || a.severity === 'high'
+            ? ` <span style="font-size:11px;font-weight:700;color:${a.severity === 'critical' ? '#FF3B3B' : '#F59E0B'};">[${a.severity.toUpperCase()}]</span>`
+            : ''
+          return `
+          <p style="font-size:14px;line-height:1.7;color:#cbd5e1;margin:0 0 14px;">
+            ${severity}<a href="https://hackwire.news/news/${a.slug}" style="color:#ffffff;text-decoration:none;font-weight:600;">${a.headline}</a> &mdash;
+            <span style="color:#94a3b8;">${a.summary}</span>
+            <a href="https://hackwire.news/news/${a.slug}" style="color:#00FF88;text-decoration:none;font-size:12px;font-family:'JetBrains Mono',monospace;"> Read more &rarr;</a>
+          </p>`
+        })
+        .join('\n')
+
+      return `
+      <div style="margin-bottom:28px;">
+        <div style="border-bottom:1px solid #1E1E2E;padding-bottom:8px;margin-bottom:16px;">
+          <a href="${catLink}" style="text-decoration:none;">
+            <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${color};margin-right:8px;vertical-align:middle;"></span>
+            <span style="font-size:13px;font-weight:700;color:#ffffff;font-family:'JetBrains Mono',monospace;letter-spacing:0.5px;">${heading}</span>
+            <span style="font-size:11px;color:#64748b;margin-left:8px;">(${items.length})</span>
+          </a>
+        </div>
+        ${newsItems}
+      </div>`
+    })
+    .join('\n')
+
+  return sections
 }
 
 function buildThreatIntelHtml(articles, allArticles) {
@@ -123,7 +171,7 @@ function buildThreatIntelHtml(articles, allArticles) {
 
 function buildDigestHtml(articles, allArticles, dateStr) {
   const threatIntel = buildThreatIntelHtml(articles, allArticles)
-  const articleBlocks = articles.map(buildArticleHtml).join('\n')
+  const newsSections = buildNewsSectionHtml(articles)
 
   return `
 <!DOCTYPE html>
@@ -138,11 +186,13 @@ function buildDigestHtml(articles, allArticles, dateStr) {
 
     ${threatIntel}
 
-    <p style="font-size:15px;line-height:1.7;color:#cbd5e1;margin:0 0 24px;">
-      Here's what happened in cybersecurity in the last 24 hours &mdash; <strong>${articles.length} stories</strong>, decoded.
-    </p>
+    <div style="margin-bottom:28px;">
+      <div style="border-bottom:2px solid #1E1E2E;padding-bottom:8px;margin-bottom:24px;">
+        <span style="font-size:11px;font-weight:700;color:#00FF88;font-family:'JetBrains Mono',monospace;letter-spacing:1px;">TODAY'S BRIEFING &mdash; ${articles.length} STORIES</span>
+      </div>
+    </div>
 
-    ${articleBlocks}
+    ${newsSections}
 
     <div style="margin:32px 0;text-align:center;">
       <a href="https://hackwire.news" style="display:inline-block;background:#00FF88;color:#0A0A0F;font-weight:700;font-size:14px;padding:12px 28px;border-radius:6px;text-decoration:none;font-family:'JetBrains Mono',monospace;">VIEW ALL STORIES &rarr;</a>
