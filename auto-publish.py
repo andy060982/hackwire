@@ -71,7 +71,7 @@ def slugify(text: str) -> str:
     text = re.sub(r'[^\w\s-]', '', text)
     text = re.sub(r'[\s_]+', '-', text)
     text = re.sub(r'-+', '-', text)
-    return text[:80].rstrip('-')
+    return text[:80].strip('-')
 
 def classify_category(title: str, summary: str) -> str:
     text = (title + " " + summary).lower()
@@ -286,6 +286,54 @@ def rewrite_article_fallback(entry: dict) -> dict:
         "tldr": tldr,  # Quick summary
     }
 
+# Phrases that indicate AI refusal/meta-commentary instead of real content
+AI_REFUSAL_PATTERNS = [
+    "i need to clarify",
+    "i need more information",
+    "i don't see an article",
+    "please provide",
+    "you've provided the headline",
+    "i'd be happy to write",
+    "to write that summary",
+    "however, the summary you provided",
+    "the text you've shared appears",
+    "i cannot write",
+    "i'm unable to",
+    "you haven't provided",
+    "could you share the",
+    "i'll need the actual",
+    "no article content",
+    "please share the article",
+]
+
+def validate_article(rewritten: dict) -> bool:
+    """Reject articles with AI refusal content, empty bodies, or bad headlines."""
+    headline = rewritten.get("headline", "")
+    body = rewritten.get("body", "")
+    tldr = rewritten.get("tldr", "")
+
+    # Must have meaningful body content (at least 200 chars)
+    if len(body.strip()) < 200:
+        return False
+
+    # Check body and tldr for AI refusal patterns
+    body_lower = body.lower()
+    tldr_lower = tldr.lower()
+    for pattern in AI_REFUSAL_PATTERNS:
+        if pattern in body_lower or pattern in tldr_lower:
+            return False
+
+    # Reject emoji in headlines
+    if any(ord(c) > 127 for c in headline):
+        # Allow only basic ASCII + common punctuation in headlines
+        cleaned = re.sub(r'[^\x20-\x7E]', '', headline).strip()
+        if len(cleaned) < len(headline) * 0.9:
+            return False
+        rewritten["headline"] = cleaned
+
+    return True
+
+
 def publish_articles(max_articles=5):
     """Main publish flow."""
     print(f"[{datetime.now(timezone.utc).isoformat()}] Starting HackWire auto-publish...")
@@ -317,7 +365,13 @@ def publish_articles(max_articles=5):
             rewritten = rewrite_article_gemini(entry)
             if not rewritten:
                 continue
-            
+
+            # Content quality gate — reject AI refusals and broken content
+            if not validate_article(rewritten):
+                print(f"  ✗ REJECTED (failed validation): {rewritten.get('headline', 'unknown')}")
+                published.add(entry_hash)  # Mark as processed so we don't retry
+                continue
+
             slug = slugify(rewritten["headline"])
             if slug in existing_slugs or len(slug) < 5:
                 slug = f"{slug}-{entry_hash[:6]}"
