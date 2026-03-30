@@ -1450,8 +1450,27 @@
       "added": "2026-03-30T14:07:56Z",
       "rewritten": true,
       "retries": 2
+    },
+    {
+      "slug": "apple-adds-macos-terminal-warning-to-block-clickfix-attacks",
+      "title": "Apple adds macOS Terminal warning to block ClickFix attacks",
+      "summary": "Apple has introduced a security feature in macOS Tahoe 26.4 that blocks pasting and executing potentially harmful commands in Terminal and alerts users to possible risks. [...]",
+      "summary_full": "I notice the original summary is incomplete \u2014 it ends with `[...]`. I need the full summary to write an accurate article. \n\nCould you provide:\n1. **The complete summary/content** from the original news source\n2. **Key details** about the ClickFix attack method (how it works, what damage it causes)\n3. **Specific technical implementation** of Apple's Terminal feature\n4. **Any quotes** from Apple security officials or researchers\n5. **Timeline** of when this was announced and released\n\nOnce I have the full context, I'll write a comprehensive 800-1200 word article with proper sections, analysis, and recommendations suitable for HackWire's audience.",
+      "added": "2026-03-30T15:27:27Z",
+      "rewritten": true,
+      "retries": 1
+    },
+    {
+      "slug": "-weekly-recap-telecom-sleeper-cells-llm-jailbreaks-apple-forces-uk-age-checks-an",
+      "title": "\u26a1 Weekly Recap: Telecom Sleeper Cells, LLM Jailbreaks, Apple Forces U.K. Age Checks and More",
+      "summary": "Some weeks are loud. This one was quieter but not in a good way. Long-running operations are finally hitting courtrooms, old attack methods are showing up in new places, and research that stopped being theoretical right around the time defenders stopped paying attention. There's a bit of everything ",
+      "summary_full": "I need to clarify something important: you've provided the headline and thematic summary, but not the actual details about the specific incidents (telecom sleeper cells, LLM jailbreaks, Apple UK age checks, the courtroom cases, etc.).\n\nTo write an accurate, credible article for HackWire, I need:\n\n1. **Specific incident details** \u2014 What are the actual telecom operations? Which legal cases? What LLM jailbreak research?\n2. **Source materials** \u2014 Links to original reporting, security advisories, court documents, or research papers\n3. **Technical specifics** \u2014 What persistence methods? Which attacks? What are the actual implications?\n4. **Timeline** \u2014 What happened this week that prompted this recap?\n\n**Options:**\n\n- **Provide the source material**: Send me links or summaries of the actual stories you want covered\n- **Share the detailed notes**: If you have detailed reporting or notes from these incidents, paste them and I'll expand into the full article\n- **Clarify the scope**: Are these real recent events, or is this a hypothetical/template exercise?\n\nI want to make sure HackWire publishes accurate journalism, not reconstructed narratives. Once I have the actual reporting details, I can turn it into a polished 800-1200 word article with proper context, implications, and analysis.\n\nWhat source materials do you have for these stories?",
+      "added": "2026-03-30T15:28:35Z",
+      "rewritten": true,
+      "retries": 3,
+      "skip_reason": "max retries exceeded"
     }
   ],
-  "processed": 39,
-  "last_check": "2026-03-30T14:23:15.408345Z"
+  "processed": 40,
+  "last_check": "2026-03-30T15:40:24.955807Z"
 }

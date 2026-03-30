@@ -198,7 +198,7 @@ export default async function ArticlePage({ params }: Props) {
               <div className="flex items-center gap-2">
                 <span className="text-gray-400 dark:text-gray-600 text-xs font-mono">SHARE:</span>
                 <a
-                  href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(article.headline)}&url=${encodeURIComponent(`https://hackwire.news/news/${article.slug}`)}`}
+                  href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(article.headline)}&url=${encodeURIComponent(`https://www.hackwire.news/news/${article.slug}`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-2 py-1 border border-gray-200 dark:border-[#1E1E2E] text-gray-400 dark:text-gray-500 text-xs font-mono rounded hover:border-[#059669]/30 dark:hover:border-[#00FF88]/30 hover:text-[#059669] dark:hover:text-[#00FF88] transition-colors"
@@ -206,7 +206,7 @@ export default async function ArticlePage({ params }: Props) {
                   𝕏
                 </a>
                 <a
-                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://hackwire.news/news/${article.slug}`)}`}
+                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://www.hackwire.news/news/${article.slug}`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-2 py-1 border border-gray-200 dark:border-[#1E1E2E] text-gray-400 dark:text-gray-500 text-xs font-mono rounded hover:border-[#059669]/30 dark:hover:border-[#00FF88]/30 hover:text-[#059669] dark:hover:text-[#00FF88] transition-colors"
@@ -214,14 +214,14 @@ export default async function ArticlePage({ params }: Props) {
                   IN
                 </a>
                 <a
-                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://hackwire.news/news/${article.slug}`)}`}
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://www.hackwire.news/news/${article.slug}`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-2 py-1 border border-gray-200 dark:border-[#1E1E2E] text-gray-400 dark:text-gray-500 text-xs font-mono rounded hover:border-[#059669]/30 dark:hover:border-[#00FF88]/30 hover:text-[#059669] dark:hover:text-[#00FF88] transition-colors"
                 >
                   FB
                 </a>
-                <CopyLinkButton url={`https://hackwire.news/news/${article.slug}`} />
+                <CopyLinkButton url={`https://www.hackwire.news/news/${article.slug}`} />
               </div>
             </div>
 

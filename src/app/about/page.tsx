@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About HackWire',
     description: 'Cybersecurity News, Decoded.',
-    url: 'https://hackwire.news/about',
+    url: 'https://www.hackwire.news/about',
   },
 }
 

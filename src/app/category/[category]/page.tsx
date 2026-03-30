@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `${cat.label} | HackWire`,
       description: `Cybersecurity ${cat.label.toLowerCase()} coverage, decoded.`,
-      url: `https://hackwire.news/category/${category}`,
+      url: `https://www.hackwire.news/category/${category}`,
     },
   }
 }

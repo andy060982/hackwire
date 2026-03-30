@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   keywords: ['cybersecurity news', 'data breaches', 'vulnerabilities', 'malware', 'ransomware', 'infosec'],
   authors: [{ name: 'HackWire Editorial' }],
   alternates: {
-    canonical: './',
+    canonical: 'https://www.hackwire.news/',
   },
   openGraph: {
     type: 'website',

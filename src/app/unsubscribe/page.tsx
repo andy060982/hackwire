@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { Suspense } from 'react'
 
+// Note: robots noindex is set via parent layout or middleware since this is a client component
+
 function UnsubscribeForm() {
   const searchParams = useSearchParams()
   const emailParam = searchParams.get('email') || ''

@@ -7,9 +7,13 @@ import PodcastPlayer from './PodcastPlayer'
 export const metadata: Metadata = {
   title: 'Podcast — HackWire Daily',
   description: 'Listen to HackWire Daily — your AI-powered cybersecurity threat briefing. Morning briefs and evening wraps covering the latest threats, breaches, and security news.',
+  alternates: {
+    canonical: 'https://www.hackwire.news/podcast',
+  },
   openGraph: {
     title: 'HackWire Daily Podcast',
     description: 'Your AI-powered cybersecurity threat briefing — delivered twice daily.',
+    url: 'https://www.hackwire.news/podcast',
     images: [{ url: '/podcast/cover.png', width: 1400, height: 1400 }],
   },
 }
