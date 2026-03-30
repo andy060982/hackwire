@@ -304,6 +304,20 @@ AI_REFUSAL_PATTERNS = [
     "i'll need the actual",
     "no article content",
     "please share the article",
+    "no problem —",
+    "no problem,",
+    "i'll write this",
+    "i have enough context",
+    "here's the rewritten",
+    "here's the article",
+    "let me write",
+    "i'll craft",
+    "based on the provided details",
+    "web search was blocked",
+    "i couldn't access",
+    "in the meantime",
+    "i need websearch",
+    "could you grant",
 ]
 
 def validate_article(rewritten: dict) -> bool:
@@ -319,8 +333,18 @@ def validate_article(rewritten: dict) -> bool:
     # Check body and tldr for AI refusal patterns
     body_lower = body.lower()
     tldr_lower = tldr.lower()
+    # Full body scan for hard refusals
     for pattern in AI_REFUSAL_PATTERNS:
         if pattern in body_lower or pattern in tldr_lower:
+            return False
+
+    # Check opening 300 chars for AI preamble (the article may be fine after the preamble)
+    opening = body_lower[:300]
+    preamble_phrases = ["no problem", "i'll write", "i have enough context", "here's the r",
+                        "let me write", "based on the provided", "web search was blocked",
+                        "i couldn't access", "in the meantime", "i need websearch"]
+    for phrase in preamble_phrases:
+        if phrase in opening:
             return False
 
     # Reject emoji in headlines
