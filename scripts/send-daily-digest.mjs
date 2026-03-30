@@ -43,12 +43,15 @@ const CATEGORY_LABELS = {
   tools: 'TOOLS',
 }
 
-function getRecentArticles(hours = 24) {
+function getAllArticles() {
   const data = readFileSync(join(PROJECT_ROOT, 'src/lib/articles-data.json'), 'utf-8')
-  const articles = JSON.parse(data)
+  return JSON.parse(data)
+}
+
+function getRecentArticles(allArticles, hours = 24) {
   const cutoff = Date.now() - hours * 60 * 60 * 1000
 
-  return articles
+  return allArticles
     .filter((a) => new Date(a.publishedAt).getTime() > cutoff)
     .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
 }
@@ -72,7 +75,54 @@ function buildArticleHtml(article) {
     </div>`
 }
 
-function buildDigestHtml(articles, dateStr) {
+function buildThreatIntelHtml(articles, allArticles) {
+  // Compute real stats from today's articles + recent history
+  const criticalCount = articles.filter((a) => a.severity === 'critical' || a.severity === 'high').length
+  const breachCount = articles.filter((a) => a.category === 'breaches').length
+  const malwareCount = articles.filter((a) => a.category === 'malware' || a.category === 'ransomware').length
+  const vulnCount = articles.filter((a) => a.category === 'vulnerabilities').length
+  const policyCount = articles.filter((a) => a.category === 'policy').length
+  const toolsCount = articles.filter((a) => a.category === 'tools').length
+
+  const stats = [
+    { label: 'Critical/High Severity', value: criticalCount, color: '#FF3B3B', link: 'https://hackwire.news' },
+    { label: 'Breaches', value: breachCount, color: '#FF3B3B', link: 'https://hackwire.news/category/breaches' },
+    { label: 'Vulnerabilities', value: vulnCount, color: '#F59E0B', link: 'https://hackwire.news/category/vulnerabilities' },
+    { label: 'Malware & Ransomware', value: malwareCount, color: '#A855F7', link: 'https://hackwire.news/category/malware' },
+    { label: 'Policy & Regulation', value: policyCount, color: '#3B82F6', link: 'https://hackwire.news/category/policy' },
+    { label: 'Tools & Research', value: toolsCount, color: '#22C55E', link: 'https://hackwire.news/category/tools' },
+  ].filter((s) => s.value > 0)
+
+  const rows = stats
+    .map(
+      (s) => `
+      <tr>
+        <td style="padding:8px 12px;">
+          <a href="${s.link}" style="color:#cbd5e1;text-decoration:none;font-size:13px;font-family:'JetBrains Mono',monospace;">${s.label}</a>
+        </td>
+        <td style="padding:8px 12px;text-align:right;">
+          <a href="${s.link}" style="text-decoration:none;font-size:14px;font-weight:700;color:${s.color};font-family:'JetBrains Mono',monospace;">${s.value}</a>
+        </td>
+      </tr>`
+    )
+    .join('\n')
+
+  return `
+    <div style="background:#0F0F1A;border:1px solid #1E1E2E;border-radius:8px;margin-bottom:28px;overflow:hidden;">
+      <div style="padding:12px 16px;border-bottom:1px solid #1E1E2E;background:#0A0A14;">
+        <a href="https://hackwire.news" style="text-decoration:none;">
+          <span style="color:#00FF88;font-size:11px;font-family:'JetBrains Mono',monospace;">&#9654;</span>
+          <span style="font-size:11px;font-weight:700;color:#00FF88;font-family:'JetBrains Mono',monospace;letter-spacing:1px;margin-left:6px;">THREAT INTEL &mdash; LAST 24H</span>
+        </a>
+      </div>
+      <table style="width:100%;border-collapse:collapse;">
+        ${rows}
+      </table>
+    </div>`
+}
+
+function buildDigestHtml(articles, allArticles, dateStr) {
+  const threatIntel = buildThreatIntelHtml(articles, allArticles)
   const articleBlocks = articles.map(buildArticleHtml).join('\n')
 
   return `
@@ -85,6 +135,8 @@ function buildDigestHtml(articles, dateStr) {
       <h1 style="margin:0;font-size:28px;font-family:'JetBrains Mono',monospace;color:#00FF88;">HACKWIRE_</h1>
       <p style="margin:4px 0 0;font-size:13px;color:#64748b;">Daily Digest &mdash; ${dateStr}</p>
     </div>
+
+    ${threatIntel}
 
     <p style="font-size:15px;line-height:1.7;color:#cbd5e1;margin:0 0 24px;">
       Here's what happened in cybersecurity in the last 24 hours &mdash; <strong>${articles.length} stories</strong>, decoded.
@@ -114,7 +166,8 @@ async function getSubscribers() {
 }
 
 async function main() {
-  const articles = getRecentArticles(24)
+  const allArticles = getAllArticles()
+  const articles = getRecentArticles(allArticles, 24)
 
   if (articles.length === 0) {
     console.log('No articles in the last 24 hours — skipping digest.')
@@ -135,7 +188,7 @@ async function main() {
     timeZone: 'America/New_York',
   })
 
-  const html = buildDigestHtml(articles, dateStr)
+  const html = buildDigestHtml(articles, allArticles, dateStr)
   const subject = `HackWire Daily — ${articles.length} stories for ${new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'America/New_York' })}`
 
   console.log(`Sending digest (${articles.length} articles) to ${subscribers.length} subscriber(s)...`)
