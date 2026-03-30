@@ -27,6 +27,9 @@ export default function PodcastPage() {
         <div>
           <h1 className="text-3xl font-black font-mono text-gray-900 dark:text-white mb-2">
             HackWire Daily
+            <span className="ml-2 align-middle px-2 py-0.5 rounded text-xs font-mono font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
+              BETA
+            </span>
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
             Your AI-powered cybersecurity threat briefing. Morning briefs and evening wraps covering the latest threats, breaches, vulnerabilities, and security news.

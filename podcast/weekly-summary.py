@@ -12,11 +12,14 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from dotenv import load_dotenv
+
 BASE = Path(__file__).parent
+load_dotenv(BASE.parent / ".env")
 HACKWIRE = BASE.parent
 ARTICLES_FILE = HACKWIRE / "src" / "lib" / "articles-data.json"
-GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "AIzaSyCTAAF4Wql-Ty0KypBsLQkrpY1FkVpeXtw")
-BOT_TOKEN = "8417850157:AAG0yGy36pSnZoPWWlXEcmfLbSrhspuMsbw"
+GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "")
+BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
 ANDY_CHAT = "1667266840"
 
 ET = ZoneInfo("America/New_York")

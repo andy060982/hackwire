@@ -1,0 +1,968 @@
+{
+  "queue": [
+    {
+      "id": "20260319-1800",
+      "edition": "evening",
+      "date": "2026-03-19T18:00:01.151555-04:00",
+      "articles": [
+        {
+          "headline": "Privacy Platform Cloaked Raises $375M to Expand Enterprise Reach",
+          "summary": "Cloaked plans to introduce AI agents designed to act on behalf of users to monitor, manage, and enforce privacy preferences and security postures. The post Privacy Platform Cloaked Raises $375M to Expand Enterprise Reach appeared first on SecurityWeek.",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "54 EDR Killers Use BYOVD to Exploit 34 Signed Vulnerable Drivers and Disable Security",
+          "summary": "A new analysis of endpoint detection and response (EDR) killers has revealed that 54 of them leverage a technique known as bring your own vulnerable driver (BYOVD) by abusing a total of 34 vulnerable drivers. EDR killer programs have been a common presence in ransomware intrusions as they offer a wa",
+          "category": "ransomware"
+        },
+        {
+          "headline": "Speagle Malware Hijacks Cobra DocGuard to Steal Data via Compromised Servers",
+          "summary": "Cybersecurity researchers have flagged a new malware dubbed Speagle that hijacks the functionality and infrastructure of a legitimate program called Cobra DocGuard. \"Speagle is designed to surreptitiously harvest sensitive information from infected computers and transmit it to a Cobra DocGuard serve",
+          "category": "breaches"
+        },
+        {
+          "headline": "New \u2018PolyShell\u2019 flaw allows unauthenticated RCE on Magento e-stores",
+          "summary": "A newly disclosed vulnerability dubbed 'PolyShell' affects all Magento Open Source and Adobe Commerce stable version 2 installations, allowing unauthenticated code execution and account takeover. [...]",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "Navia discloses data breach impacting 2.7 million people",
+          "summary": "Navia Benefit Solutions, Inc. (Navia) is informing nearly 2.7 million individuals of a data breach that exposed their sensitive information to attackers. [...]",
+          "category": "breaches"
+        },
+        {
+          "headline": "Critical ScreenConnect Vulnerability Exposes Machine Keys",
+          "summary": "Latest ScreenConnect version adds encrypted storage and management to prevent unauthorized access to machine keys. The post Critical ScreenConnect Vulnerability Exposes Machine Keys appeared first on SecurityWeek.",
+          "category": "vulnerabilities"
+        }
+      ],
+      "queued_at": "2026-03-19T22:00:01.161046+00:00",
+      "script_generated": false,
+      "audio_generated": false,
+      "deployed": true,
+      "deployed_at": "2026-03-23T14:54:46.027872+00:00"
+    },
+    {
+      "id": "20260320-0600",
+      "edition": "morning",
+      "date": "2026-03-20T06:00:01.204869-04:00",
+      "articles": [
+        {
+          "headline": "Post-Quantum Web Could be Safer, Faster",
+          "summary": "Major providers are testing a quantum-safe version of HTTPS that shrinks certificates to a tenth their previous size, decreasing latency and adding transparency.",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "Native Launches With Security Control Plane for Multicloud",
+          "summary": "The cloud security startup's platform translates and enforces security policies across AWS, Azure, Google Cloud and Oracle using provider-native controls.",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "Ex-data analyst stole company data in $2.5M extortion scheme",
+          "summary": "A North Carolina man was found guilty of extorting a D.C.-based technology company while still being employed as a data analyst contractor. [...]",
+          "category": "ransomware"
+        },
+        {
+          "headline": "Microsoft: March Windows updates break Teams, OneDrive sign-ins",
+          "summary": "Microsoft says the March Windows 11 update breaks sign-ins with Microsoft accounts across multiple Microsoft apps, including Teams and OneDrive. [...]",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "International joint action disrupts world\u2019s largest DDoS botnets",
+          "summary": "Authorities from the United States, Germany, and Canada have taken down Command and Control (C2) infrastructure used by the Aisuru, KimWolf, JackSkid, and Mossad botnets to infect Internet of Things (IoT) devices. [...]",
+          "category": "malware"
+        },
+        {
+          "headline": "Ransomware Under Pressure: Tactics, Techniques, and Procedures in a Shifting Threat Landscape",
+          "summary": "Written by: Bavi Sadayappan, Zach Riddle, Ioana Teaca, Kimberly Goody, Genevieve Stark Introduction Since 2018, when many financially motivated threat actors began shifting their monetization strategy to post-compromise ransomware deployments, ransomware has become one of the most pervasive threats ",
+          "category": "ransomware"
+        }
+      ],
+      "queued_at": "2026-03-20T10:00:01.217817+00:00",
+      "script_generated": false,
+      "audio_generated": false,
+      "deployed": true,
+      "deployed_at": "2026-03-23T14:55:02.948030+00:00"
+    },
+    {
+      "id": "20260320-1800",
+      "edition": "evening",
+      "date": "2026-03-20T18:00:02.042364-04:00",
+      "articles": [
+        {
+          "headline": "Eclypsium Raises $25 Million for Device Supply Chain Security",
+          "summary": "The company will use the investment to expand its platform\u2019s capabilities and grow channel partnerships. The post Eclypsium Raises $25 Million for Device Supply Chain Security appeared first on SecurityWeek.",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "Patch Now: Oracle's Fusion Middleware Has Critical RCE Flaw",
+          "summary": "Attackers can execute arbitrary code without authentication if Oracle's Identity or Web Services Managers are exposed to the Web.",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "Trivy Security Scanner GitHub Actions Breached, 75 Tags Hijacked to Steal CI/CD Secrets",
+          "summary": "Trivy, a popular open-source vulnerability scanner maintained by Aqua Security, was compromised a second time within the span of a month to deliver malware that stole sensitive CI/CD secrets. The latest incident impacted GitHub Actions \"aquasecurity/trivy-action\" and \"aquasecurity/setup-trivy,\" whic",
+          "category": "tools"
+        },
+        {
+          "headline": "Oracle pushes emergency fix for critical Identity Manager RCE flaw",
+          "summary": "Oracle has released an out-of-band security update to fix a critical unauthenticated remote code execution vulnerability in Identity Manager and Web Services Manager tracked as CVE-2026-21992. [...]",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "FBI links Signal phishing attacks to Russian intelligence services",
+          "summary": "The FBI has issued a public service announcement warning that Russian intelligence-linked threat actors are actively targeting users of encrypted messaging apps such as Signal and WhatsApp in phishing campaigns that have already compromised thousands of accounts. [...]",
+          "category": "breaches"
+        },
+        {
+          "headline": "3 Men Charged With Conspiring to Smuggle US Artificial Intelligence to China",
+          "summary": "The men violated U.S. export controls laws by scheming to divert massive quantities of the high-performance servers assembled in the United States to China. The post 3 Men Charged With Conspiring to Smuggle US Artificial Intelligence to China appeared first on SecurityWeek.",
+          "category": "policy"
+        }
+      ],
+      "queued_at": "2026-03-20T22:00:02.052926+00:00",
+      "script_generated": false,
+      "audio_generated": false,
+      "deployed": true,
+      "deployed_at": "2026-03-23T14:55:18.410168+00:00"
+    },
+    {
+      "id": "20260321-0600",
+      "edition": "morning",
+      "date": "2026-03-21T06:00:01.271993-04:00",
+      "articles": [
+        {
+          "headline": "GSocket Backdoor Delivered Through Bash Script, (Fri, Mar 20th)",
+          "summary": "Yesterday, I discovered a malicious Bash script that installs a GSocket backdoor on the victim&rsquo;s computer. I don&rsquo;t know the source of the script not how it is delivered to the victim.",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "South Korean Police Accidentally Post Cryptocurrency Wallet Password",
+          "summary": "An expensive mistake: Someone jumped at the opportunity to steal $4.4 million in crypto assets after South Korea&#8217;s National Tax Service exposed publicly the mnemonic recovery phrase of a seized cryptocurrency wallet. The funds were stored in a Ledger cold wallet seized in law enforcement raids",
+          "category": "breaches"
+        },
+        {
+          "headline": "Meta\u2019s AI Glasses and Privacy",
+          "summary": "Surprising no one, Meta&#8217;s new AI glasses are a privacy disaster. I&#8217;m not sure what can be done here. This is a technology that will exist, whether we like it or not. Meanwhile, there is a new Android app that detects when there are smart glasses nearby.",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "CISA Flags Apple, Craft CMS, Laravel Bugs in KEV, Orders Patching by April 3, 2026",
+          "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added five security flaws impacting Apple, Craft CMS, and Laravel Livewire to its Known Exploited Vulnerabilities (KEV) catalog, urging federal agencies to patch them by April 3, 2026. The vulnerabilities that have come under",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "Trivy Supply Chain Attack Triggers Self-Spreading CanisterWorm Across 47 npm Packages",
+          "summary": "The threat actors behind the supply chain attack targeting the popular Trivy scanner are suspected to be conducting follow-on attacks that have led to the compromise of a large number of npm packages with a previously undocumented self-propagating worm dubbed CanisterWorm. The name is a reference to",
+          "category": "breaches"
+        },
+        {
+          "headline": "Hacking a Robot Vacuum",
+          "summary": "Someone tries to remote control his own DJI Romo vacuum, and ends up controlling 7,000 of them from all around the world. The IoT is horribly insecure, but we already knew that.",
+          "category": "breaches"
+        }
+      ],
+      "queued_at": "2026-03-21T10:00:01.286673+00:00",
+      "script_generated": false,
+      "audio_generated": false,
+      "deployed": true,
+      "deployed_at": "2026-03-23T14:55:38.355354+00:00"
+    },
+    {
+      "id": "20260321-1800",
+      "edition": "evening",
+      "date": "2026-03-21T18:00:01.740276-04:00",
+      "articles": [
+        {
+          "headline": "Microsoft Azure Monitor alerts abused for callback phishing attacks",
+          "summary": "Microsoft Azure Monitor alerts are being abused to send callback phishing emails that impersonate warnings from the Microsoft Security Team about unauthorized charges on your account. [...]",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "Trivy vulnerability scanner breach pushed infostealer via GitHub Actions",
+          "summary": "The Trivy vulnerability scanner was compromised in a supply-chain attack by threat actors known as TeamPCP, which distributed credential-stealing malware through official releases and GitHub Actions. [...]",
+          "category": "tools"
+        },
+        {
+          "headline": "Scans for \"adminer\", (Wed, Mar 18th)",
+          "summary": "A very popular target of attackers scanning our honeypots is &quot;phpmyadmin&quot;. phpMyAdmin is a script first released in the late 90s, before many security concepts had&nbsp;been discovered. It's rich history of vulnerabilities made it a favorite target. Its alternative, &quot;adminer&quot;, be",
+          "category": "tools"
+        },
+        {
+          "headline": "FBI Warns Russian Hackers Target Signal, WhatsApp in Mass Phishing Attacks",
+          "summary": "Threat actors affiliated with Russian Intelligence Services are conducting phishing campaigns to compromise commercial messaging applications (CMAs) like WhatsApp and Signal to seize control of accounts belonging to individuals with high intelligence value, the U.S. Cybersecurity and Infrastructure ",
+          "category": "breaches"
+        },
+        {
+          "headline": "Microsoft Azure Monitor alerts abused in callback phishing campaigns",
+          "summary": "Microsoft Azure Monitor alerts are being abused to send callback phishing emails that impersonate warnings from the Microsoft Security Team about unauthorized charges on your account. [...]",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "Google adds \u2018Advanced Flow\u2019 for safe APK sideloading on Android",
+          "summary": "Google has announced a new mechanism in Android called Advanced Flow that will allow sideloading APKs from unverified developers for power users in a more secure way. [...]",
+          "category": "vulnerabilities"
+        }
+      ],
+      "queued_at": "2026-03-21T22:00:01.752855+00:00",
+      "script_generated": false,
+      "audio_generated": false,
+      "deployed": true,
+      "deployed_at": "2026-03-23T14:55:54.859398+00:00"
+    },
+    {
+      "id": "20260322-0600",
+      "edition": "morning",
+      "date": "2026-03-22T06:00:01.567417-04:00",
+      "articles": [
+        {
+          "headline": "Microsoft Azure Monitor alerts abused for callback phishing attacks",
+          "summary": "Microsoft Azure Monitor alerts are being abused to send callback phishing emails that impersonate warnings from the Microsoft Security Team about unauthorized charges on your account. [...]",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "Trivy vulnerability scanner breach pushed infostealer via GitHub Actions",
+          "summary": "The Trivy vulnerability scanner was compromised in a supply-chain attack by threat actors known as TeamPCP, which distributed credential-stealing malware through official releases and GitHub Actions. [...]",
+          "category": "tools"
+        },
+        {
+          "headline": "Scans for \"adminer\", (Wed, Mar 18th)",
+          "summary": "A very popular target of attackers scanning our honeypots is &quot;phpmyadmin&quot;. phpMyAdmin is a script first released in the late 90s, before many security concepts had&nbsp;been discovered. It's rich history of vulnerabilities made it a favorite target. Its alternative, &quot;adminer&quot;, be",
+          "category": "tools"
+        },
+        {
+          "headline": "FBI Warns Russian Hackers Target Signal, WhatsApp in Mass Phishing Attacks",
+          "summary": "Threat actors affiliated with Russian Intelligence Services are conducting phishing campaigns to compromise commercial messaging applications (CMAs) like WhatsApp and Signal to seize control of accounts belonging to individuals with high intelligence value, the U.S. Cybersecurity and Infrastructure ",
+          "category": "breaches"
+        },
+        {
+          "headline": "Microsoft Azure Monitor alerts abused in callback phishing campaigns",
+          "summary": "Microsoft Azure Monitor alerts are being abused to send callback phishing emails that impersonate warnings from the Microsoft Security Team about unauthorized charges on your account. [...]",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "Google adds \u2018Advanced Flow\u2019 for safe APK sideloading on Android",
+          "summary": "Google has announced a new mechanism in Android called Advanced Flow that will allow sideloading APKs from unverified developers for power users in a more secure way. [...]",
+          "category": "vulnerabilities"
+        }
+      ],
+      "queued_at": "2026-03-22T10:00:01.579748+00:00",
+      "script_generated": false,
+      "audio_generated": false,
+      "deployed": true,
+      "deployed_at": "2026-03-23T14:56:10.730460+00:00"
+    },
+    {
+      "id": "20260322-1800",
+      "edition": "evening",
+      "date": "2026-03-22T18:00:01.732688-04:00",
+      "articles": [
+        {
+          "headline": "VoidStealer malware steals Chrome master key via debugger trick",
+          "summary": "An information stealer called VoidStealer uses a new approach to bypass Chrome's Application-Bound Encryption (ABE) and extract the master key for decrypting sensitive data stored in the browser. [...]",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "Microsoft Azure Monitor alerts abused for callback phishing attacks",
+          "summary": "Microsoft Azure Monitor alerts are being abused to send callback phishing emails that impersonate warnings from the Microsoft Security Team about unauthorized charges on your account. [...]",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "Trivy vulnerability scanner breach pushed infostealer via GitHub Actions",
+          "summary": "The Trivy vulnerability scanner was compromised in a supply-chain attack by threat actors known as TeamPCP, which distributed credential-stealing malware through official releases and GitHub Actions. [...]",
+          "category": "tools"
+        },
+        {
+          "headline": "Scans for \"adminer\", (Wed, Mar 18th)",
+          "summary": "A very popular target of attackers scanning our honeypots is &quot;phpmyadmin&quot;. phpMyAdmin is a script first released in the late 90s, before many security concepts had&nbsp;been discovered. It's rich history of vulnerabilities made it a favorite target. Its alternative, &quot;adminer&quot;, be",
+          "category": "tools"
+        },
+        {
+          "headline": "FBI Warns Russian Hackers Target Signal, WhatsApp in Mass Phishing Attacks",
+          "summary": "Threat actors affiliated with Russian Intelligence Services are conducting phishing campaigns to compromise commercial messaging applications (CMAs) like WhatsApp and Signal to seize control of accounts belonging to individuals with high intelligence value, the U.S. Cybersecurity and Infrastructure ",
+          "category": "breaches"
+        },
+        {
+          "headline": "Microsoft Azure Monitor alerts abused in callback phishing campaigns",
+          "summary": "Microsoft Azure Monitor alerts are being abused to send callback phishing emails that impersonate warnings from the Microsoft Security Team about unauthorized charges on your account. [...]",
+          "category": "vulnerabilities"
+        }
+      ],
+      "queued_at": "2026-03-22T22:00:01.746117+00:00",
+      "script_generated": false,
+      "audio_generated": false,
+      "deployed": true,
+      "deployed_at": "2026-03-23T14:56:26.539840+00:00"
+    },
+    {
+      "id": "20260323-0600",
+      "edition": "morning",
+      "date": "2026-03-23T06:00:27.003926-04:00",
+      "articles": [
+        {
+          "headline": "Trivy Hack Spreads Infostealer via Docker, Triggers Worm and Kubernetes Wiper",
+          "summary": "Cybersecurity researchers have uncovered malicious artifacts distributed via Docker Hub following the Trivy supply chain attack, highlighting the widening blast radius across developer environments. The last known clean release of Trivy on Docker Hub is 0.69.3. The malicious versions 0.69.4, 0.69.5,",
+          "category": "malware"
+        },
+        {
+          "headline": "CISA orders feds to patch DarkSword iOS flaws exploited attacks",
+          "summary": "CISA ordered U.S. government agencies to patch three iOS vulnerabilities targeted in cryptocurrency theft and cyberespionage attacks using the DarkSword exploit kit. [...]",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "Hackers Exploit CVE-2025-32975 (CVSS 10.0) to Hijack Unpatched Quest KACE SMA Systems",
+          "summary": "Threat actors are suspected to be exploiting a maximum-severity security flaw impacting Quest KACE Systems Management Appliance (SMA), according to Arctic Wolf. The cybersecurity company said it observed malicious activity starting the week of March 9, 2026, in customer environments that's consisten",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "New KB5085516 emergency update fixes Microsoft account sign-in",
+          "summary": "Microsoft has released an emergency update to address a major issue that breaks sign-ins with Microsoft accounts across multiple Microsoft apps, including Teams and OneDrive. [...]",
+          "category": "tools"
+        },
+        {
+          "headline": "Oracle Releases Emergency Patch for Critical Identity Manager Vulnerability",
+          "summary": "CVE-2026-21992 can be used without authentication for remote code execution and it may have been exploited in the wild. The post Oracle Releases Emergency Patch for Critical Identity Manager Vulnerability appeared first on SecurityWeek.",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "ISC Stormcast For Monday, March 23rd, 2026 https://isc.sans.edu/podcastdetail/9860, (Mon, Mar 23rd)",
+          "summary": "ISC Stormcast For Monday, March 23rd, 2026 https://isc.sans.edu/podcastdetail/9860, (Mon, Mar 23rd)",
+          "category": "vulnerabilities"
+        }
+      ],
+      "queued_at": "2026-03-23T10:00:27.103750+00:00",
+      "script_generated": false,
+      "audio_generated": false,
+      "deployed": true,
+      "deployed_at": "2026-03-23T14:56:44.123530+00:00"
+    },
+    {
+      "id": "20260323-1800",
+      "edition": "evening",
+      "date": "2026-03-23T18:00:01.214986-04:00",
+      "articles": [
+        {
+          "headline": "Tool updates: lots of security and logic fixes, (Mon, Mar 23rd)",
+          "summary": "So, I've been slow to get on the Claude Code/OpenCode/Codex/OpenClaw bandwagon, but I had some time last week so I asked Claude to review (/security-review) some of my python scripts. He found more than I'd like to admit, so I checked in a bunch of updates. In reviewing his suggestions, he was right",
+          "category": "policy"
+        },
+        {
+          "headline": "TeamPCP deploys Iran-targeted wiper in Kubernetes attacks",
+          "summary": "The TeamPCP hacking group is targeting Kubernetes clusters with a malicious script that wipes all machines when it detects systems configured for Iran. [...]",
+          "category": "breaches"
+        },
+        {
+          "headline": "North Korean Hackers Abuse VS Code Auto-Run Tasks to Deploy StoatWaffle Malware",
+          "summary": "The North Korean threat actors behind the Contagious Interview campaign, also tracked as WaterPlum, have been attributed to a malware family tracked as StoatWaffle that's distributed via malicious Microsoft Visual Studio Code (VS Code) projects. The use of VS Code \"tasks.json\" to distribute malware ",
+          "category": "breaches"
+        },
+        {
+          "headline": "Crunchyroll probes breach after hacker claims to steal 6.8M users' data",
+          "summary": "Popular anime streaming platform Crunchyroll is investigating a breach after hackers claimed to have stolen personal information for approximately 6.8 million people. [...]",
+          "category": "breaches"
+        },
+        {
+          "headline": "Microsoft Xbox One Hacked",
+          "summary": "It&#8217;s an impressive feat, over a decade after the box was released: Since reset glitching wasn&#8217;t possible, Gaasedelen thought some voltage glitching could do the trick. So, instead of tinkering with the system rest pin(s) the hacker targeted the momentary collapse of the CPU voltage rail.",
+          "category": "breaches"
+        },
+        {
+          "headline": "RSAC 2026 Conference Announcements Summary (Pre-Event)",
+          "summary": "A summary of the announcements made by vendors in the days leading up to the RSAC 2026 Conference. The post RSAC 2026 Conference Announcements Summary (Pre-Event) appeared first on SecurityWeek.",
+          "category": "vulnerabilities"
+        }
+      ],
+      "queued_at": "2026-03-23T22:00:01.228899+00:00",
+      "script_generated": false,
+      "audio_generated": false,
+      "deployed": true,
+      "deployed_at": "2026-03-24T01:00:17.237099+00:00"
+    },
+    {
+      "id": "20260324-0600",
+      "edition": "morning",
+      "date": "2026-03-24T06:00:01.644335-04:00",
+      "articles": [
+        {
+          "headline": "Citrix Urges Patching Critical NetScaler Flaw Allowing Unauthenticated Data Leaks",
+          "summary": "Citrix has released security updates to address two vulnerabilities in NetScaler ADC and NetScaler Gateway, including a critical flaw that could be exploited to leak sensitive data from the application. The vulnerabilities are listed below - CVE-2026-3055 (CVSS score: 9.3) - Insufficient input valid",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "U.S. Sentences Russian Hacker to 6.75 Years for Role in $9M Ransomware Damage",
+          "summary": "A 26-year-old Russian citizen has been sentenced in the U.S. to 6.75 years (81 months) in prison for his role in assisting major cybercrime groups, including the Yanluowang ransomware crew, in conducting numerous attacks against U.S. companies and other organizations. According to the U.S. Departmen",
+          "category": "ransomware"
+        },
+        {
+          "headline": "ISC Stormcast For Tuesday, March 24th, 2026 https://isc.sans.edu/podcastdetail/9862, (Tue, Mar 24th)",
+          "summary": "ISC Stormcast For Tuesday, March 24th, 2026 https://isc.sans.edu/podcastdetail/9862, (Tue, Mar 24th)",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "CISOs Debate Human Role in AI-Powered Security",
+          "summary": "The idea of a &quot;human in the loop&quot; in AI deployment was challenged during a security executive panel at the RSAC 2026 Conference this week.",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "Ransomware's New Era: Moving at AI Speed",
+          "summary": "Threat actors bypass security tools and use AI to launch faster ransomware attacks that exploit valid credentials and target data",
+          "category": "ransomware"
+        },
+        {
+          "headline": "Trivy Supply Chain Attack Targets CI/CD Secrets",
+          "summary": "A threat actor used the open source security tool to deploy an infostealer into CI/CD workflows and steal cloud credentials, SSH keys, tokens, and other sensitive secrets.",
+          "category": "vulnerabilities"
+        }
+      ],
+      "queued_at": "2026-03-24T10:00:01.661339+00:00",
+      "script_generated": false,
+      "audio_generated": false,
+      "deployed": true,
+      "deployed_at": "2026-03-24T19:00:48.364253+00:00"
+    },
+    {
+      "id": "20260324-1800",
+      "edition": "evening",
+      "date": "2026-03-24T18:00:01.322604-04:00",
+      "articles": [
+        {
+          "headline": "Grassroots DICOM (GDCM)",
+          "summary": "View CSAF Summary Successful exploitation of this vulnerability could allow an attacker to send a specially crafted file, and when parsed, could result in a denial-of-service condition. The following versions of Grassroots DICOM (GDCM) are affected: Grassroots DICOM (GDCM) 3.2.2 (CVE-2026-3650) CVSS",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "Schneider Electric EcoStruxure Foxboro DCS",
+          "summary": "View CSAF Summary Schneider Electric is aware of a vulnerability in its EcoStruxure Foxboro DCS Control Software on Foxboro DCS workstations and servers. Control Core Services and all runtime software, like FCPs, FDCs, and FBMs, are not affected. The EcoStruxure Foxboro DCS ([https://www.se.com/ww/e",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "Schneider Electric Plant iT/Brewmaxx",
+          "summary": "View CSAF Summary Successful exploitation of these vulnerabilities could risk privilege escalation, which could result in remote code execution. The following versions of Schneider Electric Plant iT/Brewmaxx are affected: Plant iT/Brewmaxx 9.60_and_above (CVE-2025-49844, CVE-2025-46817, CVE-2025-468",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "How AI Coding Tools Crushed the Endpoint Security Fortress",
+          "summary": "Security vendors have spent years building up defenses around the endpoint, but one researcher says AI coding tools have brought the walls down.",
+          "category": "tools"
+        },
+        {
+          "headline": "FCC bans new routers made outside the USA over security risks",
+          "summary": "The Federal Communications Commission has updated its Covered List to include all consumer routers made in foreign countries, banning the sale of new models in the U.S. [...]",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "Pharos Controls Mosaic Show Controller",
+          "summary": "View CSAF Summary Successful exploitation of this vulnerability could allow an unauthenticated attacker to execute arbitrary commands with root privileges. The following versions of Pharos Controls Mosaic Show Controller are affected: Mosaic Show Controller Firmware 2.15.3 (CVE-2026-2417) CVSS Vendo",
+          "category": "vulnerabilities"
+        }
+      ],
+      "queued_at": "2026-03-24T22:00:01.337511+00:00",
+      "script_generated": false,
+      "audio_generated": false,
+      "deployed": true,
+      "deployed_at": "2026-03-25T00:38:07.572925+00:00"
+    },
+    {
+      "id": "20260324-2250",
+      "edition": "evening",
+      "date": "2026-03-24T22:50:17.310243-04:00",
+      "articles": [
+        {
+          "headline": "CrowdStrike Services and Agentic MDR Put the Agentic SOC in Reach",
+          "summary": "CrowdStrike Services and Agentic MDR Put the Agentic SOC in Reach",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "Falcon Data Security Secures Data Wherever It Lives and Moves",
+          "summary": "Falcon Data Security Secures Data Wherever It Lives and Moves",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "Checkmarx KICS Code Scanner Targeted in Widening Supply Chain Hit",
+          "summary": "TeamPCP is the likely cyber threat actor behind attacks on Trivy, Checkmarx's KICS and VS Code plug-ins, and the LiteLLM AI library \u2014 and all signs point to more attacks to come.",
+          "category": "tools"
+        },
+        {
+          "headline": "Popular LiteLLM PyPI package backdoored to steal credentials, auth tokens",
+          "summary": "The TeamPCP hacking group continues its supply-chain rampage, now compromising the massively popular \"LiteLLM\" Python package on PyPI and claiming to have stolen data from hundreds of thousands of devices during the attack. [...]",
+          "category": "breaches"
+        },
+        {
+          "headline": "PTC warns of imminent threat from critical Windchill, FlexPLM RCE bug",
+          "summary": "PTC Inc. is warning of a critical vulnerability in Windchill and FlexPLM, widely used product lifecycle management (PLM) solutions, that could allow remote code execution. [...]",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "Grassroots DICOM (GDCM)",
+          "summary": "View CSAF Summary Successful exploitation of this vulnerability could allow an attacker to send a specially crafted file, and when parsed, could result in a denial-of-service condition. The following versions of Grassroots DICOM (GDCM) are affected: Grassroots DICOM (GDCM) 3.2.2 (CVE-2026-3650) CVSS",
+          "category": "vulnerabilities"
+        }
+      ],
+      "queued_at": "2026-03-25T02:50:17.324405+00:00",
+      "script_generated": false,
+      "audio_generated": false,
+      "deployed": true
+    },
+    {
+      "id": "20260325-0600",
+      "edition": "morning",
+      "date": "2026-03-25T06:00:01.363781-04:00",
+      "articles": [
+        {
+          "headline": "Manager of botnet used in ransomware attacks gets 2 years in prison",
+          "summary": "A Russian national has been sentenced to two years in prison after admitting that the phishing botnet he managed was used to launch BitPaymer ransomware attacks against 72 U.S. companies. [...]",
+          "category": "ransomware"
+        },
+        {
+          "headline": "HackerOne Employee Data Exposed in Massive Navia Breach",
+          "summary": "The cybersecurity firm said the personal information of hundreds of employees was stolen in the hacker attack targeting Navia. The post HackerOne Employee Data Exposed in Massive Navia Breach appeared first on SecurityWeek.",
+          "category": "breaches"
+        },
+        {
+          "headline": "TeamPCP Backdoors LiteLLM Versions 1.82.7\u20131.82.8 via Trivy CI/CD Compromise",
+          "summary": "TeamPCP, the threat actor behind the recent compromises of Trivy and KICS, has now compromised a popular Python package named litellm, pushing two malicious versions containing a credential harvester, a Kubernetes lateral movement toolkit, and a persistent backdoor. Multiple security vendors, includ",
+          "category": "breaches"
+        },
+        {
+          "headline": "FCC Bans New Foreign-Made Routers Over Supply Chain and Cyber Risk Concerns",
+          "summary": "The U.S. Federal Communications Commission (FCC) said on Monday that it was banning the import of new, foreign-made consumer routers, citing \"unacceptable\" risks to cyber and national security. The action was designed to safeguard Americans and the underlying communications networks the country reli",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "CrowdStrike Flex for Services Expands Access to Elite Security Expertise",
+          "summary": "CrowdStrike Flex for Services Expands Access to Elite Security Expertise",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "Iran Hacktivists Make Noise but Have Little Impact on War",
+          "summary": "Iran-aligned groups are trying to make their mark in the Gulf, but the results have fallen short of remarkable.",
+          "category": "breaches"
+        }
+      ],
+      "queued_at": "2026-03-25T10:00:01.378741+00:00",
+      "script_generated": false,
+      "audio_generated": false,
+      "deployed": true
+    },
+    {
+      "id": "20260325-1800",
+      "edition": "evening",
+      "date": "2026-03-25T18:00:01.908932-04:00",
+      "articles": [
+        {
+          "headline": "Sen. Wyden Warns of Another Section 702 Abuse",
+          "summary": "Sen. Ron Wyden is warning us of an abuse of Section 702: Wyden took to the Senate floor to deliver a lengthy speech, ostensibly about the since approved (with support of many Democrats) nomination of Joshua Rudd to lead the NSA. Wyden was protesting that nomination, but in the context of Rudd being ",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "How Charlotte AI AgentWorks Fuels Security's Agentic Ecosystem",
+          "summary": "How Charlotte AI AgentWorks Fuels Security's Agentic Ecosystem",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "How one man used 10,000 bots to steal $8,000,000 from music artists",
+          "summary": "A man has pleaded guilty to defrauding online music streaming platforms out of more than US $8 million, after creating hundreds of thousands of songs with AI, and then using bots to play them billions of times. Read more in my article on the Hot for Security blog.",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "FCC Bans New Routers Made Outside the US Over National Security Risks",
+          "summary": "The ban aligns with a White House determination that all routers produced abroad are a threat to national security. The post FCC Bans New Routers Made Outside the US Over National Security Risks appeared first on SecurityWeek.",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "New Torg Grabber infostealer malware targets 728 crypto wallets",
+          "summary": "A new info-stealing malware called Torg Grabber is stealing sensitive data from 850 browser extensions, more than 700 of them for cryptocurrency wallets. [...]",
+          "category": "malware"
+        },
+        {
+          "headline": "Bubble AI app builder abused to steal Microsoft account credentials",
+          "summary": "Threat actors are evading phishing detection in campaigns targeting Microsoft accounts by abusing the no-code app-building platform Bubble to generate and host malicious web apps. [...]",
+          "category": "vulnerabilities"
+        }
+      ],
+      "queued_at": "2026-03-25T22:00:01.923519+00:00",
+      "script_generated": false,
+      "audio_generated": false,
+      "deployed": true,
+      "deployed_at": "2026-03-26T01:00:41.406239+00:00"
+    },
+    {
+      "id": "20260326-0600",
+      "edition": "morning",
+      "date": "2026-03-26T06:00:01.901141-04:00",
+      "articles": [
+        {
+          "headline": "Dell and HP Roll Out Quantum-Resistant Device Security and AI-Era Cyber Resilience",
+          "summary": "The computer giants have announced new security capabilities for PCs and printers. The post Dell and HP Roll Out Quantum-Resistant Device Security and AI-Era Cyber Resilience appeared first on SecurityWeek.",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "WebRTC Skimmer Bypasses CSP to Steal Payment Data from E-Commerce Sites",
+          "summary": "Cybersecurity researchers have discovered a new payment skimmer that uses WebRTC data channels as a means to receive payloads and exfiltrate data, effectively bypassing security controls. \"Instead of the usual HTTP requests or image beacons, this malware uses WebRTC data channels to load its payload",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "ISC Stormcast For Thursday, March 26th, 2026 https://isc.sans.edu/podcastdetail/9866, (Thu, Mar 26th)",
+          "summary": "ISC Stormcast For Thursday, March 26th, 2026 https://isc.sans.edu/podcastdetail/9866, (Thu, Mar 26th)",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "Apple Patches (almost) everything again. March 2026 edition., (Wed, Mar 25th)",
+          "summary": "Apple released the next version of its operating system, patching 85 different vulnerabilities across all of them. None of the vulnerabilities are currently being exploited. The last three macOS &quot;generations&quot;&nbsp;are covered, as are the last two versions of iOS/iPadOS. For tvOS, watchOS, ",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "At RSAC, the EU Leads While US Officials Are Sidelined",
+          "summary": "While US government sits out this year, EU officials are on the ground in San Francisco leading the conversations on today's top cybersecurity challenges.",
+          "category": "policy"
+        },
+        {
+          "headline": "PolyShell attacks target 56% of all vulnerable Magento stores",
+          "summary": "Attacks leveraging the 'PolyShell' vulnerability in version 2 of Magento Open Source and Adobe Commerce installations are underway, targeting more than half of all vulnerable stores. [...]",
+          "category": "vulnerabilities"
+        }
+      ],
+      "queued_at": "2026-03-26T10:00:01.915993+00:00",
+      "script_generated": false,
+      "audio_generated": false,
+      "deployed": true,
+      "deployed_at": "2026-03-26T13:00:50.325795+00:00"
+    },
+    {
+      "id": "20260326-1800",
+      "edition": "evening",
+      "date": "2026-03-26T18:00:01.761077-04:00",
+      "articles": [
+        {
+          "headline": "Smashing Security podcast #460: Never knock on the door of a nuclear submarine base and ask for a selfie",
+          "summary": "A disgruntled data analyst decides that the best response to losing his contract is to steal the entire company payroll database and demand $2.5 million in Bitcoin - signing his extortion emails from a company called \"Loot.\" Meanwhile, two people drive up to the entrance of the UK's nuclear submarin",
+          "category": "ransomware"
+        },
+        {
+          "headline": "WAGO GmbH & Co. KG Industrial Managed Switches",
+          "summary": "View CSAF Summary An unauthenticated remote attacker can exploit a hidden function in the CLI prompt to escape the restricted interface, leading to full compromise of the device. The following versions of WAGO GmbH &amp; Co. KG Industrial Managed Switches are affected: WAGO Firmware versions prior t",
+          "category": "breaches"
+        },
+        {
+          "headline": "Automotive Cybersecurity Threats Grow in Era of Connected, Autonomous Vehicles",
+          "summary": "More than a decade since the 2015 Jeep hack, the cybersecurity of vehicles remains of the utmost importance.",
+          "category": "breaches"
+        },
+        {
+          "headline": "Is the FCC's Router Ban the Wrong Fix?",
+          "summary": "The agency put foreign-made consumer routers on its list of prohibited communications devices, but the ban could create more problems down the road.",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "Ajax football club hack exposed fan data, enabled ticket hijack",
+          "summary": "Dutch professional football club Ajax Amsterdam (AFC Ajax) disclosed that a hacker exploited vulnerabilities in its IT systems and accessed data belonging to a few hundred people. [...]",
+          "category": "breaches"
+        },
+        {
+          "headline": "OpenCode Systems OC Messaging and USSD Gateway",
+          "summary": "View CSAF Summary Successful exploitation of this vulnerability could allow an authenticated low-privileged user to gain access to SMS messages outside of their authorized tenant scope via a crafted company or tenant identifier parameter. The following versions of OpenCode Systems OC Messaging and U",
+          "category": "vulnerabilities"
+        }
+      ],
+      "queued_at": "2026-03-26T22:00:01.777909+00:00",
+      "script_generated": false,
+      "audio_generated": false,
+      "deployed": true,
+      "deployed_at": "2026-03-27T01:01:03.988334+00:00"
+    },
+    {
+      "id": "20260327-0600",
+      "edition": "morning",
+      "date": "2026-03-27T06:00:01.534951-04:00",
+      "articles": [
+        {
+          "headline": "CISA Flags Critical PTC Vulnerability That Had German Police Mobilized",
+          "summary": "Police in Germany physically warned organizations about the critical PTC Windchill vulnerability tracked as CVE-2026-4681. The post CISA Flags Critical PTC Vulnerability That Had German Police Mobilized appeared first on SecurityWeek.",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "LangChain, LangGraph Flaws Expose Files, Secrets, Databases in Widely Used AI Frameworks",
+          "summary": "Cybersecurity researchers have disclosed three security vulnerabilities impacting LangChain and LangGraph that, if successfully exploited, could expose filesystem data, environment secrets, and conversation history. Both LangChain and LangGraph are open-source frameworks that are used to build appli",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "Dutch Police discloses security breach after phishing attack",
+          "summary": "The Dutch National Police (Politie) says a security breach resulting from a successful phishing attack has had a limited impact and hasn't affected citizens' data. [...]",
+          "category": "breaches"
+        },
+        {
+          "headline": "Windows 11 KB5079391 update rolls out Smart App Control improvements",
+          "summary": "\u200bMicrosoft has released the KB5079391 preview cumulative update for Windows 11 24H2 and 25H2, which includes 29 changes, such as Smart App Control and Display improvements. [...]",
+          "category": "tools"
+        },
+        {
+          "headline": "ISC Stormcast For Friday, March 27th, 2026 https://isc.sans.edu/podcastdetail/9868, (Fri, Mar 27th)",
+          "summary": "ISC Stormcast For Friday, March 27th, 2026 https://isc.sans.edu/podcastdetail/9868, (Fri, Mar 27th)",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "TeamPCP Supply Chain Campaign: Update 001 - Checkmarx Scope Wider Than Reported, CISA KEV Entry, and Detection Tools Available, (Thu, Mar 26th)",
+          "summary": "This is the first update to the TeamPCP supply chain campaign threat intelligence report,&nbsp;&quot;When the Security Scanner Became the Weapon&quot;&nbsp;(v3.0, March 25, 2026). That report covers the full campaign from the February 28 initial access through the March 24 LiteLLM PyPI compromise. T",
+          "category": "tools"
+        }
+      ],
+      "queued_at": "2026-03-27T10:00:01.552133+00:00",
+      "script_generated": false,
+      "audio_generated": false,
+      "deployed": true,
+      "deployed_at": "2026-03-27T13:01:07.574518+00:00"
+    },
+    {
+      "id": "20260327-1800",
+      "edition": "evening",
+      "date": "2026-03-27T18:00:01.596964-04:00",
+      "articles": [
+        {
+          "headline": "Coruna, DarkSword &amp; Democratizing Nation-State Exploit Kits",
+          "summary": "Nation-state malware is being sold on the Dark Web and leaked to GitHub; and ordinary organizations might not stand much of a chance of defending themselves.",
+          "category": "breaches"
+        },
+        {
+          "headline": "Google Sets 2029 Deadline for Quantum-Safe Cryptography",
+          "summary": "The post-quantum future may be coming sooner than you think, as Google plans to have PQC migration in place by 2029.",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "Infrastructure Attacks With Physical Consequences Down 25%",
+          "summary": "Operational technology (OT) at industrial and critical infrastructure sites seem to have been benefitting from a lull in ransomware, and hackers' relative ignorance of OT systems.",
+          "category": "ransomware"
+        },
+        {
+          "headline": "Wartime Usage of Compromised IP Cameras Highlight Their Danger",
+          "summary": "The list of countries exploiting Internet-connected cameras to give them eyes inside their adversaries' borders continues to expand. What should companies look out for?",
+          "category": "breaches"
+        },
+        {
+          "headline": "Backdoored Telnyx PyPI package pushes malware hidden in WAV audio",
+          "summary": "TeamPCP hackers compromised the Telnyx package on the Python Package Index today, uploading malicious versions that deliver credential-stealing malware hidden inside a WAV file. [...]",
+          "category": "breaches"
+        },
+        {
+          "headline": "China Upgrades the Backdoor It Uses to Spy on Telcos Globally",
+          "summary": "Chinese APT Red Menshen's super-advanced BPFdoor malware defeats traditional cybersecurity protections. All telcos can do, really, is try hunting it down.",
+          "category": "malware"
+        }
+      ],
+      "queued_at": "2026-03-27T22:00:01.601799+00:00",
+      "script_generated": false,
+      "audio_generated": false,
+      "deployed": true,
+      "deployed_at": "2026-03-28T01:01:01.939992+00:00"
+    },
+    {
+      "id": "20260328-0600",
+      "edition": "morning",
+      "date": "2026-03-28T06:00:01.331940-04:00",
+      "articles": [
+        {
+          "headline": "TA446 Deploys DarkSword iOS Exploit Kit in Targeted Spear-Phishing Campaign",
+          "summary": "Proofpoint has disclosed details of a targeted email campaign in which threat actors with ties to Russia are leveraging the recently disclosed DarkSword exploit kit to target iOS devices. The activity has been attributed with high confidence to the Russian state-sponsored threat group known as TA446",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "CISA Adds CVE-2025-53521 to KEV After Active F5 BIG-IP APM Exploitation",
+          "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added a critical security flaw impacting F5 BIG-IP Access Policy Manager (APM) to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation. The vulnerability in question is CVE-2025-53521 (CVS",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "TA446 Deploys Leaked DarkSword iOS Exploit Kit in Targeted Spear-Phishing Campaign",
+          "summary": "Proofpoint has disclosed details of a targeted email campaign in which threat actors with ties to Russia are leveraging the recently disclosed DarkSword exploit kit to target iOS devices. The activity has been attributed with high confidence to the Russian state-sponsored threat group known as TA446",
+          "category": "breaches"
+        },
+        {
+          "headline": "LeakNet ransomware: what you need to know",
+          "summary": "A ransomware gang that claims to be a group of \"investigative journalists\"? Meet LeakNet - the group using fake CAPTCHA pages to trick employees into hacking themselves. Read more in my article on the Fortra blog.",
+          "category": "breaches"
+        },
+        {
+          "headline": "Denver\u2019s crosswalks hacked to broadcast anti-Trump messages",
+          "summary": "Pedestrians crossing a street in Denver, Colorado, got rather more than they bargained for last weekend, when the audio signals at two crosswalks began broadcasting a political message alongside their usual walking instructions. Read more in my article on the Hot for Security blog.",
+          "category": "breaches"
+        },
+        {
+          "headline": "How one man used 10,000 bots to steal $8,000,000 from music artists",
+          "summary": "A man has pleaded guilty to defrauding online music streaming platforms out of more than US $8 million, after creating hundreds of thousands of songs with AI, and then using bots to play them billions of times. Read more in my article on the Hot for Security blog.",
+          "category": "vulnerabilities"
+        }
+      ],
+      "queued_at": "2026-03-28T10:00:01.336666+00:00",
+      "script_generated": false,
+      "audio_generated": false,
+      "deployed": true,
+      "deployed_at": "2026-03-28T13:01:02.815431+00:00"
+    },
+    {
+      "id": "20260328-1800",
+      "edition": "evening",
+      "date": "2026-03-28T18:00:01.696896-04:00",
+      "articles": [
+        {
+          "headline": "Iran-Linked Hackers Breach FBI Director\u2019s Personal Email, Hit Stryker With Wiper Attack",
+          "summary": "Threat actors with ties to Iran successfully broke into the personal email account of Kash Patel, the director of the U.S. Federal Bureau of Investigation (FBI), and leaked a cache of photos and other documents to the internet. Handala Hack Team, which carried out the breach, said on its website tha",
+          "category": "breaches"
+        },
+        {
+          "headline": "New Infinity Stealer malware grabs macOS data via ClickFix lures",
+          "summary": "A new info-stealing malware named Infinity Stealer is targeting macOS systems with a Python payload packaged as an executable using the open-source Nuitka compiler. [...]",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "Cloudflare-Themed ClickFix Attack Drops Infiniti Stealer on Macs",
+          "summary": "The infection chain includes a fake CAPTCHA page, a Bash script, a Nuitka loader, and the Python-based infostealer. The post Cloudflare-Themed ClickFix Attack Drops Infiniti Stealer on Macs appeared first on SecurityWeek.",
+          "category": "malware"
+        },
+        {
+          "headline": "Citrix NetScaler Under Active Recon for CVE-2026-3055 (CVSS 9.3) Memory Overread Bug",
+          "summary": "A recently disclosed critical security flaw impacting Citrix NetScaler ADC and NetScaler Gateway is witnessing active reconnaissance activity, according to Defused Cyber and watchTowr. The vulnerability, CVE-2026-3055 (CVSS score: 9.3), refers to a case of insufficient input validation leading to me",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "TA446 Deploys DarkSword iOS Exploit Kit in Targeted Spear-Phishing Campaign",
+          "summary": "Proofpoint has disclosed details of a targeted email campaign in which threat actors with ties to Russia are leveraging the recently disclosed DarkSword exploit kit to target iOS devices. The activity has been attributed with high confidence to the Russian state-sponsored threat group known as TA446",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "CISA Adds CVE-2025-53521 to KEV After Active F5 BIG-IP APM Exploitation",
+          "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added a critical security flaw impacting F5 BIG-IP Access Policy Manager (APM) to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation. The vulnerability in question is CVE-2025-53521 (CVS",
+          "category": "vulnerabilities"
+        }
+      ],
+      "queued_at": "2026-03-28T22:00:01.703079+00:00",
+      "script_generated": false,
+      "audio_generated": false,
+      "deployed": true,
+      "deployed_at": "2026-03-29T01:00:15.252642+00:00"
+    },
+    {
+      "id": "20260329-0600",
+      "edition": "morning",
+      "date": "2026-03-29T06:00:01.188080-04:00",
+      "articles": [
+        {
+          "headline": "Iran-Linked Hackers Breach FBI Director\u2019s Personal Email, Hit Stryker With Wiper Attack",
+          "summary": "Threat actors with ties to Iran successfully broke into the personal email account of Kash Patel, the director of the U.S. Federal Bureau of Investigation (FBI), and leaked a cache of photos and other documents to the internet. Handala Hack Team, which carried out the breach, said on its website tha",
+          "category": "breaches"
+        },
+        {
+          "headline": "New Infinity Stealer malware grabs macOS data via ClickFix lures",
+          "summary": "A new info-stealing malware named Infinity Stealer is targeting macOS systems with a Python payload packaged as an executable using the open-source Nuitka compiler. [...]",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "Cloudflare-Themed ClickFix Attack Drops Infiniti Stealer on Macs",
+          "summary": "The infection chain includes a fake CAPTCHA page, a Bash script, a Nuitka loader, and the Python-based infostealer. The post Cloudflare-Themed ClickFix Attack Drops Infiniti Stealer on Macs appeared first on SecurityWeek.",
+          "category": "malware"
+        },
+        {
+          "headline": "Citrix NetScaler Under Active Recon for CVE-2026-3055 (CVSS 9.3) Memory Overread Bug",
+          "summary": "A recently disclosed critical security flaw impacting Citrix NetScaler ADC and NetScaler Gateway is witnessing active reconnaissance activity, according to Defused Cyber and watchTowr. The vulnerability, CVE-2026-3055 (CVSS score: 9.3), refers to a case of insufficient input validation leading to me",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "TA446 Deploys DarkSword iOS Exploit Kit in Targeted Spear-Phishing Campaign",
+          "summary": "Proofpoint has disclosed details of a targeted email campaign in which threat actors with ties to Russia are leveraging the recently disclosed DarkSword exploit kit to target iOS devices. The activity has been attributed with high confidence to the Russian state-sponsored threat group known as TA446",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "CISA Adds CVE-2025-53521 to KEV After Active F5 BIG-IP APM Exploitation",
+          "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added a critical security flaw impacting F5 BIG-IP Access Policy Manager (APM) to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation. The vulnerability in question is CVE-2025-53521 (CVS",
+          "category": "vulnerabilities"
+        }
+      ],
+      "queued_at": "2026-03-29T10:00:01.193093+00:00",
+      "script_generated": false,
+      "audio_generated": false,
+      "deployed": true,
+      "deployed_at": "2026-03-29T13:01:06.906062+00:00"
+    },
+    {
+      "id": "20260329-1800",
+      "edition": "evening",
+      "date": "2026-03-29T18:00:01.786744-04:00",
+      "articles": [
+        {
+          "headline": "FBI confirms hack of Director Patel's personal email inbox",
+          "summary": "The Handala hackers associated with Iran have breached the personal email account of FBI Director Kash Patel and published photos and documents. [...]",
+          "category": "breaches"
+        },
+        {
+          "headline": "File read flaw in Smart Slider plugin impacts 500K WordPress sites",
+          "summary": "A vulnerability in the Smart Slider 3 WordPress plugin, active on more than 800,000 websites, can be exploited to allow subscriber-level users access to arbitrary files on the server. [...]",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "Iran-Linked Hackers Breach FBI Director\u2019s Personal Email, Hit Stryker With Wiper Attack",
+          "summary": "Threat actors with ties to Iran successfully broke into the personal email account of Kash Patel, the director of the U.S. Federal Bureau of Investigation (FBI), and leaked a cache of photos and other documents to the internet. Handala Hack Team, which carried out the breach, said on its website tha",
+          "category": "breaches"
+        },
+        {
+          "headline": "New Infinity Stealer malware grabs macOS data via ClickFix lures",
+          "summary": "A new info-stealing malware named Infinity Stealer is targeting macOS systems with a Python payload packaged as an executable using the open-source Nuitka compiler. [...]",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "Cloudflare-Themed ClickFix Attack Drops Infiniti Stealer on Macs",
+          "summary": "The infection chain includes a fake CAPTCHA page, a Bash script, a Nuitka loader, and the Python-based infostealer. The post Cloudflare-Themed ClickFix Attack Drops Infiniti Stealer on Macs appeared first on SecurityWeek.",
+          "category": "malware"
+        },
+        {
+          "headline": "Citrix NetScaler Under Active Recon for CVE-2026-3055 (CVSS 9.3) Memory Overread Bug",
+          "summary": "A recently disclosed critical security flaw impacting Citrix NetScaler ADC and NetScaler Gateway is witnessing active reconnaissance activity, according to Defused Cyber and watchTowr. The vulnerability, CVE-2026-3055 (CVSS score: 9.3), refers to a case of insufficient input validation leading to me",
+          "category": "vulnerabilities"
+        }
+      ],
+      "queued_at": "2026-03-29T22:00:01.791537+00:00",
+      "script_generated": false,
+      "audio_generated": false,
+      "deployed": true,
+      "deployed_at": "2026-03-30T01:01:03.989388+00:00"
+    },
+    {
+      "id": "20260330-0600",
+      "edition": "morning",
+      "date": "2026-03-30T06:00:02.044724-04:00",
+      "articles": [
+        {
+          "headline": "Exploitation of Fresh Citrix NetScaler Vulnerability Begins",
+          "summary": "The critical-severity flaw leaks application memory and can be exploited to obtain authenticated administrative session IDs. The post Exploitation of Fresh Citrix NetScaler Vulnerability Begins appeared first on SecurityWeek.",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "F5 BIG-IP DoS Flaw Upgraded to Critical RCE, Now Exploited in the Wild",
+          "summary": "Initially disclosed as a high-severity denial-of-service (DoS), the bug was reclassified as a critical RCE issue. The post F5 BIG-IP DoS Flaw Upgraded to Critical RCE, Now Exploited in the Wild appeared first on SecurityWeek.",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "FBI Confirms Kash Patel Email Hack as US Offers $10M Reward for Hackers",
+          "summary": "The agency said Iranian hackers targeted the director\u2019s personal email account and noted that the compromised information is old. The post FBI Confirms Kash Patel Email Hack as US Offers $10M Reward for Hackers appeared first on SecurityWeek.",
+          "category": "breaches"
+        },
+        {
+          "headline": "Three China-Linked Clusters Target Southeast Asian Government in 2025 Cyber Campaign",
+          "summary": "Three threat activity clusters aligned with China have targeted a government organization in Southeast Asia as part of what has been described as a \"complex and well-resourced operation.\" The campaigns have led to the deployment of various malware families, including HIUPAN (aka USBFect, MISTCLOAK, ",
+          "category": "vulnerabilities"
+        },
+        {
+          "headline": "European Commission confirms data breach after Europa.eu hack",
+          "summary": "The European Commission has confirmed a data breach after its Europa.eu web platform was hacked in a cyberattack claimed by the ShinyHunters extortion gang. [...]",
+          "category": "breaches"
+        },
+        {
+          "headline": "Critical Fortinet Forticlient EMS flaw now exploited in attacks",
+          "summary": "Attackers are now actively exploiting a critical vulnerability in Fortinet's FortiClient EMS platform, according to threat intelligence company Defused. [...]",
+          "category": "vulnerabilities"
+        }
+      ],
+      "queued_at": "2026-03-30T10:00:02.050458+00:00",
+      "script_generated": false,
+      "audio_generated": false,
+      "deployed": true,
+      "deployed_at": "2026-03-30T13:00:18.005734+00:00"
+    }
+  ]
+}

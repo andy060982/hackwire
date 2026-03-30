@@ -15,8 +15,11 @@ import hashlib
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
 
+from dotenv import load_dotenv
+
 # Paths
 BASE = Path(__file__).parent
+load_dotenv(BASE.parent / ".env")
 HACKWIRE = BASE.parent
 ARTICLES_FILE = HACKWIRE / "src" / "lib" / "articles-data.json"
 EPISODES_DIR = BASE / "episodes"
@@ -34,7 +37,7 @@ PODCAST_DESC = "Your daily cybersecurity threat briefing in under 5 minutes. Twi
 
 # Claude Haiku for script generation (via Anthropic/OpenClaw)
 # Gemini API for TTS (voice generation)
-GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "AIzaSyCTAAF4Wql-Ty0KypBsLQkrpY1FkVpeXtw")
+GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "")
 
 EPISODES_DIR.mkdir(exist_ok=True)
 
@@ -431,7 +434,7 @@ def copy_to_public(episode_path):
     import subprocess
     try:
         result = subprocess.run(
-            ["npx", "vercel", "--token", "vcp_2AYVOKHp0aqAffkH7SBS1GKmGXXi16Opflatek8cbPgVMangm10zHKRC", "--yes", "--prod"],
+            ["npx", "vercel", "--token", os.environ.get("VERCEL_TOKEN", ""), "--yes", "--prod"],
             cwd="/home/aarevalo/clawd/hackwire",
             capture_output=True, text=True, timeout=180
         )
@@ -523,7 +526,7 @@ def main():
     # Send notification to Andy
     try:
         import urllib.request
-        bot_token = "8417850157:AAG0yGy36pSnZoPWWlXEcmfLbSrhspuMsbw"
+        bot_token = os.environ.get("TELEGRAM_BOT_TOKEN", "")
         chat_id = "1667266840"
         
         # Send audio file

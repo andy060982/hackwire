@@ -181,10 +181,38 @@ function buildThreatIntelHtml(articles, allArticles) {
     </div>`
 }
 
-function buildDigestHtml(articles, allArticles, dateStr) {
+function buildTopStoryHtml(articles) {
+  // Pick the top story: highest severity first, then most recent
+  const severityRank = { critical: 4, high: 3, medium: 2, low: 1 }
+  const top = [...articles].sort((a, b) => {
+    const sa = severityRank[a.severity] || 0
+    const sb = severityRank[b.severity] || 0
+    if (sb !== sa) return sb - sa
+    return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  })[0]
+
+  if (!top) return ''
+
+  const color = CATEGORY_COLORS[top.category] || '#64748b'
+  const severityTag = top.severity === 'critical' || top.severity === 'high'
+    ? `<span style="font-size:11px;font-weight:700;color:${top.severity === 'critical' ? '#FF3B3B' : '#F59E0B'};font-family:'JetBrains Mono',monospace;margin-left:8px;">[${top.severity.toUpperCase()}]</span>`
+    : ''
+
+  return `
+    <div style="background:#0F0F1A;border:1px solid ${color};border-radius:8px;padding:20px;margin-bottom:24px;">
+      <p style="margin:0 0 8px;font-size:11px;font-weight:700;color:${color};font-family:'JetBrains Mono',monospace;letter-spacing:1px;">TOP STORY${severityTag}</p>
+      <a href="https://hackwire.news/news/${top.slug}" style="color:#ffffff;text-decoration:none;font-size:18px;font-weight:700;line-height:1.4;display:block;margin-bottom:8px;">${top.headline}</a>
+      <p style="margin:0 0 12px;font-size:14px;line-height:1.6;color:#94a3b8;">${top.summary}</p>
+      <a href="https://hackwire.news/news/${top.slug}" style="color:#00FF88;text-decoration:none;font-size:12px;font-family:'JetBrains Mono',monospace;">Read full story &rarr;</a>
+    </div>`
+}
+
+function buildDigestHtml(articles, allArticles, dateStr, email) {
   const threatIntel = buildThreatIntelHtml(articles, allArticles)
+  const topStory = buildTopStoryHtml(articles)
   const newsReel = buildNewsReelHtml(articles)
   const deepDives = buildDeepDiveHtml(articles)
+  const unsubUrl = `https://hackwire.news/unsubscribe?email=${encodeURIComponent(email)}`
 
   return `
 <!DOCTYPE html>
@@ -198,6 +226,8 @@ function buildDigestHtml(articles, allArticles, dateStr) {
     </div>
 
     ${threatIntel}
+
+    ${topStory}
 
     <p style="font-size:15px;line-height:1.7;color:#cbd5e1;margin:0 0 24px;">
       Here's what happened in cybersecurity in the last 24 hours &mdash; <strong>${articles.length} stories</strong>, decoded.
@@ -214,7 +244,8 @@ function buildDigestHtml(articles, allArticles, dateStr) {
     <div style="border-top:1px solid #1E1E2E;padding-top:20px;margin-top:40px;">
       <p style="margin:0;font-size:12px;color:#475569;">
         HackWire &mdash; <a href="https://hackwire.news" style="color:#00FF88;text-decoration:none;">hackwire.news</a><br>
-        You received this because you subscribed to the HackWire daily digest.
+        You received this because you subscribed to the HackWire daily digest.<br>
+        <a href="${unsubUrl}" style="color:#475569;text-decoration:underline;">Unsubscribe</a>
       </p>
     </div>
   </div>
@@ -251,24 +282,37 @@ async function main() {
     timeZone: 'America/New_York',
   })
 
-  const html = buildDigestHtml(articles, allArticles, dateStr)
   const subject = `HackWire Daily — ${articles.length} stories for ${new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'America/New_York' })}`
 
   console.log(`Sending digest (${articles.length} articles) to ${subscribers.length} subscriber(s)...`)
 
-  const result = await resend.emails.send({
-    from: 'HackWire <newsletter@hackwire.news>',
-    to: subscribers,
-    subject,
-    html,
-  })
+  let sent = 0
+  let failed = 0
 
-  if (result.error) {
-    console.error('Send failed:', result.error)
-    process.exit(1)
+  for (const email of subscribers) {
+    const html = buildDigestHtml(articles, allArticles, dateStr, email)
+    const unsubUrl = `https://hackwire.news/api/unsubscribe?email=${encodeURIComponent(email)}`
+
+    const result = await resend.emails.send({
+      from: 'HackWire <newsletter@hackwire.news>',
+      to: email,
+      subject,
+      html,
+      headers: {
+        'List-Unsubscribe': `<${unsubUrl}>`,
+        'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
+      },
+    })
+
+    if (result.error) {
+      console.error(`Failed for ${email}:`, result.error)
+      failed++
+    } else {
+      sent++
+    }
   }
 
-  console.log(`Digest sent! ID: ${result.data?.id}`)
+  console.log(`Digest complete: ${sent} sent, ${failed} failed.`)
 }
 
 main().catch((err) => {

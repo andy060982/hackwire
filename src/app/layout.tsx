@@ -6,6 +6,8 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { Analytics } from '@vercel/analytics/next'
+import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration'
+import PWAInstallPrompt from '@/components/PWAInstallPrompt'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -36,6 +38,14 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'HackWire',
     locale: 'en_US',
+    images: [
+      {
+        url: '/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'HackWire — Cybersecurity News, Decoded',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -44,6 +54,15 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'HackWire',
+  },
+  other: {
+    'mobile-web-app-capable': 'yes',
   },
 }
 
@@ -55,6 +74,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
       <head>
+        <meta name="theme-color" content="#0A0A0F" />
+        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
         {/* Prevent flash of wrong theme */}
         <script
           dangerouslySetInnerHTML={{
@@ -68,6 +89,8 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </ThemeProvider>
+        <ServiceWorkerRegistration />
+        <PWAInstallPrompt />
         <Analytics />
         {/* Defer third-party scripts to after page load */}
         <Script

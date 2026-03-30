@@ -6,6 +6,9 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://hackwire.news/sitemap.xml',
+    sitemap: [
+      'https://www.hackwire.news/sitemap.xml',
+      'https://www.hackwire.news/news-sitemap.xml',
+    ],
   }
 }

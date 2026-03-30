@@ -12,6 +12,10 @@ from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 from googleapiclient.errors import HttpError
 
+import os
+from dotenv import load_dotenv
+load_dotenv(Path('/home/aarevalo/clawd/hackwire/.env'))
+
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s] %(levelname)s: %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
 logger = logging.getLogger(__name__)
 
@@ -151,7 +155,7 @@ def main():
         # Then deploy to Vercel
         logger.info("Triggering Vercel deployment...")
         result = subprocess.run(
-            ["npx", "vercel", "--token", "vcp_2AYVOKHp0aqAffkH7SBS1GKmGXXi16Opflatek8cbPgVMangm10zHKRC", "--yes", "--prod"],
+            ["npx", "vercel", "--token", os.environ.get("VERCEL_TOKEN", ""), "--yes", "--prod"],
             cwd="/home/aarevalo/clawd/hackwire",
             capture_output=True,
             text=True,

@@ -3,7 +3,7 @@ import { articles } from '@/lib/articles'
 import { categories } from '@/lib/categories'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://hackwire.news'
+  const base = 'https://www.hackwire.news'
 
   const articleUrls = articles.map((article) => ({
     url: `${base}/news/${article.slug}`,
@@ -25,6 +25,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'hourly',
       priority: 1,
+    },
+    {
+      url: `${base}/featured`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.8,
     },
     {
       url: `${base}/about`,

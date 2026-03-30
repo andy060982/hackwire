@@ -1,0 +1,32 @@
+[
+  {
+    "headline": "Critical Zero-Day Vulnerabilities Discovered in Widely-Used Enterprise Software",
+    "summary": "Security researchers have identified a critical zero-day vulnerability affecting millions of enterprise systems worldwide. The flaw allows unauthenticated remote code execution. Major tech companies are being notified and patches are in development.",
+    "category": "Vulnerabilities"
+  },
+  {
+    "headline": "Ransomware Gang Targets Healthcare Sector with New Variant",
+    "summary": "A sophisticated ransomware group has launched coordinated attacks against 47 healthcare facilities across three continents. The malware encrypts patient records and demands millions in cryptocurrency. Health authorities are investigating the breach.",
+    "category": "Ransomware"
+  },
+  {
+    "headline": "Major Data Breach Exposes 5.2 Million User Records",
+    "summary": "A financial services company revealed that hackers accessed customer data including names, social security numbers, and banking information. The breach went undetected for six months before discovery.",
+    "category": "Data Breaches"
+  },
+  {
+    "headline": "AI-Powered Phishing Attacks Show Dramatic Increase",
+    "summary": "Cybersecurity firms report a 340% increase in sophisticated phishing campaigns using AI-generated content. These attacks have higher success rates as they use personalized, contextually relevant messages.",
+    "category": "Threats"
+  },
+  {
+    "headline": "New CISA Advisory on Supply Chain Security",
+    "summary": "The Cybersecurity and Infrastructure Security Agency issued guidance on securing the software supply chain. Recommendations focus on vendor risk assessment and continuous monitoring.",
+    "category": "Policy"
+  },
+  {
+    "headline": "Cryptocurrency Exchange Hacked, Millions in Assets Stolen",
+    "summary": "Attackers exploited a vulnerability in the exchange's API to drain user wallets. The incident highlights ongoing security challenges in the crypto industry.",
+    "category": "Cybercrime"
+  }
+]

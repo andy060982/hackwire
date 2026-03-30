@@ -3,8 +3,10 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getArticleBySlug, getRelatedArticles, formatTimeAgo, articles } from '@/lib/articles'
 import CategoryBadge from '@/components/CategoryBadge'
+import CopyLinkButton from '@/components/CopyLinkButton'
 import SeverityBadge from '@/components/SeverityBadge'
 import NewsCard from '@/components/NewsCard'
+import NewsletterSignup from '@/components/NewsletterSignup'
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -22,13 +24,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: article.headline,
     description: article.summary,
+    alternates: {
+      canonical: `https://www.hackwire.news/news/${article.slug}`,
+    },
     openGraph: {
       title: article.headline,
       description: article.summary,
-      url: `https://hackwire.news/news/${article.slug}`,
+      url: `https://www.hackwire.news/news/${article.slug}`,
       type: 'article',
       publishedTime: article.publishedAt,
       tags: article.tags,
+      images: [
+        {
+          url: '/opengraph-image',
+          width: 1200,
+          height: 630,
+          alt: article.headline,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
@@ -93,7 +106,7 @@ export default async function ArticlePage({ params }: Props) {
   const related = getRelatedArticles(article)
   const articleDate = new Date(article.publishedAt)
 
-  const jsonLd = {
+  const jsonLd: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'NewsArticle',
     headline: article.headline,
@@ -104,10 +117,29 @@ export default async function ArticlePage({ params }: Props) {
     publisher: {
       '@type': 'Organization',
       name: 'HackWire',
-      url: 'https://hackwire.news',
+      url: 'https://www.hackwire.news',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.hackwire.news/opengraph-image',
+        width: 1200,
+        height: 630,
+      },
     },
-    url: `https://hackwire.news/news/${article.slug}`,
-    keywords: article.tags.join(', '),
+    url: `https://www.hackwire.news/news/${article.slug}`,
+    image: {
+      '@type': 'ImageObject',
+      url: 'https://www.hackwire.news/opengraph-image',
+      width: 1200,
+      height: 630,
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://www.hackwire.news/news/${article.slug}`,
+    },
+  }
+
+  if (article.tags.length > 0) {
+    jsonLd.keywords = article.tags.join(', ')
   }
 
   return (
@@ -181,6 +213,15 @@ export default async function ArticlePage({ params }: Props) {
                 >
                   IN
                 </a>
+                <a
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://hackwire.news/news/${article.slug}`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-2 py-1 border border-gray-200 dark:border-[#1E1E2E] text-gray-400 dark:text-gray-500 text-xs font-mono rounded hover:border-[#059669]/30 dark:hover:border-[#00FF88]/30 hover:text-[#059669] dark:hover:text-[#00FF88] transition-colors"
+                >
+                  FB
+                </a>
+                <CopyLinkButton url={`https://hackwire.news/news/${article.slug}`} />
               </div>
             </div>
 
@@ -216,6 +257,11 @@ export default async function ArticlePage({ params }: Props) {
                 </div>
               </div>
             )}
+
+            {/* Newsletter signup */}
+            <div className="mt-10">
+              <NewsletterSignup />
+            </div>
 
             {/* Attribution */}
             <div className="mt-10 pt-6 border-t border-gray-200 dark:border-[#1E1E2E]">

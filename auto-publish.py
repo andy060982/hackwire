@@ -16,10 +16,13 @@ from datetime import datetime, timezone
 from pathlib import Path
 from urllib.request import Request, urlopen
 
+from dotenv import load_dotenv
+
 SCRIPT_DIR = Path(__file__).parent
+load_dotenv(SCRIPT_DIR / ".env")
 ARTICLES_FILE = SCRIPT_DIR / "src" / "lib" / "articles-data.json"
 PUBLISHED_TRACKER = SCRIPT_DIR / ".published-articles.json"
-VERCEL_TOKEN = "vcp_2AYVOKHp0aqAffkH7SBS1GKmGXXi16Opflatek8cbPgVMangm10zHKRC"
+VERCEL_TOKEN = os.environ.get("VERCEL_TOKEN", "")
 
 # Claude Haiku for article rewriting (via OpenClaw/Anthropic)
 
@@ -156,22 +159,71 @@ def fetch_feeds():
 def rewrite_article_with_claude(entry: dict) -> dict | None:
     """Rewrite article using Claude directly through OpenClaw session."""
     try:
-        # Use OpenClaw's built-in claude access
-        # The fact that I'm running in this environment means I have Claude access
-        from anthropic import Anthropic
-        
         full_content = entry.get("summary_full", entry["summary"])
         headline = entry["title"]
-        
-        # Build rewrite prompt
-        rewrite_prompt = f"""You are a professional cybersecurity journalist. 
+        source = entry.get("source", "")
 
-Expand this news summary into a comprehensive 800-1200 word article that:
-1. Provides full context and background
-2. Explains technical details in accessible language
-3. Discusses implications for organizations
-4. Includes recommendations where applicable
-5. Maintains journalistic objectivity
+        # Truncate extremely long content (CISA advisories can be 10k+ chars of raw dumps)
+        # Keep enough for Claude to work with but not overwhelm it
+        if len(full_content) > 4000:
+            full_content = full_content[:4000] + "\n[Content truncated for processing]"
+
+        # Detect CISA/ICS advisory content for specialized handling
+        is_advisory = source == "CISA Alerts" or "cisa.gov" in entry.get("sourceUrl", "") or \
+                      any(kw in full_content.lower() for kw in ["cvss", "cwe-", "ics-cert", "icsa-", "affected products", "mitigations"])
+
+        if is_advisory:
+            rewrite_prompt = f"""You are a professional cybersecurity journalist writing for HackWire.
+
+Rewrite this security advisory into a well-structured 800-1200 word article using markdown formatting.
+
+REQUIRED STRUCTURE (use these exact markdown headers):
+# [Compelling headline about the vulnerability/threat]
+
+## The Threat
+[2-3 paragraphs explaining what the vulnerability is and why it matters]
+
+## Severity and Impact
+[Include a markdown table with CVE, CVSS score, vector string, attack complexity, authentication requirements]
+
+## Affected Products
+[Organized list of affected products/versions — consolidate duplicates into clean bullet points]
+
+## Mitigations
+[What organizations should do — firmware updates, workarounds, network segmentation, etc.]
+
+## References
+[Links to the original advisory and vendor pages]
+
+IMPORTANT RULES:
+- Decode HTML entities (&amp; → &, etc.)
+- Consolidate duplicate product listings into clean grouped lists
+- Do NOT dump raw advisory text — restructure it into readable journalism
+- Include CVE numbers, CVSS scores, and CWE identifiers in the severity table
+- End with actionable recommendations
+
+SOURCE ADVISORY:
+Title: {headline}
+Content: {full_content}
+
+Write the full article now in markdown."""
+        else:
+            rewrite_prompt = f"""You are a professional cybersecurity journalist writing for HackWire.
+
+Expand this news summary into a comprehensive 800-1200 word article using markdown formatting.
+
+REQUIRED FORMAT:
+- Start with a # headline
+- Use ## section headers (e.g., ## The Threat, ## Background and Context, ## Technical Details, ## Implications, ## Recommendations)
+- Use bullet points, bold text, and tables where appropriate
+- Write in professional journalistic style
+
+The article must:
+1. Provide full context and background
+2. Explain technical details in accessible language
+3. Discuss implications for organizations
+4. Include recommendations where applicable
+5. Maintain journalistic objectivity
 
 ORIGINAL SUMMARY:
 Title: {headline}
@@ -179,34 +231,29 @@ Content: {full_content}
 
 Write the full article now. Include all important details, context, and analysis."""
 
-        # Initialize Anthropic client (uses env ANTHROPIC_API_KEY or works through OpenClaw context)
-        client = Anthropic()
-        
-        response = client.messages.create(
-            model="claude-3-5-haiku-20241022",
-            max_tokens=2000,
-            messages=[{"role": "user", "content": rewrite_prompt}]
+        # Use Claude CLI (already authenticated) instead of SDK
+        result = subprocess.run(
+            ["claude", "-p", "--model", "claude-haiku-4-5-20251001"],
+            input=rewrite_prompt,
+            capture_output=True, text=True, timeout=120
         )
-        
-        body = response.content[0].text.strip()
+        if result.returncode != 0:
+            raise Exception(f"Claude CLI error: {result.stderr[:200]}")
+
+        body = result.stdout.strip()
         
         if not body:
             raise Exception("Empty response from Claude")
         
         # Generate TL;DR
-        tldr_prompt = f"""Write a 1-paragraph summary (2-3 sentences max) of this article for people on the go:
+        tldr_prompt = f"""Write a 1-paragraph summary (2-3 sentences max, under 200 characters) of this article:\n\n{body[:2000]}\n\nSummary:"""
 
-{body}
-
-Summary:"""
-        
-        tldr_response = client.messages.create(
-            model="claude-3-5-haiku-20241022",
-            max_tokens=150,
-            messages=[{"role": "user", "content": tldr_prompt}]
+        tldr_result = subprocess.run(
+            ["claude", "-p", "--model", "claude-haiku-4-5-20251001"],
+            input=tldr_prompt,
+            capture_output=True, text=True, timeout=60
         )
-        
-        tldr = tldr_response.content[0].text.strip()
+        tldr = tldr_result.stdout.strip() if tldr_result.returncode == 0 else body[:200] + "..."
         
         return {
             "headline": headline,
@@ -297,6 +344,31 @@ def publish_articles(max_articles=5):
             published.add(entry_hash)
             new_count += 1
             print(f"  + [{category.upper()}] {rewritten['headline']}")
+
+            # Queue short articles for deep-dive expansion by the rewriter service
+            if len(rewritten["body"]) < 3000:
+                try:
+                    queue_file = SCRIPT_DIR / "article-rewrite-queue.json"
+                    queue_data = {"queue": [], "processed": 0}
+                    if queue_file.exists():
+                        with open(queue_file) as qf:
+                            queue_data = json.load(qf)
+                    # Check if already queued
+                    queued_slugs = {q.get("slug") for q in queue_data.get("queue", [])}
+                    if slug not in queued_slugs:
+                        queue_data["queue"].append({
+                            "slug": slug,
+                            "title": rewritten["headline"],
+                            "summary": rewritten["summary"],
+                            "summary_full": rewritten.get("body", ""),
+                            "added": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                            "rewritten": False
+                        })
+                        with open(queue_file, "w") as qf:
+                            json.dump(queue_data, qf, indent=2)
+                        print(f"    → Queued for deep-dive expansion ({len(rewritten['body'])} chars)")
+                except Exception as qe:
+                    print(f"    → Queue error: {qe}")
         
         if new_count == 0:
             print("  No new articles to publish.")

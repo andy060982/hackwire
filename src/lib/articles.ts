@@ -38,6 +38,18 @@ export function getLatestArticles(limit?: number): Article[] {
   return limit ? sorted.slice(0, limit) : sorted
 }
 
+export function isDeepDive(article: Article): boolean {
+  return article.body.length > 3000
+}
+
+export function getAllDeepDives(): Article[] {
+  return getLatestArticles().filter(isDeepDive)
+}
+
+export function getFeaturedDeepDives(limit = 2): Article[] {
+  return getAllDeepDives().slice(0, limit)
+}
+
 export function getRelatedArticles(article: Article, limit = 3): Article[] {
   return articles
     .filter((a) => a.slug !== article.slug && a.category === article.category)
@@ -45,15 +57,17 @@ export function getRelatedArticles(article: Article, limit = 3): Article[] {
 }
 
 export function formatTimeAgo(dateString: string): string {
-  const now = new Date('2025-01-14T12:00:00Z')
+  const now = new Date()
   const date = new Date(dateString)
   const diffMs = now.getTime() - date.getTime()
+  const diffMins = Math.floor(diffMs / (1000 * 60))
   const diffHours = Math.floor(diffMs / (1000 * 60 * 60))
   const diffDays = Math.floor(diffHours / 24)
 
-  if (diffHours < 1) return 'Just now'
+  if (diffMins < 1) return 'Just now'
+  if (diffMins < 60) return `${diffMins}m ago`
   if (diffHours < 24) return `${diffHours}h ago`
   if (diffDays === 1) return '1d ago'
   if (diffDays < 7) return `${diffDays}d ago`
-  return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+  return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
 }

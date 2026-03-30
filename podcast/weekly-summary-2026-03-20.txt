@@ -1,0 +1,43 @@
+# HackWire Weekly Threat Briefing: March 13, 2026 – March 20, 2026
+
+## Top Stories This Week
+
+### 1. 3 Men Charged With Conspiring to Smuggle US Artificial Intelligence to China
+Category: policy
+The men violated U.S. export controls laws by scheming to divert massive quantities of the high-performance servers assembled in the United States to China. The post 3 Men Charged With Conspiring to Smuggle US Artificial Intelligence to China appeared first on SecurityWeek.
+
+### 2. In Other News: New Android Safeguards, Operation Alice, UK Toughens Cyber Reporting
+Category: ransomware
+Other noteworthy stories that might have slipped under the radar: vulnerabilities found in KVM devices, Claudy Day Claude vulnerabilities, The Gentlemen ransomware group. The post In Other News: New Android Safeguards, Operation Alice, UK Toughens Cyber Reporting appeared first on SecurityWeek.
+
+### 3. Cyber OpSec Fail: Beast Gang Exposes Ransomware Server
+Category: ransomware
+Files on a central cloud server used by the ransomware group highlight a systematic, aggressive attack on network backups as a key TTP.
+
+### 4. Critical Langflow Flaw CVE-2026-33017 Triggers Attacks within 20 Hours of Disclosure
+Category: vulnerabilities
+A critical security flaw impacting Langflow has come under active exploitation within 20 hours of public disclosure, highlighting the speed at which threat actors weaponize newly published vulnerabilities. The security defect, tracked as CVE-2026-33017 (CVSS score: 9.3), is a case of missing authent
+
+### 5. Police take down 373,000 fake CSAM sites in Operation Alice
+Category: vulnerabilities
+An international law enforcement action called Operation Alice has shut down over 373,000 dark web sites that offered fake CSAM packages. [...]
+
+### 6. With Government's Role Uncertain, Businesses Unite to Combat Fraud
+Category: policy
+Major industry leaders agree to share information and collaborate to boost defenses in the wake of distressing online scams.
+
+### 7. Interlock Ransomware Targets Cisco Enterprise Firewalls
+Category: ransomware
+The ransomware gang, known for double-extortion attacks, had access to a critical Cisco firewall vulnerability weeks before it was publicly disclosed.
+
+### 8. Magento PolyShell Flaw Enables Unauthenticated Uploads, RCE and Account Takeover
+Category: vulnerabilities
+Sansec is warning of a critical security flaw in Magento's REST API that could allow unauthenticated attackers to upload arbitrary executables and achieve code execution and account takeover. The vulnerability has been codenamed PolyShell by Sansec owing to the fact that the attack hinges on disguis
+
+### 9. How CISOs Can Survive the Era of Geopolitical Cyberattacks
+Category: breaches
+Geopolitical tensions are driving destructive cyberattacks designed to disrupt operations, not demand ransom. CISOs must limit lateral movement and contain breaches to reduce the impact of wiper campaigns. [...]
+
+### 10. CISA orders feds to patch max-severity Cisco flaw by Sunday
+Category: vulnerabilities
+The Cybersecurity and Infrastructure Security Agency (CISA) has ordered federal agencies to patch a maximum-severity vulnerability, CVE-2026-20131, in Cisco Secure Firewall Management Center (FMC) by Sunday, March 22. [...]

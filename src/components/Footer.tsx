@@ -1,11 +1,12 @@
 import Link from 'next/link'
 import { categories } from '@/lib/categories'
+import NewsletterSignup from '@/components/NewsletterSignup'
 
 export default function Footer() {
   return (
     <footer className="bg-gray-50 dark:bg-[#050508] border-t border-gray-200 dark:border-[#1E1E2E] mt-16">
       <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-10">
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-0.5 mb-3">
@@ -35,6 +36,11 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <NewsletterSignup compact />
           </div>
 
           {/* Sources */}

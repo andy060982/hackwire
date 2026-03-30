@@ -35,11 +35,17 @@ async function sendWelcomeEmail(email: string): Promise<void> {
   const { Resend } = await import('resend')
   const resend = new Resend(apiKey)
 
+  const unsubUrl = `https://hackwire.news/unsubscribe?email=${encodeURIComponent(email)}`
+
   try {
     await resend.emails.send({
       from: 'HackWire <newsletter@hackwire.news>',
       to: email,
       subject: 'Welcome to HackWire — You\'re In',
+      headers: {
+        'List-Unsubscribe': `<https://hackwire.news/api/unsubscribe?email=${encodeURIComponent(email)}>`,
+        'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
+      },
       html: `
 <!DOCTYPE html>
 <html>
@@ -90,7 +96,8 @@ async function sendWelcomeEmail(email: string): Promise<void> {
     <div style="border-top:1px solid #1E1E2E;padding-top:20px;margin-top:40px;">
       <p style="margin:0;font-size:12px;color:#475569;">
         HackWire — <a href="https://hackwire.news" style="color:#00FF88;text-decoration:none;">hackwire.news</a><br>
-        You received this because you subscribed. No hard feelings if you unsubscribe.
+        You received this because you subscribed.<br>
+        <a href="${unsubUrl}" style="color:#475569;text-decoration:underline;">Unsubscribe</a>
       </p>
     </div>
   </div>
