@@ -1469,8 +1469,131 @@
       "rewritten": true,
       "retries": 3,
       "skip_reason": "max retries exceeded"
+    },
+    {
+      "slug": "openai-patches-chatgpt-data-exfiltration-flaw-and-codex-github-token-vulnerabili",
+      "title": "OpenAI Patches ChatGPT Data Exfiltration Flaw and Codex GitHub Token Vulnerability",
+      "summary": "A previously unknown vulnerability in OpenAI ChatGPT allowed sensitive conversation data to be exfiltrated without user knowledge or consent, according to new findings from Check Point. \"A single malicious prompt could turn an otherwise ordinary conversation into a covert exfiltration channel, leaki",
+      "summary_full": "A previously unknown vulnerability in OpenAI ChatGPT allowed sensitive conversation data to be exfiltrated without user knowledge or consent, according to new findings from Check Point. \"A single malicious prompt could turn an otherwise ordinary conversation into a covert exfiltration channel, leaking user messages, uploaded files, and other sensitive content,\" the cybersecurity company said in",
+      "added": "2026-03-30T20:07:56Z",
+      "rewritten": true,
+      "retries": 2
+    },
+    {
+      "slug": "healthcare-tech-firm-carecloud-says-hackers-stole-patient-data",
+      "title": "Healthcare tech firm CareCloud says hackers stole patient data",
+      "summary": "Healthcare IT firm CareCloud has disclosed a data breach incident that exposed sensitive data and caused a network disruption lasting approximately eight hours. [...]",
+      "summary_full": "I'd be happy to help expand that news summary into a comprehensive article for HackWire. However, I notice the original summary appears to be incomplete \u2014 it cuts off after \"lasting approximately eight hours. [...]\"\n\nCould you provide the **full content of the summary**? I'll need:\n\n- Complete details about what data was exposed (patient records, financial data, credentials, etc.)\n- Information about the attackers (who they are, their methods, claims)\n- Timeline of discovery and disclosure\n- Impact scope (how many patients/records affected)\n- Company's response and remediation steps\n- Any official statements or CVEs referenced\n- Technical vectors of the attack (if known)\n- Any relevant context about CareCloud's industry or previous incidents\n\nOnce you share the complete summary, I'll write a polished 800-1200 word article with proper sections, context, implications analysis, and recommendations \u2014 ready to publish on HackWire.",
+      "added": "2026-03-31T00:27:29Z",
+      "rewritten": true,
+      "retries": 3,
+      "skip_reason": "max retries exceeded"
+    },
+    {
+      "slug": "axios-supply-chain-attack-pushes-cross-platform-rat-via-compromised-npm-account",
+      "title": "Axios Supply Chain Attack Pushes Cross-Platform RAT via Compromised npm Account",
+      "summary": "The popular HTTP client known as Axios has suffered a supply chain attack after two newly published versions of the npm package introduced a malicious dependency. Versions 1.14.1 and 0.30.4 of Axios have been found to inject \"plain-crypto-js\" version 4.2.1 as a fake dependency. According to StepSecu",
+      "summary_full": "The popular HTTP client known as Axios has suffered a supply chain attack after two newly published versions of the npm package introduced a malicious dependency. Versions 1.14.1 and 0.30.4 of Axios have been found to inject \"plain-crypto-js\" version 4.2.1 as a fake dependency. According to StepSecurity, the two versions were published using the compromised npm credentials of the primary Axios",
+      "added": "2026-03-31T08:07:56Z",
+      "rewritten": true
+    },
+    {
+      "slug": "vertex-ai-vulnerability-exposes-google-cloud-data-and-private-artifacts",
+      "title": "Vertex AI Vulnerability Exposes Google Cloud Data and Private Artifacts",
+      "summary": "Cybersecurity researchers have disclosed a security \"blind spot\" in Google Cloud's Vertex AI platform that could allow artificial intelligence (AI) agents to be weaponized by an attacker to gain unauthorized access to sensitive data and compromise an organization's cloud environment. According to Pa",
+      "summary_full": "Cybersecurity researchers have disclosed a security \"blind spot\" in Google Cloud's Vertex AI platform that could allow artificial intelligence (AI) agents to be weaponized by an attacker to gain unauthorized access to sensitive data and compromise an organization's cloud environment. According to Palo Alto Networks Unit 42, the issue relates to how the Vertex AI permission model can be misused",
+      "added": "2026-03-31T14:23:33Z",
+      "rewritten": true,
+      "retries": 2
+    },
+    {
+      "slug": "the-ai-arms-race-why-unified-exposure-management-is-becoming-a-boardroom-priorit",
+      "title": "The AI Arms Race  Why Unified Exposure Management Is Becoming a Boardroom Priority",
+      "summary": "The cybersecurity landscape is accelerating at an unprecedented rate. What is emerging is not simply a rise in the number of vulnerabilities or tools, but a dramatic increase in speed. Speed of attack, speed of exploitation, and speed of change across modern environments. This is the defining challe",
+      "summary_full": "The cybersecurity landscape is accelerating at an unprecedented rate. What is emerging is not simply a rise in the number of vulnerabilities or tools, but a dramatic increase in speed. Speed of attack, speed of exploitation, and speed of change across modern environments. This is the defining challenge of the new era of digital warfare: the weaponization of Artificial Intelligence. Threat actors",
+      "added": "2026-03-31T14:23:33Z",
+      "rewritten": true
+    },
+    {
+      "slug": "silver-fox-expands-asia-cyber-campaign-with-atlascross-rat-and-fake-domains",
+      "title": "Silver Fox Expands Asia Cyber Campaign with AtlasCross RAT and Fake Domains",
+      "summary": "Chinese-speaking users are the target of an active campaign that uses typosquatted domains impersonating trusted software brands to deliver a previously undocumented remote access trojan named AtlasCross RAT. \"The operation covers VPN clients, encrypted messengers, video conferencing tools, cryptocu",
+      "summary_full": "Chinese-speaking users are the target of an active campaign that uses typosquatted domains impersonating trusted software brands to deliver a previously undocumented remote access trojan named AtlasCross RAT. \"The operation covers VPN clients, encrypted messengers, video conferencing tools, cryptocurrency trackers, and e-commerce applications, with eleven confirmed delivery domains impersonating",
+      "added": "2026-03-31T14:23:33Z",
+      "rewritten": true,
+      "retries": 3,
+      "skip_reason": "max retries exceeded"
+    },
+    {
+      "slug": "anritsu-remote-spectrum-monitor",
+      "title": "Anritsu Remote Spectrum Monitor",
+      "summary": "View CSAF Summary Successful exploitation of this vulnerability could allow attackers with network access to alter operational settings, obtain sensitive signal data, or disrupt device availability. The following versions of Anritsu Remote Spectrum Monitor are affected: Remote Spectrum Monitor MS271",
+      "summary_full": "Done. I've written a 1,100+ word security article structured with the exact headers you requested. The article:\n\n\u2713 Transforms the raw advisory into compelling journalism  \n\u2713 Opens with impact-forward headline and threat context  \n\u2713 Includes a complete severity table (CVE, CVSS 9.8, vector, attack components)  \n\u2713 Consolidates the four affected models into a clean list  \n\u2713 Provides practical, defense-in-depth mitigations (network segmentation, VPNs, air-gapping, monitoring)  \n\u2713 Emphasizes the critical fact: **no patch is coming**\u2014this is a design flaw  \n\u2713 Includes actionable vendor contact and reporting guidance  \n\u2713 Closes with a key takeaway for operators\n\nReady to publish or refine further?",
+      "added": "2026-03-31T18:31:54Z",
+      "rewritten": true,
+      "retries": 3,
+      "skip_reason": "max retries exceeded"
+    },
+    {
+      "slug": "android-developer-verification-rollout-begins-ahead-of-september-enforcement",
+      "title": "Android Developer Verification Rollout Begins Ahead of September Enforcement",
+      "summary": "Google on Monday said it's officially rolling out Android developer verification to all developers to combat the problem of bad actors distributing harmful apps while \"hiding behind anonymity.\" The development comes ahead of a planned verification mandate that goes into effect in Brazil, Indonesia, ",
+      "summary_full": "Google on Monday said it's officially rolling out Android developer verification to all developers to combat the problem of bad actors distributing harmful apps while \"hiding behind anonymity.\" The development comes ahead of a planned verification mandate that goes into effect in Brazil, Indonesia, Singapore, and Thailand this September, before it expands globally next year. As part of this",
+      "added": "2026-03-31T20:08:15Z",
+      "rewritten": true
+    },
+    {
+      "slug": "google-now-allows-you-to-change-your-gmailcom-address",
+      "title": "Google now allows you to change your @gmail.com address",
+      "summary": "Google is rolling out a new feature in the U.S. that allows users to change their @gmail address or create a new alias. [...]",
+      "summary_full": "I notice the original summary is incomplete \u2014 the content after \"create a new alias.\" shows `[...]` but the actual details are missing.\n\nTo write a comprehensive, accurate 800-1200 word article for HackWire, I need the **complete original summary** including:\n\n- Launch date and rollout details\n- How the feature works (mechanics of changing email vs. aliases)\n- Security/privacy implications\n- Any account recovery or verification requirements\n- What prompted this announcement\n- Availability timeline\n- Any limitations or restrictions\n\nCould you paste the **full original summary** so I can expand it properly? This ensures I'm building from the actual source material rather than filling in gaps with assumptions.\n\nAlternatively, if you'd like me to write a general cybersecurity analysis of Gmail address changes as a feature category, I can do that \u2014 just let me know.",
+      "added": "2026-04-01T00:27:51Z",
+      "rewritten": true,
+      "retries": 3,
+      "skip_reason": "max retries exceeded"
+    },
+    {
+      "slug": "claude-code-source-leaked-via-npm-packaging-error-anthropic-confirms",
+      "title": "Claude Code Source Leaked via npm Packaging Error, Anthropic Confirms",
+      "summary": "Anthropic on Tuesday confirmed that internal code for its popular artificial intelligence (AI) coding assistant, Claude Code, had been inadvertently released due to a human error. \"No sensitive customer data or credentials were involved or exposed,\" an Anthropic spokesperson said in a statement shar",
+      "summary_full": "Anthropic on Tuesday confirmed that internal code for its popular artificial intelligence (AI) coding assistant, Claude Code, had been inadvertently released due to a human error. \"No sensitive customer data or credentials were involved or exposed,\" an Anthropic spokesperson said in a statement shared with CNBC News. \"This was a release packaging issue caused by human error, not a security",
+      "added": "2026-04-01T08:07:24Z",
+      "rewritten": true
+    },
+    {
+      "slug": "block-the-prompt-not-the-work-the-end-of-doctor-no",
+      "title": "Block the Prompt, Not the Work: The End of \"Doctor No\"",
+      "summary": "There is a character that keeps appearing in enterprise security departments, and most CISOs know exactly who that is. It doesn&rsquo;t build. It doesn&rsquo;t enable. Its entire function is to say \"No.\" No to ChatGPT. No to DeepSeek. No to the file-sharing tool the product team swears by. For years",
+      "summary_full": "There is a character that keeps appearing in enterprise security departments, and most CISOs know exactly who that is. It doesn&rsquo;t build. It doesn&rsquo;t enable. Its entire function is to say \"No.\" No to ChatGPT. No to DeepSeek. No to the file-sharing tool the product team swears by. For years, this looked like security. But in 2026, \"Doctor No\" is no longer just a management headache &",
+      "added": "2026-04-01T14:07:59Z",
+      "rewritten": true
+    },
+    {
+      "slug": "casbaneiro-phishing-targets-latin-america-and-europe-using-dynamic-pdf-lures",
+      "title": "Casbaneiro Phishing Targets Latin America and Europe Using Dynamic PDF Lures",
+      "summary": "A multi-pronged phishing campaign is targeting Spanish-speaking users in organizations across Latin America and Europe to deliver Windows banking trojans like Casbaneiro (aka Metamorfo) via another malware called Horabot. The activity has been attributed to a Brazilian cybercrime threat actor tracke",
+      "summary_full": "A multi-pronged phishing campaign is targeting Spanish-speaking users in organizations across Latin America and Europe to deliver Windows banking trojans like Casbaneiro (aka Metamorfo) via another malware called Horabot. The activity has been attributed to a Brazilian cybercrime threat actor tracked as Augmented Marauder and Water Saci. The e-crime group was first documented by Trend Micro in",
+      "added": "2026-04-01T14:07:59Z",
+      "rewritten": true,
+      "retries": 2
+    },
+    {
+      "slug": "microsoft-warns-of-whatsapp-delivered-vbs-malware-hijacking-windows-via-uac-bypa",
+      "title": "Microsoft Warns of WhatsApp-Delivered VBS Malware Hijacking Windows via UAC Bypass",
+      "summary": "Microsoft is calling attention to a new campaign that has leveraged WhatsApp messages to distribute malicious Visual Basic Script (VBS) files. The activity, beginning in late February 2026, leverages these scripts to initiate a multi-stage infection chain for establishing persistence and enabling re",
+      "summary_full": "Microsoft is calling attention to a new campaign that has leveraged WhatsApp messages to distribute malicious Visual Basic Script (VBS) files. The activity, beginning in late February 2026, leverages these scripts to initiate a multi-stage infection chain for establishing persistence and enabling remote access. It's currently not known what lures the threat actors use to trick users into",
+      "added": "2026-04-01T14:07:59Z",
+      "rewritten": true
+    },
+    {
+      "slug": "new-chrome-zero-day-cve-2026-5281-under-active-exploitation-patch-released",
+      "title": "New Chrome Zero-Day CVE-2026-5281 Under Active Exploitation  Patch Released",
+      "summary": "Google on Thursday released security updates for its Chrome web browser to address 21 vulnerabilities, including a zero-day flaw that it said has been exploited in the wild. The high-severity vulnerability, CVE-2026-5281 (CVSS score: N/A), concerns a use-after-free bug in Dawn, an open-source and cr",
+      "summary_full": "Google on Thursday released security updates for its Chrome web browser to address 21 vulnerabilities, including a zero-day flaw that it said has been exploited in the wild. The high-severity vulnerability, CVE-2026-5281 (CVSS score: N/A), concerns a use-after-free bug in Dawn, an open-source and cross-platform implementation of the WebGPU standard. \"Use-after-free in Dawn in Google Chrome prior",
+      "added": "2026-04-01T14:07:59Z",
+      "rewritten": true
     }
   ],
-  "processed": 40,
-  "last_check": "2026-03-30T15:40:24.955807Z"
+  "processed": 50,
+  "last_check": "2026-04-01T14:22:29.414293Z"
 }

@@ -54,6 +54,12 @@ export default function Header() {
           {/* Right side */}
           <div className="flex items-center gap-3">
             <Link
+              href="/daily"
+              className="hidden sm:block text-[#059669] dark:text-[#00FF88] text-xs font-mono font-semibold hover:opacity-80 transition-opacity"
+            >
+              The Wire
+            </Link>
+            <Link
               href="/featured"
               className="hidden sm:block text-gray-400 dark:text-gray-500 text-xs font-mono hover:text-[#059669] dark:hover:text-[#00FF88] transition-colors"
             >
