@@ -321,7 +321,8 @@ AI_REFUSAL_PATTERNS = [
 ]
 
 def validate_article(rewritten: dict) -> bool:
-    """Reject articles with AI refusal content, empty bodies, or bad headlines."""
+    """Reject articles with AI refusal content, empty bodies, or bad headlines.
+    Uses both exact patterns AND regex to catch AI meta-commentary."""
     headline = rewritten.get("headline", "")
     body = rewritten.get("body", "")
     tldr = rewritten.get("tldr", "")
@@ -330,32 +331,61 @@ def validate_article(rewritten: dict) -> bool:
     if len(body.strip()) < 200:
         return False
 
-    # Check body and tldr for AI refusal patterns
     body_lower = body.lower()
     tldr_lower = tldr.lower()
-    # Full body scan for hard refusals
+    combined = body_lower + " " + tldr_lower
+
+    # === EXACT PHRASE PATTERNS ===
     for pattern in AI_REFUSAL_PATTERNS:
-        if pattern in body_lower or pattern in tldr_lower:
+        if pattern in combined:
             return False
 
-    # Check opening 300 chars for AI preamble (the article may be fine after the preamble)
-    opening = body_lower[:300]
-    preamble_phrases = ["no problem", "i'll write", "i have enough context", "here's the r",
-                        "let me write", "based on the provided", "web search was blocked",
-                        "i couldn't access", "in the meantime", "i need websearch"]
-    for phrase in preamble_phrases:
-        if phrase in opening:
+    # === REGEX PATTERNS — catches variations the AI can rephrase ===
+    refusal_regexes = [
+        # First-person AI meta-commentary (the AI talking about itself/the task)
+        r"\bi (need|notice|don'?t see|cannot|can'?t|wasn'?t able|am unable|don'?t have)",
+        r"\bi'?(ll|d|m) (need|write|craft|create|draft|generate|produce|summarize)",
+        r"\bcould you (paste|share|provide|send|give|include)",
+        r"\bplease (provide|share|paste|send|give|include)",
+        r"\byou'?ve? (provided|shared|given|sent|pasted)",
+        r"\bthe (original |actual )?(summary|article|content|text) (is |you |was )?(incomplete|missing|empty|not provided|truncated)",
+        r"\bto write (a |this |the |that )?(comprehensive|accurate|full|complete|proper)",
+        r"\b(no|missing|incomplete|empty) (article |)(content|text|body|summary|details)",
+        r"\bonce you (share|provide|paste|send)",
+        # AI preamble / self-narration
+        r"^(no problem|sure|absolutely|of course|happy to|glad to|let me|i'?ll)",
+        r"\bbased on (the |my |)(provided|available|given|limited) (details|information|context|data)",
+        r"\b(web ?search|internet access|live search|search permission) (was |were |is |)(blocked|unavailable|denied|failed|not available)",
+    ]
+    for rgx in refusal_regexes:
+        if re.search(rgx, combined):
             return False
+
+    # === STRUCTURAL CHECK — real articles don't start with "I" ===
+    first_line = body.strip().split('\n')[0].strip()
+    if first_line.startswith('I ') and len(first_line) < 200:
+        # Article body starts with "I ..." — almost certainly AI meta-commentary
+        return False
 
     # Reject emoji in headlines
     if any(ord(c) > 127 for c in headline):
-        # Allow only basic ASCII + common punctuation in headlines
         cleaned = re.sub(r'[^\x20-\x7E]', '', headline).strip()
         if len(cleaned) < len(headline) * 0.9:
             return False
         rewritten["headline"] = cleaned
 
     return True
+
+
+def post_deploy_quality_scan(articles: list) -> list:
+    """Scan ALL articles for AI refusal content. Returns list of bad articles."""
+    bad = []
+    for a in articles:
+        fake = {"headline": a.get("headline", ""), "body": a.get("body", ""), "tldr": a.get("tldr", "")}
+        if not validate_article(fake):
+            bad.append(a)
+            print(f"    ✗ BAD: {a['slug']}")
+    return bad
 
 
 def publish_articles(max_articles=5):
@@ -478,6 +508,29 @@ def publish_articles(max_articles=5):
             print(f"  Deployed successfully!")
         else:
             print(f"  Deploy warning: {result.stderr[-300:]}")
+
+        # Post-deploy quality scan — catch anything that slipped through
+        bad_articles = post_deploy_quality_scan(articles)
+        if bad_articles:
+            print(f"  ⚠ POST-DEPLOY SCAN: {len(bad_articles)} bad article(s) found — removing and redeploying")
+            slugs_to_remove = {a["slug"] for a in bad_articles}
+            articles = [a for a in articles if a["slug"] not in slugs_to_remove]
+            save_articles(articles)
+            # Rebuild and redeploy without the bad articles
+            subprocess.run(["npm", "run", "build"], cwd=str(SCRIPT_DIR), capture_output=True, text=True, timeout=120)
+            subprocess.run(["npx", "vercel", "--token", VERCEL_TOKEN, "--yes", "--prod"], cwd=str(SCRIPT_DIR), capture_output=True, text=True, timeout=180)
+            # Alert via Telegram
+            bad_list = "\n".join(f"- {a['headline']}" for a in bad_articles)
+            alert_msg = f"⚠️ HackWire auto-publisher removed {len(bad_articles)} bad article(s) during post-deploy scan:\n{bad_list}"
+            try:
+                from urllib.request import Request, urlopen
+                from urllib.parse import urlencode
+                tg_data = urlencode({"chat_id": "1667266840", "text": alert_msg}).encode()
+                tg_req = Request("https://api.telegram.org/bot8718467986:AAHeP-bYYN6fpVWgNa4JhrAlJrD67Pv7w40/sendMessage", data=tg_data)
+                urlopen(tg_req, timeout=10)
+            except Exception:
+                pass
+            print(f"  ✓ Cleaned and redeployed")
         
         return new_count
     
