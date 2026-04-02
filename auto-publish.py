@@ -388,6 +388,127 @@ def post_deploy_quality_scan(articles: list) -> list:
     return bad
 
 
+RETRY_QUEUE_FILE = SCRIPT_DIR / "retry-queue.json"
+MAX_RETRIES = 2
+
+def load_retry_queue() -> list:
+    if RETRY_QUEUE_FILE.exists():
+        with open(RETRY_QUEUE_FILE) as f:
+            return json.load(f)
+    return []
+
+def save_retry_queue(queue: list):
+    with open(RETRY_QUEUE_FILE, "w") as f:
+        json.dump(queue, f, indent=2)
+
+def add_to_retry_queue(bad_articles: list, all_articles_data: list):
+    """Add removed articles to retry queue with their source info."""
+    queue = load_retry_queue()
+    existing_slugs = {item["slug"] for item in queue}
+
+    for a in bad_articles:
+        if a["slug"] in existing_slugs:
+            continue
+        queue.append({
+            "slug": a["slug"],
+            "headline": a.get("headline", ""),
+            "source": a.get("source", ""),
+            "sourceUrl": a.get("sourceUrl", ""),
+            "category": a.get("category", ""),
+            "retries": 0,
+            "added": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        })
+        print(f"    → Queued for retry: {a['headline']}")
+
+    save_retry_queue(queue)
+
+def process_retry_queue(published: set, articles: list, existing_slugs: set) -> int:
+    """Process retry queue — re-fetch and re-generate failed articles."""
+    queue = load_retry_queue()
+    if not queue:
+        return 0
+
+    print(f"  Processing retry queue ({len(queue)} items)...")
+    new_count = 0
+    remaining = []
+
+    for item in queue:
+        if item["retries"] >= MAX_RETRIES:
+            print(f"    ✗ PERMANENTLY SKIPPED (max retries): {item['headline']}")
+            continue
+
+        item["retries"] += 1
+
+        # Build a fake RSS entry from the saved source info
+        entry = {
+            "title": item["headline"],
+            "summary": item["headline"],
+            "summary_full": item["headline"],
+            "source": item.get("source", "").replace("via ", ""),
+            "sourceUrl": item.get("sourceUrl", ""),
+        }
+
+        # If we have a source URL, try to fetch fresh content
+        if item.get("sourceUrl"):
+            try:
+                req = Request(item["sourceUrl"], headers={"User-Agent": "Mozilla/5.0"})
+                resp = urlopen(req, timeout=15)
+                html = resp.read().decode("utf-8", errors="replace")
+                # Extract text content (basic)
+                import re as _re
+                text = _re.sub(r'<[^>]+>', ' ', html)
+                text = _re.sub(r'\s+', ' ', text).strip()
+                if len(text) > 200:
+                    entry["summary_full"] = text[:3000]
+            except Exception as e:
+                print(f"    Could not re-fetch source: {e}")
+
+        # Try to rewrite
+        rewritten = rewrite_article_gemini(entry)
+        if not rewritten:
+            remaining.append(item)
+            continue
+
+        # Validate
+        if not validate_article(rewritten):
+            print(f"    ✗ RETRY FAILED (still bad): {item['headline']} (attempt {item['retries']})")
+            if item["retries"] < MAX_RETRIES:
+                remaining.append(item)
+            else:
+                print(f"    ✗ PERMANENTLY SKIPPED: {item['headline']}")
+            continue
+
+        # Success! Publish it
+        slug = slugify(rewritten["headline"])
+        if slug in existing_slugs or len(slug) < 5:
+            slug = f"{slug}-retry"
+
+        category = item.get("category") or classify_category(rewritten["headline"], rewritten["summary"])
+        severity = classify_severity(rewritten["headline"], rewritten["summary"])
+
+        new_article = {
+            "slug": slug,
+            "headline": rewritten["headline"],
+            "summary": rewritten["summary"],
+            "body": rewritten["body"],
+            "tldr": rewritten.get("tldr", rewritten["summary"]),
+            "category": category,
+            "source": item.get("source", ""),
+            "sourceUrl": item.get("sourceUrl", ""),
+            "publishedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "severity": severity,
+            "tags": [],
+        }
+
+        articles.insert(0, new_article)
+        existing_slugs.add(slug)
+        new_count += 1
+        print(f"    ✓ RETRY SUCCESS: {rewritten['headline']}")
+
+    save_retry_queue(remaining)
+    return new_count
+
+
 def publish_articles(max_articles=5):
     """Main publish flow."""
     print(f"[{datetime.now(timezone.utc).isoformat()}] Starting HackWire auto-publish...")
@@ -403,6 +524,12 @@ def publish_articles(max_articles=5):
     new_count = 0
     entries_to_process = []  # Track unprocessed entries for queueing
     try:
+        # Process retry queue first — re-generate previously failed articles
+        retry_count = process_retry_queue(published, articles, existing_slugs)
+        if retry_count > 0:
+            print(f"  Retried and published {retry_count} article(s) from retry queue")
+            new_count += retry_count
+
         for entry in entries:
             if new_count >= max_articles:
                 break
@@ -423,7 +550,15 @@ def publish_articles(max_articles=5):
             # Content quality gate — reject AI refusals and broken content
             if not validate_article(rewritten):
                 print(f"  ✗ REJECTED (failed validation): {rewritten.get('headline', 'unknown')}")
-                published.add(entry_hash)  # Mark as processed so we don't retry
+                # Queue for retry with source info instead of just skipping
+                add_to_retry_queue([{
+                    "slug": slugify(rewritten.get("headline", "unknown")),
+                    "headline": entry.get("title", rewritten.get("headline", "")),
+                    "source": f"via {entry.get('source', '')}",
+                    "sourceUrl": entry.get("sourceUrl", ""),
+                    "category": classify_category(rewritten.get("headline", ""), rewritten.get("summary", "")),
+                }], [])
+                published.add(entry_hash)  # Mark as processed so RSS doesn't retry
                 continue
 
             slug = slugify(rewritten["headline"])
@@ -512,7 +647,9 @@ def publish_articles(max_articles=5):
         # Post-deploy quality scan — catch anything that slipped through
         bad_articles = post_deploy_quality_scan(articles)
         if bad_articles:
-            print(f"  ⚠ POST-DEPLOY SCAN: {len(bad_articles)} bad article(s) found — removing and redeploying")
+            print(f"  ⚠ POST-DEPLOY SCAN: {len(bad_articles)} bad article(s) found — removing and queuing for retry")
+            # Add to retry queue BEFORE removing
+            add_to_retry_queue(bad_articles, articles)
             slugs_to_remove = {a["slug"] for a in bad_articles}
             articles = [a for a in articles if a["slug"] not in slugs_to_remove]
             save_articles(articles)
@@ -521,16 +658,15 @@ def publish_articles(max_articles=5):
             subprocess.run(["npx", "vercel", "--token", VERCEL_TOKEN, "--yes", "--prod"], cwd=str(SCRIPT_DIR), capture_output=True, text=True, timeout=180)
             # Alert via Telegram
             bad_list = "\n".join(f"- {a['headline']}" for a in bad_articles)
-            alert_msg = f"⚠️ HackWire auto-publisher removed {len(bad_articles)} bad article(s) during post-deploy scan:\n{bad_list}"
+            alert_msg = f"⚠️ HackWire auto-publisher removed {len(bad_articles)} bad article(s) — queued for retry:\n{bad_list}"
             try:
-                from urllib.request import Request, urlopen
                 from urllib.parse import urlencode
                 tg_data = urlencode({"chat_id": "1667266840", "text": alert_msg}).encode()
                 tg_req = Request("https://api.telegram.org/bot8718467986:AAHeP-bYYN6fpVWgNa4JhrAlJrD67Pv7w40/sendMessage", data=tg_data)
                 urlopen(tg_req, timeout=10)
             except Exception:
                 pass
-            print(f"  ✓ Cleaned and redeployed")
+            print(f"  ✓ Cleaned, queued for retry, and redeployed")
         
         return new_count
     
