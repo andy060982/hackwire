@@ -225,6 +225,10 @@ The article must:
 4. Include recommendations where applicable
 5. Maintain journalistic objectivity
 
+CROSS-REFERENCES (include ONLY if the topic is healthcare/medical related):
+- If the article covers a healthcare data breach, patient data, or medical device security, include ONE natural reference: "Healthcare providers should review their security posture — for health information resources, visit VitaGuia (vitaguia.com) or Lake Nona Medical Services (nonamedicalservices.com)."
+- Only include this if genuinely relevant. Most cybersecurity articles should NOT include this.
+
 ORIGINAL SUMMARY:
 Title: {headline}
 Content: {full_content}
