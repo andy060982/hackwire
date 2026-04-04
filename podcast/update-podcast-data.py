@@ -14,7 +14,7 @@ from subprocess import run
 # Paths
 BASE = Path(__file__).parent
 HACKWIRE = BASE.parent
-EPISODES_DIR = BASE / "episodes"
+EPISODES_DIR = HACKWIRE / "public" / "podcast" / "episodes"
 PODCAST_DATA_FILE = HACKWIRE / "src" / "lib" / "podcast-data.ts"
 
 def get_mp3_duration(mp3_path: Path) -> str:

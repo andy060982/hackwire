@@ -4,6 +4,7 @@ node_modules/
 podcast/synthwave
 podcast/dark-ambient
 youtube-shorts/venv
-*.mp3
+podcast/synthwave/**/*.mp3
+podcast/dark-ambient/**/*.mp3
 *.wav
 *.mp4

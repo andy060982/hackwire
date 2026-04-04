@@ -92,8 +92,12 @@ QUEUE_FILE.write_text(json.dumps({'queue': queue}, indent=2))
 print(f'Generated {processed} episodes')
 " 2>&1 | tee -a "$LOG"
 
-# Clean old episodes (keep last 7 days)
-find "$PUBLIC_DIR" -name "*.mp3" -mtime +7 -delete 2>/dev/null || true
+# Clean old episodes (keep last 30 days)
+find "$PUBLIC_DIR" -name "*.mp3" -mtime +30 -delete 2>/dev/null || true
+
+# Update podcast data (registers new episodes with the website)
+log "Updating podcast data..."
+python3 podcast/update-podcast-data.py 2>&1 | tee -a "$LOG"
 
 # Deploy to Vercel
 log "Deploying to Vercel..."
