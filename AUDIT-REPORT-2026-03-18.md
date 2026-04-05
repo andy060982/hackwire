@@ -102,7 +102,7 @@ This error appears for every single article on Mar 17-18. The `ANTHROPIC_API_KEY
 - Fallback behavior just dumps raw RSS summary — these are teasers, not articles
 - Readers clicking through get a stub, not a real story
 
-**Fix:** Either restore Claude API key OR switch `auto-publish.py` to use Gemini API (same key already used by podcast generator: `AIzaSyCTAAF4Wql-Ty0KypBsLQkrpY1FkVpeXtw`) for article rewrites.
+**Fix:** Either restore Claude API key OR switch `auto-publish.py` to use Gemini API (same key already used by podcast generator — see `$GEMINI_API_KEY` from environment) for article rewrites.
 
 ---
 
@@ -220,7 +220,7 @@ Going from 10 → 17 sources increases daily article pool from ~50 to ~85 candid
 **P1-A: Fix Claude API key in cron environment**
 ```bash
 # In crontab, add ANTHROPIC_API_KEY= at top, or use env file:
-0 12,18,0 * * * ANTHROPIC_API_KEY=<key> GEMINI_API_KEY=AIzaSyCTAAF4Wql-Ty0KypBsLQkrpY1FkVpeXtw /usr/bin/python3 auto-publish.py 5
+0 12,18,0 * * * ANTHROPIC_API_KEY=<key> GEMINI_API_KEY=<key> /usr/bin/python3 auto-publish.py 5
 ```
 OR (simpler): Update `auto-publish.py` to use Gemini for article rewrites since that key already works in the environment.
 
