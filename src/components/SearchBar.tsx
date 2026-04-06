@@ -23,9 +23,17 @@ export default function SearchBar() {
     if (fetched.current) return
     fetched.current = true
     try {
-      const res = await fetch('/api/search')
-      const data = await res.json()
-      setArticles(data)
+      const allArticles: Article[] = []
+      let page = 1
+      let totalPages = 1
+      do {
+        const res = await fetch(`/api/search?page=${page}`)
+        const json = await res.json()
+        allArticles.push(...json.data)
+        totalPages = json.pagination.totalPages
+        page++
+      } while (page <= totalPages)
+      setArticles(allArticles)
     } catch {
       fetched.current = false
     }
