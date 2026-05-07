@@ -264,6 +264,14 @@ export default async function ArticlePage({ params }: Props) {
               dangerouslySetInnerHTML={{ __html: renderBody(article.body) }}
             />
 
+            {/* Subscribe with Google — Inline CTA injection target */}
+            <div
+              className="mt-8"
+              dangerouslySetInnerHTML={{
+                __html: '<div rrm-inline-cta="f6952284-8d3f-4ef1-8d7a-0b5cb9fd6282"></div>',
+              }}
+            />
+
             {/* TL;DR Section */}
             {article.tldr && (
               <div className="mt-10 p-4 bg-blue-50 dark:bg-blue-950/20 border-l-4 border-blue-500 dark:border-blue-400 rounded">
