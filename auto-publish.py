@@ -172,10 +172,38 @@ def rewrite_article_with_claude(entry: dict) -> dict | None:
         is_advisory = source == "CISA Alerts" or "cisa.gov" in entry.get("sourceUrl", "") or \
                       any(kw in full_content.lower() for kw in ["cvss", "cwe-", "ics-cert", "icsa-", "affected products", "mitigations"])
 
+        # Detect article category for category-aware internal linking
+        category = classify_category(headline, full_content)
+        category_url = f"https://www.hackwire.news/category/{category}"
+        # Two related pillar pages other than the primary
+        related_pillars = [c for c in CATEGORY_KEYWORDS.keys() if c != category][:2]
+        related_pillar_links = " and ".join(
+            f"[{p.replace('-', ' ').title()}](https://www.hackwire.news/category/{p})" for p in related_pillars
+        )
+
+        analysis_block = f"""
+
+## HackWire Analysis
+
+REQUIRED: write 200-300 words of original commentary that goes beyond restating the source. Pick the angle that fits the story:
+- Why this matters now (timing / who's exposed / what changes)
+- Pattern recognition (does this fit a broader trend? prior incidents to compare against?)
+- Hidden risk or detail other reporting is missing
+- Concrete next steps for defenders or specific industries
+This must be substantive, opinionated journalism — not a paraphrase of the source. Sign off the section with "— HackWire Editorial."
+
+## Related Coverage
+
+REQUIRED: end with 3 short bullets that internally link to relevant HackWire category pages. Use this exact markdown format and include all three bullets:
+- Read more in our [{category.replace('-', ' ').title()}]({category_url}) coverage
+- Cross-reference with {related_pillar_links}
+- Stay current via the [HackWire homepage](https://www.hackwire.news/)
+"""
+
         if is_advisory:
             rewrite_prompt = f"""You are a professional cybersecurity journalist writing for HackWire.
 
-Rewrite this security advisory into a well-structured 800-1200 word article using markdown formatting.
+Rewrite this security advisory into a well-structured 1000-1400 word article using markdown formatting.
 
 REQUIRED STRUCTURE (use these exact markdown headers):
 # [Compelling headline about the vulnerability/threat]
@@ -194,13 +222,13 @@ REQUIRED STRUCTURE (use these exact markdown headers):
 
 ## References
 [Links to the original advisory and vendor pages]
-
+{analysis_block}
 IMPORTANT RULES:
 - Decode HTML entities (&amp; → &, etc.)
 - Consolidate duplicate product listings into clean grouped lists
 - Do NOT dump raw advisory text — restructure it into readable journalism
 - Include CVE numbers, CVSS scores, and CWE identifiers in the severity table
-- End with actionable recommendations
+- End with actionable recommendations and the required HackWire Analysis + Related Coverage sections
 
 SOURCE ADVISORY:
 Title: {headline}
@@ -210,20 +238,21 @@ Write the full article now in markdown."""
         else:
             rewrite_prompt = f"""You are a professional cybersecurity journalist writing for HackWire.
 
-Expand this news summary into a comprehensive 800-1200 word article using markdown formatting.
+Expand this news summary into a comprehensive 1000-1400 word article using markdown formatting.
 
 REQUIRED FORMAT:
 - Start with a # headline
 - Use ## section headers (e.g., ## The Threat, ## Background and Context, ## Technical Details, ## Implications, ## Recommendations)
 - Use bullet points, bold text, and tables where appropriate
 - Write in professional journalistic style
-
+{analysis_block}
 The article must:
 1. Provide full context and background
 2. Explain technical details in accessible language
 3. Discuss implications for organizations
 4. Include recommendations where applicable
 5. Maintain journalistic objectivity
+6. End with the REQUIRED "HackWire Analysis" and "Related Coverage" sections shown above
 
 CROSS-REFERENCES (include ONLY if the topic is healthcare/medical related):
 - If the article covers a healthcare data breach, patient data, or medical device security, include ONE natural reference: "Healthcare providers should review their security posture — for health information resources, visit VitaGuia (vitaguia.com) or Lake Nona Medical Services (nonamedicalservices.com)."
@@ -641,7 +670,7 @@ def publish_articles(max_articles=5):
         result = subprocess.run(
             ["npx", "vercel", "--token", VERCEL_TOKEN, "--yes", "--prod"],
             cwd=str(SCRIPT_DIR),
-            capture_output=True, text=True, timeout=180
+            capture_output=True, text=True, timeout=420
         )
         if result.returncode == 0:
             print(f"  Deployed successfully!")
@@ -659,7 +688,7 @@ def publish_articles(max_articles=5):
             save_articles(articles)
             # Rebuild and redeploy without the bad articles
             subprocess.run(["npm", "run", "build"], cwd=str(SCRIPT_DIR), capture_output=True, text=True, timeout=120)
-            subprocess.run(["npx", "vercel", "--token", VERCEL_TOKEN, "--yes", "--prod"], cwd=str(SCRIPT_DIR), capture_output=True, text=True, timeout=180)
+            subprocess.run(["npx", "vercel", "--token", VERCEL_TOKEN, "--yes", "--prod"], cwd=str(SCRIPT_DIR), capture_output=True, text=True, timeout=420)
             # Alert via Telegram
             bad_list = "\n".join(f"- {a['headline']}" for a in bad_articles)
             alert_msg = f"⚠️ HackWire auto-publisher removed {len(bad_articles)} bad article(s) — queued for retry:\n{bad_list}"
