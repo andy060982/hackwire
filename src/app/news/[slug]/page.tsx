@@ -1,12 +1,15 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import Script from 'next/script'
 import { getArticleBySlug, getRelatedArticles, formatTimeAgo, articles } from '@/lib/articles'
 import CategoryBadge from '@/components/CategoryBadge'
 import CopyLinkButton from '@/components/CopyLinkButton'
 import SeverityBadge from '@/components/SeverityBadge'
 import NewsCard from '@/components/NewsCard'
 import NewsletterSignup from '@/components/NewsletterSignup'
+
+const SWG_PRODUCT_ID = 'CAowjZzgCw:openaccess'
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -148,6 +151,24 @@ export default async function ArticlePage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+
+      {/* Subscribe with Google (SwG) — Reader Revenue Manager basic subscription init */}
+      <Script
+        id="swg-basic-loader"
+        async
+        src="https://news.google.com/swg/js/v1/swg-basic.js"
+        strategy="afterInteractive"
+      />
+      <Script id="swg-basic-init" strategy="afterInteractive">
+        {`(self.SWG_BASIC = self.SWG_BASIC || []).push(basicSubscriptions => {
+  basicSubscriptions.init({
+    type: "NewsArticle",
+    isPartOfType: ["Product"],
+    isPartOfProductId: "${SWG_PRODUCT_ID}",
+    clientOptions: { theme: "light", lang: "en" },
+  });
+});`}
+      </Script>
 
       <article className="max-w-7xl mx-auto px-4 py-8">
         {/* Breadcrumb */}
