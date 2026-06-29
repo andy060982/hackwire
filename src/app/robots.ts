@@ -1,14 +1,14 @@
 import { MetadataRoute } from 'next'
 
+// Blocked: AI *training* crawlers + scrapers that ingest content with no
+// referral traffic back. We intentionally ALLOW the AI *answer/search* engines
+// (ChatGPT-User, OAI-SearchBot, PerplexityBot, Perplexity-User) — being cited
+// there drives real referral clicks for a news site. (2026-06-29)
 const BLOCKED_AI_BOTS = [
   'GPTBot',
-  'ChatGPT-User',
-  'OAI-SearchBot',
   'ClaudeBot',
   'Claude-Web',
   'anthropic-ai',
-  'PerplexityBot',
-  'Perplexity-User',
   'CCBot',
   'cohere-ai',
   'Diffbot',

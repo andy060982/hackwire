@@ -21,10 +21,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${cat.label} — HackWire`,
     description: `Latest cybersecurity ${cat.label.toLowerCase()} news and analysis from HackWire.`,
+    alternates: {
+      canonical: `https://www.hackwire.news/category/${category}`,
+    },
     openGraph: {
       title: `${cat.label} | HackWire`,
       description: `Cybersecurity ${cat.label.toLowerCase()} coverage, decoded.`,
       url: `https://www.hackwire.news/category/${category}`,
+      images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: 'summary_large_image',
     },
   }
 }
@@ -35,6 +42,11 @@ export default async function CategoryPage({ params }: Props) {
   if (!cat) notFound()
 
   const catArticles = getArticlesByCategory(category)
+  // Cap the rendered grid — some categories hold hundreds of articles and
+  // rendering them all inline tanks Core Web Vitals. Recent-first is what
+  // category readers want; the rest stay indexed via the sitemap + /news.
+  const CATEGORY_LATEST = 30
+  const visibleArticles = catArticles.slice(0, CATEGORY_LATEST)
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
@@ -75,11 +87,23 @@ export default async function CategoryPage({ params }: Props) {
           <p className="text-gray-400 dark:text-gray-600 font-mono text-sm">No articles found in this category.</p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {catArticles.map((article) => (
-            <NewsCard key={article.slug} article={article} />
-          ))}
-        </div>
+        <>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {visibleArticles.map((article) => (
+              <NewsCard key={article.slug} article={article} />
+            ))}
+          </div>
+          {catArticles.length > CATEGORY_LATEST && (
+            <div className="mt-8 text-center">
+              <a
+                href="/news"
+                className="inline-block px-5 py-2.5 rounded border border-[#059669]/30 dark:border-[#00FF88]/30 text-[#059669] dark:text-[#00FF88] text-sm font-mono hover:bg-[#059669]/5 dark:hover:bg-[#00FF88]/5 transition-colors"
+              >
+                Browse all stories &rarr;
+              </a>
+            </div>
+          )}
+        </>
       )}
     </div>
   )
