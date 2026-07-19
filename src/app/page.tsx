@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description:
     'HackWire delivers real-time cybersecurity news covering breaches, ransomware, malware, and vulnerabilities — decoded for security professionals. Updated 3x daily from 15 sources.',
   alternates: {
-    canonical: 'https://www.hackwire.news',
+    canonical: 'https://www.hackwire.news/',
   },
   openGraph: {
     title: 'HackWire — Cybersecurity News, Decoded',

@@ -30,9 +30,12 @@ export const metadata: Metadata = {
   description:
     'HackWire delivers real-time cybersecurity news covering breaches, vulnerabilities, malware, ransomware, policy, and security tools — decoded for professionals.',
   keywords: ['cybersecurity news', 'data breaches', 'vulnerabilities', 'malware', 'ransomware', 'infosec'],
-  authors: [{ name: 'HackWire Editorial' }],
+  authors: [{ name: 'Andy Arevalo', url: 'https://www.hackwire.news/about' }],
   alternates: {
     canonical: 'https://www.hackwire.news/',
+    types: {
+      'application/rss+xml': 'https://www.hackwire.news/feed.xml',
+    },
   },
   openGraph: {
     type: 'website',
@@ -54,6 +57,13 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
   },
   manifest: '/manifest.json',
   appleWebApp: {
@@ -76,6 +86,26 @@ export default function RootLayout({
       <head>
         <meta name="theme-color" content="#0A0A0F" />
         <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Organization JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'NewsMediaOrganization',
+              name: 'HackWire',
+              url: 'https://www.hackwire.news',
+              logo: {
+                '@type': 'ImageObject',
+                url: 'https://www.hackwire.news/google-news/logo-rect-1000x200.png',
+                width: 1000,
+                height: 200,
+              },
+            }),
+          }}
+        />
         {/* Prevent flash of wrong theme */}
         <script
           dangerouslySetInnerHTML={{
@@ -104,6 +134,10 @@ export default function RootLayout({
         />
         <Script id="gtag-init" strategy="afterInteractive">
           {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZE00TMSWQF');`}
+        </Script>
+        {/* Microsoft Clarity */}
+        <Script id="ms-clarity" strategy="afterInteractive">
+          {`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","x7i807ifje");`}
         </Script>
       </body>
     </html>
